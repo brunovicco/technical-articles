@@ -1,0 +1,44 @@
+{
+  "id": "multiagentes-quebram-no-estado-antes-de-quebrarem-no-prompt",
+  "originalLanguage": "pt-br",
+  "date": "2026-09-15",
+  "sourceUrl": "https://www.linkedin.com/pulse/multiagentes-quebram-estado-antes-de-quebrarem-prompt-bruno-vicco-pmfmf",
+  "tags": [
+    "agents",
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Multiagentes quebram no estado antes de quebrarem no prompt",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Multi-agent systems break in state before they break in the prompt",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "58a99162f2aa8e3abdbc",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQETz2YAKs26sA/article-inline_image-shrink_1500_2232/B4DaClLIkzKwAQ-/0/1789477554786?e=1794441600&v=beta&t=uIh7BVU1j2s0y3QWKBMl8CtfLCQhgyihDIc2WIoY1tw",
+      "alt": ""
+    },
+    {
+      "key": "fd75aaad9b49f9b1a4b1",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFCpjYsemeUAg/article-inline_image-shrink_1500_2232/B4DaClLImXK4AQ-/0/1789477554976?e=1794441600&v=beta&t=5xlEeCXMDL02uPNWmEFS-1uWNLwQeuONrfqsZC3o8eQ",
+      "alt": ""
+    },
+    {
+      "key": "56714b6b413a0afb26e1",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQExwRfPfjjCIg/article-inline_image-shrink_1500_2232/B4DaClLImlGkAU-/0/1789477555078?e=1794441600&v=beta&t=ZYECI_pEh86VKJsIP_Zj40x4_8aw_loLvXN358gPzdg",
+      "alt": ""
+    },
+    {
+      "key": "7c535b8d2031e1435746",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHm691Y4I-AWg/article-inline_image-shrink_1500_2232/B4DaClLIocJEAQ-/0/1789477554971?e=1794441600&v=beta&t=rjOtv1q-lyPdck15RYO0plKm82C8tZfK3njGq_dqFH4",
+      "alt": ""
+    }
+  ]
+}

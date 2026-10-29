@@ -1,0 +1,79 @@
+{
+  "id": "fat-vs-slim-vs-hibrido-no-redis-stack-o-modelo-que-mudou-minha-forma-de-pensar-em-retrieval-para-llm",
+  "originalLanguage": "pt-br",
+  "date": "2026-03-12",
+  "sourceUrl": "https://www.linkedin.com/pulse/fat-vs-slim-h%C3%ADbrido-redis-stack-o-modelo-que-mudou-minha-bruno-vicco-eykxf",
+  "tags": [
+    "engineering",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Fat vs Slim vs Híbrido no Redis Stack: o modelo que mudou minha forma de pensar em retrieval para LLM",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Fat vs Slim vs Hybrid in Redis Stack: the model that changed how I think about LLM retrieval",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "5c84c8e935aa6275fdb1",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFE5L6_q5l98g/article-inline_image-shrink_1500_2232/B4DZzfS_JiIcAU-/0/1773272823725?e=1794441600&v=beta&t=og2TmmQPQfMwQ1qM6yBuvhetsedAyzpz6C7xcKIUo5M",
+      "alt": ""
+    },
+    {
+      "key": "83065a0b227ba48ece48",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFCCq1r4c0_2w/article-inline_image-shrink_1500_2232/B4DZzfKMipJIAU-/0/1773270519154?e=1794441600&v=beta&t=jAid0m7Ps3TANfWBX4TWn1ks5xRbVRxXHdfu1x4EvUk",
+      "alt": ""
+    },
+    {
+      "key": "e2cceafe3e827427c8fb",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEGTOY_eGtedA/article-inline_image-shrink_1500_2232/B4DZzfMymiG0Ac-/0/1773271199459?e=1794441600&v=beta&t=gv5mkhd7gFzVvlOHtIuLDzHp_GVrg3Wnn-U-Q6vSZq0",
+      "alt": ""
+    },
+    {
+      "key": "ec12cf1c2f2943cb72b0",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFjFv3ewdxzpQ/article-inline_image-shrink_1500_2232/B4DZzfJYd6KIAU-/0/1773270306068?e=1794441600&v=beta&t=NEpnL-_0T4hTm_b2dxkGRXIfQ8UiX0ATNF-VuNDO8NU",
+      "alt": ""
+    },
+    {
+      "key": "66dce9d75c158a9e1864",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGZ0yooSVdmWQ/article-inline_image-shrink_1500_2232/B4DZzfK0j1GQAU-/0/1773270683001?e=1794441600&v=beta&t=FmXm6-fvLr7xhxtTYYJJ72Sta9tUnE-uqNgj9CTOW4Y",
+      "alt": ""
+    },
+    {
+      "key": "43d5a5d1c74526cce523",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHIZuigUGY-fQ/article-inline_image-shrink_1500_2232/B4DZzfLFgxH4AU-/0/1773270752250?e=1794441600&v=beta&t=IsCvFEM-yS3g-snSTgwFk57FydURyFI1rGWTsLPxhm0",
+      "alt": ""
+    },
+    {
+      "key": "5a8bdda3f3d5c9c9697f",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEVt4c4WA-j7w/article-inline_image-shrink_1500_2232/B4DZzfMgJYIAAU-/0/1773271123570?e=1794441600&v=beta&t=VUflX40XV35FLDSoEnIuB__MW0aFx4zvyv-lRrLDzC8",
+      "alt": ""
+    },
+    {
+      "key": "e25d200491e479a0d506",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG5ChgIhy0KIA/article-inline_image-shrink_1500_2232/B4DZzfPfSCIcAU-/0/1773271906500?e=1794441600&v=beta&t=8nuXU-5xY2AouCVJ4kXiGOumleQ_rdwckskh_V6GL5M",
+      "alt": ""
+    },
+    {
+      "key": "3de4995bb4383e9e3079",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFRMj-DFz7J6Q/article-inline_image-shrink_1500_2232/B4DZzfRWyQGsAU-/0/1773272395824?e=1794441600&v=beta&t=RZeszMHh3XnVzDJgY6iN29mIFN0TDskJeCQ0r5uqCbg",
+      "alt": ""
+    },
+    {
+      "key": "4e7ab90845cc88da9aec",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHplmfjYdWenw/article-inline_image-shrink_1500_2232/B4DZzfRg77IAAU-/0/1773272437227?e=1794441600&v=beta&t=Nw6u7UWHIGb74z-mdwyLIp4OcBTM4Nd26-Hc8brX_2U",
+      "alt": ""
+    },
+    {
+      "key": "6ab93483ff4ee7da3049",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEZVtWZK99Qug/article-inline_image-shrink_1500_2232/B4DZzfR_TSGwAc-/0/1773272562095?e=1794441600&v=beta&t=n3qhoyu4jZKCcK5imoZQtdG493aZaEbDXqN_vYWI4Y0",
+      "alt": ""
+    }
+  ]
+}

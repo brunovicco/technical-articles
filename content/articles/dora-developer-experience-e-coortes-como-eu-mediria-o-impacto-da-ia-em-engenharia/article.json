@@ -1,0 +1,69 @@
+{
+  "id": "dora-developer-experience-e-coortes-como-eu-mediria-o-impacto-da-ia-em-engenharia",
+  "originalLanguage": "pt-br",
+  "date": "2026-10-12",
+  "sourceUrl": "https://www.linkedin.com/pulse/dora-developer-experience-e-coortes-como-eu-mediria-o-bruno-vicco-dmnyf",
+  "tags": [
+    "agents",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "DORA, Developer Experience e coortes: como eu mediria o impacto da IA em engenharia",
+      "kind": "original"
+    },
+    "en": {
+      "title": "DORA, Developer Experience, and cohorts: how I would measure AI’s impact on engineering",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "826da043379d25016024",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFvXc1XNagz-g/article-inline_image-shrink_1500_2232/B4DaEgZKzWK0AY-/0/1791544832970?e=1794441600&v=beta&t=7Qa5PnmwQhvkPwJvwHQfimFsSooyxdVs7j4BuCerhDw",
+      "alt": ""
+    },
+    {
+      "key": "7e88bab12f58bf13ed4a",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEh4jyFqFWMqw/article-inline_image-shrink_1500_2232/B4DaEghsXuIYAQ-/0/1791547066914?e=1794441600&v=beta&t=CasjLMuBwqmzDn_H9fU7dJjiz28oHmPO3Ul-5ufydao",
+      "alt": ""
+    },
+    {
+      "key": "1b2824548e2c3c0a37d4",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGZcmAgkXue2A/article-inline_image-shrink_1500_2232/B4DaEgh06mKkAQ-/0/1791547101825?e=1794441600&v=beta&t=sEc1ojC1IJ4VziEbbyT4h9HHK-HINSv7Aaenl8-SVPg",
+      "alt": ""
+    },
+    {
+      "key": "700f9aff4be99de902e0",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEKgK1sXXCmeA/article-inline_image-shrink_1500_2232/B4DaEgaFcNKUAQ-/0/1791545073197?e=1794441600&v=beta&t=G1MEVX3AiPZ8ZIEANkEzG1sfiJk2YudRNj9TgmrDOXM",
+      "alt": ""
+    },
+    {
+      "key": "5d63f3c3868ccc77f6df",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFMBoCU160S6A/article-inline_image-shrink_1500_2232/B4DaEgh6isIkAQ-/0/1791547124897?e=1794441600&v=beta&t=_5C3QrKpxTcc-UdM-8t2UfXognffHwbwZvFyVgh3_20",
+      "alt": ""
+    },
+    {
+      "key": "9defd9509f2204dc0b62",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEmIK5QGSugsA/article-inline_image-shrink_1500_2232/B4DaEga5abIMAQ-/0/1791545286057?e=1794441600&v=beta&t=ic72TLStpTwHMIwnDpJmemxv5A2R4_3lLI0yunRnMH8",
+      "alt": ""
+    },
+    {
+      "key": "fbd0cb080ef838fc3ea1",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEB9Zs0uatsew/article-inline_image-shrink_1500_2232/B4DaEgiJ54KsAQ-/0/1791547187979?e=1794441600&v=beta&t=u32c-RCuXEoDei_V34XxukJ3NBHvP2T2gzJeC0AXv50",
+      "alt": ""
+    },
+    {
+      "key": "e8bdb618acaf434fed96",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFGWI8jP_Pzdw/article-inline_image-shrink_1500_2232/B4DaEgdoASIkAQ-/0/1791546001050?e=1794441600&v=beta&t=z98v_c_yMCcOWtlZCpjPgSXUP73UPL4mZnDL-RO-XDM",
+      "alt": ""
+    },
+    {
+      "key": "68fc1ae68d95616f03cd",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQE-syzOOJEeJQ/article-inline_image-shrink_1500_2232/B4DaEgd1wVJoAU-/0/1791546057334?e=1794441600&v=beta&t=3JAIUU-5iwiOgc8498iXx5BwCeBi-9CnOEyfgY2agow",
+      "alt": ""
+    }
+  ]
+}

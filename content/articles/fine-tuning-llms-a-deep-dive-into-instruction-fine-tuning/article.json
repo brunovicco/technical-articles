@@ -1,0 +1,22 @@
+{
+  "id": "fine-tuning-llms-a-deep-dive-into-instruction-fine-tuning",
+  "originalLanguage": "en",
+  "date": "2025-01-22",
+  "sourceUrl": "https://www.linkedin.com/pulse/fine-tuning-llms-deep-dive-instruction-bruno-vicco-tkeef",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "en": {
+      "title": "Fine-tuning LLMs: A Deep Dive into Instruction Fine-tuning",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Fine-tuning de LLMs: um mergulho no fine-tuning por instruções",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": []
+}

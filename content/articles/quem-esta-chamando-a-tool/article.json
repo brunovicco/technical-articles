@@ -1,0 +1,49 @@
+{
+  "id": "quem-esta-chamando-a-tool",
+  "originalLanguage": "pt-br",
+  "date": "2026-10-27",
+  "sourceUrl": "https://www.linkedin.com/pulse/quem-est%C3%A1-chamando-tool-bruno-vicco-4kj9f",
+  "tags": [
+    "security",
+    "agents"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Quem está chamando a tool?",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Who is calling the tool?",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "e55c5dbd52125dd588a1",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH1ueP4izpj6g/article-inline_image-shrink_1500_2232/B4DaF4G8GCK4AQ-/0/1793016447795?e=1794441600&v=beta&t=yQt1NKm1HAAuzJ8CAz19fpAnVzRafZ-xbIjvf6hF9bs",
+      "alt": ""
+    },
+    {
+      "key": "4d1919656e5a3b78708f",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEnvI6MvEndxQ/article-inline_image-shrink_1500_2232/B4DaF4HICwGcAQ-/0/1793016496777?e=1794441600&v=beta&t=YhZ6rrpOflwytFYmw3AbVIBf10apfosLK6M3gHzwZtA",
+      "alt": ""
+    },
+    {
+      "key": "cc28e8c41a3b33d72d53",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHgrasLrPLkzA/article-inline_image-shrink_1500_2232/B4DaF4HUUKK4AQ-/0/1793016547007?e=1794441600&v=beta&t=pxAtvwQJdP6InWulULGYlWhSBtvYXl3KKdkd9CCeyhQ",
+      "alt": ""
+    },
+    {
+      "key": "35da6f1eac1dcc46e201",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGipVSy1DmtDQ/article-inline_image-shrink_1500_2232/B4DaF4HhBwIUAQ-/0/1793016599213?e=1794441600&v=beta&t=RUuSc1x4HcQZzlf4E2E11ZlszKC70NmB9sINlmL7qrQ",
+      "alt": ""
+    },
+    {
+      "key": "a6739236516e4e42d6ad",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFZA5e2D5Evdw/article-inline_image-shrink_1500_2232/B4DaF4HtZvHIAQ-/0/1793016649835?e=1794441600&v=beta&t=aE7X3NDfBie_QOrAB-WeZn-m6qxJDq-ENGThxFhgKTo",
+      "alt": ""
+    }
+  ]
+}

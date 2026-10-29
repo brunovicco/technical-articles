@@ -1,0 +1,44 @@
+{
+  "id": "dspy-o-framework-que-trata-prompts-como-codigo-compilavel-nao-como-strings",
+  "originalLanguage": "pt-br",
+  "date": "2026-03-14",
+  "sourceUrl": "https://www.linkedin.com/pulse/dspy-o-framework-que-trata-prompts-como-c%C3%B3digo-compil%C3%A1vel-bruno-vicco-qtetf",
+  "tags": [
+    "governance",
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "DSPy, o framework que trata prompts como código compilável, não como strings",
+      "kind": "original"
+    },
+    "en": {
+      "title": "DSPy: the framework that treats prompts as compilable code, not strings",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "8e7abaf577aed2020770",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGFTPGyiEww5Q/article-inline_image-shrink_1000_1488/B4DZzsukyPIwAQ-/0/1773498158933?e=1794441600&v=beta&t=jD8E5klopLNHVmFr4QGSrYBgFBU4gyj93cY5n7SS9NA",
+      "alt": ""
+    },
+    {
+      "key": "5497d677a70bb75450e0",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQE3--rLHLCK0Q/article-inline_image-shrink_1500_2232/B4DZzsvZ2oKgAU-/0/1773498376265?e=1794441600&v=beta&t=ZcN-Ir3Z5J4_-T7ckF-gNM_tX0xuu6ToAfv1WRF9uAU",
+      "alt": ""
+    },
+    {
+      "key": "bb6d27362c13f4f6768d",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGUL_4vQfTBdg/article-inline_image-shrink_1500_2232/B4DZzswTl2KgAU-/0/1773498612987?e=1794441600&v=beta&t=A9Y24yODZtmY90M_0dMen7GzeIbGuVNijbuHoGOpELw",
+      "alt": ""
+    },
+    {
+      "key": "a9f3b9b6cb143c2bed26",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFOaLhfT3HTkA/article-inline_image-shrink_1000_1488/B4DZzswtTVGcAQ-/0/1773498718100?e=1794441600&v=beta&t=yCBRI4AQWaVYVEHXAxbMdEbDDDC0yRrJVXKGQol7HSo",
+      "alt": ""
+    }
+  ]
+}

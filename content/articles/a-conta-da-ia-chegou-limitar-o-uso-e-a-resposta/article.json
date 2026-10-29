@@ -1,0 +1,44 @@
+{
+  "id": "a-conta-da-ia-chegou-limitar-o-uso-e-a-resposta",
+  "originalLanguage": "pt-br",
+  "date": "2026-06-23",
+  "sourceUrl": "https://www.linkedin.com/pulse/conta-da-ia-chegou-limitar-o-uso-%C3%A9-resposta-bruno-vicco-b32uf",
+  "tags": [
+    "governance",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "A conta da IA chegou: limitar o uso é a resposta?",
+      "kind": "original"
+    },
+    "en": {
+      "title": "The AI bill has arrived: is limiting usage the answer?",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "65d5aa3902ba9a82ee0f",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQE7Tm3o2aGdiw/article-inline_image-shrink_1500_2232/B4DZ72FygXJ4AQ-/0/1782245180723?e=1794441600&v=beta&t=WvCmMuGiqhIHQCLrO3dMSO00GTGAiz08opYgldVbKho",
+      "alt": ""
+    },
+    {
+      "key": "9d3a0303e0c39f63d646",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH0HDydj72plA/article-inline_image-shrink_1500_2232/B4DZ72DW1XGYAU-/0/1782244542508?e=1794441600&v=beta&t=-fciqvL73X9CJO24K0PfXAsyn6SxTBiAs448qWBW0hI",
+      "alt": ""
+    },
+    {
+      "key": "62fae59c91cc60a01991",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGd-foQrQ7hrw/article-inline_image-shrink_1500_2232/B4DZ72ENG_JcAU-/0/1782244758295?e=1794441600&v=beta&t=uWXopFcMDkIQgOFfo18DYQddBLHE7kWqSll4jwaz5Uw",
+      "alt": ""
+    },
+    {
+      "key": "a60d253a63c99d9fffab",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQE9l6eoj0WaTg/article-inline_image-shrink_1500_2232/B4DZ72HMAqI8AQ-/0/1782245540347?e=1794441600&v=beta&t=v2V6DLrnLZld8SZiZoeUcLO0LVCLKLOEMWIACiIpax8",
+      "alt": ""
+    }
+  ]
+}

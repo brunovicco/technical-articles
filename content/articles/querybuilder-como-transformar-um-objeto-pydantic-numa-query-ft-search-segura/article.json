@@ -1,0 +1,83 @@
+{
+  "id": "querybuilder-como-transformar-um-objeto-pydantic-numa-query-ft-search-segura",
+  "originalLanguage": "pt-br",
+  "date": "2026-04-20",
+  "sourceUrl": "https://www.linkedin.com/pulse/querybuilder-como-transformar-um-objeto-pydantic-numa-bruno-vicco-e7pcf",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "QueryBuilder: como transformar um objeto Pydantic numa query FT.SEARCH segura",
+      "kind": "original"
+    },
+    "en": {
+      "title": "QueryBuilder: turning a Pydantic object into a safe FT.SEARCH query",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "0e9384aea736548401ee",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHRSuJFCxapSA/article-inline_image-shrink_1500_2232/B4DZ1u3KZqLMAY-/0/1775681448162?e=1794441600&v=beta&t=rsyN2Jtr-RjsdP8lG9vh40QHi0ZHaQ6dQnQsvbgapXc",
+      "alt": ""
+    },
+    {
+      "key": "8458e5b78cf4ae6d5e70",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG4PfL7y_uSNg/article-inline_image-shrink_1500_2232/B4DZ1u5GKbLEAU-/0/1775681955288?e=1794441600&v=beta&t=29Oc-IUPJs0oYQxM07yISr03Is5rq4ahvdrFz0TpTFw",
+      "alt": ""
+    },
+    {
+      "key": "f9274bcd8ceeba33df0a",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQE66rNii-GFJA/article-inline_image-shrink_1500_2232/B4DZ1u5RPuIEAU-/0/1775682001232?e=1794441600&v=beta&t=QafTE6c3byhs2nUgUEaNoDqbloEA8px0xGNW8GlEldI",
+      "alt": ""
+    },
+    {
+      "key": "b5cfb8011e6ced7a04d6",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQErhlUO3uHimQ/article-inline_image-shrink_1500_2232/B4DZ1u5hUpJYAU-/0/1775682066819?e=1794441600&v=beta&t=yPR8YSMGrLNJAMAaUeB2KwjPsYib5vpzuRxPME1Wdak",
+      "alt": ""
+    },
+    {
+      "key": "8931f1ab10662198e251",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGlJXPKGkDAEw/article-inline_image-shrink_1000_1488/B4DZ1u5zg6KoAQ-/0/1775682140782?e=1794441600&v=beta&t=jSLLY_OAMLXXtSvGs_N9pgnJFzx1E8apuImCZkq44c8",
+      "alt": ""
+    },
+    {
+      "key": "d7189fe035335dd23227",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFsW_VrSJenjw/article-inline_image-shrink_1500_2232/B4DZ1u59ewGUAU-/0/1775682181935?e=1794441600&v=beta&t=1PNTRupUUjA7VfZSGGiOKZuWqmyMkDdWXTV7m2f_yHQ",
+      "alt": ""
+    },
+    {
+      "key": "eeb69b038c8b0fd14a4d",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFK4HVPcDDiMw/article-inline_image-shrink_1500_2232/B4DZ1u6PhHJQAU-/0/1775682256122?e=1794441600&v=beta&t=IxBVYX2Fe3XWG2MVTCXIXDZ1fUaWsjI-p50Xa5xBu6M",
+      "alt": ""
+    },
+    {
+      "key": "ec5ca5b45fc97c94ac8b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFIUS3gfd-Lew/article-inline_image-shrink_1500_2232/B4DZ1u6XNZHUAY-/0/1775682287324?e=1794441600&v=beta&t=4WODyUX9UH-m99nvuqPZ9OXY9A9fVtgWAF1OSxPbK0s",
+      "alt": ""
+    },
+    {
+      "key": "870f50c5887741c4d011",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEEREI2kN64ng/article-inline_image-shrink_1500_2232/B4DZ1u6rL5GUAY-/0/1775682369512?e=1794441600&v=beta&t=MdRESAA-Tf2XBEbMmebjtIqBnqTH7_VnPlOQujaDrzU",
+      "alt": ""
+    },
+    {
+      "key": "06ea8b86d834a94434ef",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHRLaWilncCXQ/article-inline_image-shrink_1500_2232/B4DZ1u64w0LMAY-/0/1775682424982?e=1794441600&v=beta&t=N0lfIKaVit0OmYUWdxEeFYu8gepENDk7BXyS9YxQlZ8",
+      "alt": ""
+    },
+    {
+      "key": "7afde22ac927ab14d965",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH0sRYsveH2-g/article-inline_image-shrink_1000_1488/B4DZ1vANcKLQAQ-/0/1775683819932?e=1794441600&v=beta&t=ZPJV5cIIwSYyrF7KQSoM5Ib2VzrQ-TNqmJKQ5P15Qow",
+      "alt": ""
+    },
+    {
+      "key": "82425954857ba99fbeac",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGKlYhhAr5FVQ/article-inline_image-shrink_1500_2232/B4DZ1vAW6TG0AU-/0/1775683858834?e=1794441600&v=beta&t=9vHsSDmnUQugaeKVfqjKyMXCBIgpUp-5NfpT-HMdFls",
+      "alt": ""
+    }
+  ]
+}

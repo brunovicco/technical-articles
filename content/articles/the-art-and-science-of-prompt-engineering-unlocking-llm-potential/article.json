@@ -1,0 +1,28 @@
+{
+  "id": "the-art-and-science-of-prompt-engineering-unlocking-llm-potential",
+  "originalLanguage": "en",
+  "date": "2025-01-20",
+  "sourceUrl": "https://www.linkedin.com/pulse/art-science-prompt-engineering-unlocking-llm-potential-bruno-vicco-0cyof",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "en": {
+      "title": "The Art and Science of Prompt Engineering: Unlocking LLM Potential",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "A arte e a ciência da engenharia de prompts: liberando o potencial dos LLMs",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "f32735e6c4e65f4f5b41",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHpjmZ2f25IPg/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1737208365759?e=1794441600&v=beta&t=9yexcOY_k7X8zB9dOCxsil8ujf2OxqXv74qsVO_Cfos",
+      "alt": ""
+    }
+  ]
+}

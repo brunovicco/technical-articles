@@ -1,0 +1,13 @@
+{
+  "name": "bruno-vicco-technical-articles",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/site.test.mjs",
+    "check": "npm run build && npm test",
+    "serve": "node scripts/serve.mjs"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "arquitetura-onde-a-politica-vira-controle-tecnico-e-por-que-a-residencia-de-dados-define-o-desenho",
+  "originalLanguage": "pt-br",
+  "date": "2026-06-30",
+  "sourceUrl": "https://www.linkedin.com/pulse/arquitetura-onde-pol%C3%ADtica-vira-controle-t%C3%A9cnico-e-por-bruno-vicco-8cerf",
+  "tags": [
+    "governance"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Arquitetura: onde a política vira controle técnico e por que a residência de dados define o desenho",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Architecture: where policy becomes technical control and why data residency defines the design",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "f5fd7bcd3f7837a5103e",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFXYliJWW5yxA/article-inline_image-shrink_1500_2232/B4DZ8YtyqjIEAQ-/0/1782826085565?e=1794441600&v=beta&t=7CdfF33VbTQDO0CtS_AEGF2E0nMybgphk0WKc6la8MU",
+      "alt": ""
+    },
+    {
+      "key": "7a3f15f91f091e062f64",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHiYlrw0Quheg/article-inline_image-shrink_1500_2232/B4DZ8UtQyEGwAU-/0/1782758837723?e=1794441600&v=beta&t=8onOQaoYw_XkvWEpWxyxdbM_JEVgdYlBzbEawh-IUmU",
+      "alt": ""
+    },
+    {
+      "key": "dcbb43e875c24258928b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH59K8gyXaM1g/article-inline_image-shrink_1000_1488/B4DZ8Ut5IbIIAI-/0/1782759002966?e=1794441600&v=beta&t=hmlcRv7LR7eaptCxr46ZO_ENo1TeF96OLAXgOkbv5CE",
+      "alt": ""
+    },
+    {
+      "key": "4c4fc598036b7af2f5c2",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQElSWemmFyItg/article-inline_image-shrink_1500_2232/B4DZ8YvOp9I8AQ-/0/1782826462525?e=1794441600&v=beta&t=lYDxAJa2tVWbMe-KUnwA2pxcnv3L7vzI1U7oBQ-J_uQ",
+      "alt": ""
+    },
+    {
+      "key": "fc7fd7ec0258d244f82c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFzwzq8tOsjZA/article-inline_image-shrink_1500_2232/B4DZ8YwG0NGwAU-/0/1782826692867?e=1794441600&v=beta&t=ttQQLrD7vORhmqPDcfvo9r__Ce_qa4iENjKvqkP2o2w",
+      "alt": ""
+    },
+    {
+      "key": "01835f9ae3f8123ef1a9",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEB1uQutEMZnA/article-inline_image-shrink_1500_2232/B4DZ8Y07JsKYAU-/0/1782827955238?e=1794441600&v=beta&t=kJRwwGr2Pg8YV-nVetMoSVj_uiJt7uUqhNnEsWwFyWU",
+      "alt": ""
+    },
+    {
+      "key": "20c8f23aa68adae861c0",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG0jeb8DIXEBw/article-inline_image-shrink_1500_2232/B4DZ8Y1vm9JAAQ-/0/1782828170197?e=1794441600&v=beta&t=0PsWTYZtkzcrKA1ER2j-c1TwCkbGgNArz-u7kIRU9zQ",
+      "alt": ""
+    },
+    {
+      "key": "1455415a49615800b1ab",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHSkw2Vuv3tYA/article-inline_image-shrink_1500_2232/B4DZ8Y2glQJsAQ-/0/1782828370823?e=1794441600&v=beta&t=KCT9gROGfwxY-5JVLOKkSpOMMdTdJsFhI6Z2XXQwauE",
+      "alt": ""
+    },
+    {
+      "key": "f134ae90042c04d227c4",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEnW57DKM3Ddw/article-inline_image-shrink_1500_2232/B4DZ8Y3F6VHQAU-/0/1782828523816?e=1794441600&v=beta&t=vZPvtPD1w3TrmNnx3bJh1LRmnLL63Bc9aUNSpB8Pjxw",
+      "alt": ""
+    }
+  ]
+}

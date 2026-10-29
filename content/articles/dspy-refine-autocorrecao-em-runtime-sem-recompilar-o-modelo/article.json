@@ -1,0 +1,33 @@
+{
+  "id": "dspy-refine-autocorrecao-em-runtime-sem-recompilar-o-modelo",
+  "originalLanguage": "pt-br",
+  "date": "2026-04-13",
+  "sourceUrl": "https://www.linkedin.com/pulse/dspyrefine-autocorre%C3%A7%C3%A3o-em-runtime-sem-recompilar-o-modelo-vicco-beraf",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "dspy.Refine: autocorreção em runtime sem recompilar o modelo",
+      "kind": "original"
+    },
+    "en": {
+      "title": "dspy.Refine: runtime self-correction without recompiling the model",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "d17b8a89f671a784751b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFEqeRr5kD7Ng/article-inline_image-shrink_1500_2232/B4DZ1qoWCkHkAY-/0/1775610455660?e=1794441600&v=beta&t=GwIyYrQMCIKTCyO5rAqUN6oOL82ahEwQ7Nf99OrnVe8",
+      "alt": ""
+    },
+    {
+      "key": "eb0e8e129164a730c28c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG_SOHXpww24w/article-inline_image-shrink_1500_2232/B4DZ1qo_GrLAAU-/0/1775610624074?e=1794441600&v=beta&t=_FuOt8WfknaVwg6Yl0bvPh8efQkOwSlTxfWu8C_BHFE",
+      "alt": ""
+    }
+  ]
+}

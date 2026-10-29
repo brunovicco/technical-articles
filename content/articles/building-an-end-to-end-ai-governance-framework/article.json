@@ -1,0 +1,35 @@
+{
+  "id": "building-an-end-to-end-ai-governance-framework",
+  "originalLanguage": "en",
+  "date": "2025-03-04",
+  "sourceUrl": "https://www.linkedin.com/pulse/building-end-to-end-ai-governance-framework-bruno-vicco-ojaxf",
+  "tags": [
+    "security",
+    "governance",
+    "platforms"
+  ],
+  "versions": {
+    "en": {
+      "title": "Building an End-to-End AI Governance Framework",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Construindo um framework de governança de IA de ponta a ponta",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "4644633ab21b52050590",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHyuaPud2BK-g/article-inline_image-shrink_1000_1488/B4DZVhngZuG4AQ-/0/1741099502065?e=1794441600&v=beta&t=RDfFjRLlwWVMd0JTanO9EWKneEKgxC2q72zUoxBUTmM",
+      "alt": ""
+    },
+    {
+      "key": "e59de72ec5a84a6d35f8",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHOPZ2ieTkWfA/article-inline_image-shrink_1000_1488/B4DZVhnvCnG4AU-/0/1741099561968?e=1794441600&v=beta&t=zTg2ne-WBRZvg1lECI4lBvuGNujBuxVoSf9_sJFSo78",
+      "alt": ""
+    }
+  ]
+}

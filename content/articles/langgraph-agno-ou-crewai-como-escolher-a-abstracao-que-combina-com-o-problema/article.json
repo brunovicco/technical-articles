@@ -1,0 +1,49 @@
+{
+  "id": "langgraph-agno-ou-crewai-como-escolher-a-abstracao-que-combina-com-o-problema",
+  "originalLanguage": "pt-br",
+  "date": "2026-09-29",
+  "sourceUrl": "https://www.linkedin.com/pulse/langgraph-agno-ou-crewai-como-escolher-abstra%C3%A7%C3%A3o-que-combina-vicco-dkq2f",
+  "tags": [
+    "governance",
+    "agents"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "LangGraph, Agno ou CrewAI? Como escolher a abstração que combina com o problema",
+      "kind": "original"
+    },
+    "en": {
+      "title": "LangGraph, Agno, or CrewAI? Choosing the abstraction that fits the problem",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "c047c293d03e2fad72b3",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGDubKB_95kww/article-inline_image-shrink_1500_2232/B4DaCndRGnIAAQ-/0/1789515862664?e=1794441600&v=beta&t=e7ienSID-fgmX4vbAPlKgLAK-2y_RvdanVT_pJ5Zd_M",
+      "alt": ""
+    },
+    {
+      "key": "947f6bf221cef5ac0a6b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG90uNYJ2kjZg/article-inline_image-shrink_1500_2232/B4DaCneM0IIcAQ-/0/1789516107382?e=1794441600&v=beta&t=3GWiDR6oHrJZ8HHDuuNJq2i-DfBYyIYQa7jtpA9W_zc",
+      "alt": ""
+    },
+    {
+      "key": "eaf3068aa3fdf6f0bb3d",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGAQcX0Du9CHQ/article-inline_image-shrink_1500_2232/B4DaCnexVRIcAQ-/0/1789516256813?e=1794441600&v=beta&t=kHm3V1Oo-EacesHNqZTWrCjGxUplx6NSwSBjv_WmCcA",
+      "alt": ""
+    },
+    {
+      "key": "628e271e9396e6ab2bbc",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFbVVPnlSrytg/article-inline_image-shrink_1500_2232/B4DaCnflm9HwAQ-/0/1789516471885?e=1794441600&v=beta&t=v2UymMj0vCK8fhTPmFbAXPGQxaXKXM705myk_E_DzkU",
+      "alt": ""
+    },
+    {
+      "key": "effabcee5c5dbe22baed",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGphrlWpMdpzA/article-inline_image-shrink_1500_2232/B4DaCngaYiKAAQ-/0/1789516687958?e=1794441600&v=beta&t=iHD2yf5JgcUPC5c0ZpWlvfcmUFerPs_tp1yYfRXXbn0",
+      "alt": ""
+    }
+  ]
+}

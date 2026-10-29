@@ -1,0 +1,33 @@
+{
+  "id": "from-theory-to-practice-building-enterprise-ai-solutions-with-teams-integration",
+  "originalLanguage": "en",
+  "date": "2025-01-12",
+  "sourceUrl": "https://www.linkedin.com/pulse/from-theory-practice-building-enterprise-ai-solutions-bruno-vicco-ys1if",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "en": {
+      "title": "From Theory to Practice: Building Enterprise AI Solutions with Teams Integration",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Da teoria à prática: construindo soluções empresariais de IA com integração ao Teams",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "4d0c3f3721ec23f9ae8c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEddyAbCWb3UQ/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1736621408054?e=1794441600&v=beta&t=Pr5a2N1JbzWaSjJNotzlXG50RH3DPx0qQ8G36DSeFyY",
+      "alt": ""
+    },
+    {
+      "key": "a49cca95a1569db152cd",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQERH2RpLV6ISQ/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1736621566582?e=1794441600&v=beta&t=mb_1llM0jC8lkly9NTnAQmwrgD_THQQOy6AFnknDU5c",
+      "alt": ""
+    }
+  ]
+}

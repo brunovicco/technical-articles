@@ -1,0 +1,38 @@
+{
+  "id": "meta-apresenta-os-large-concept-models",
+  "originalLanguage": "pt-br",
+  "date": "2024-12-29",
+  "sourceUrl": "https://www.linkedin.com/pulse/meta-apresenta-os-large-concept-models-bruno-vicco-k1gjf",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Meta apresenta os Large Concept Models",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Meta Introduces Large Concept Models",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "fb395e076c8f7fa4281e",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEpJCHJRHaukQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1735431003371?e=1794441600&v=beta&t=Y-itZ2rbbUjNe11wSBeOFMHS2IThbbWrUknin3foQe0",
+      "alt": ""
+    },
+    {
+      "key": "2847666c20e325687cc7",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEoNCWVkHqbEQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1735431074773?e=1794441600&v=beta&t=5yrg9_1lTr2t0b1K8o-hG_47sTnTDwqT4eLuMIUibAc",
+      "alt": ""
+    },
+    {
+      "key": "e824e4b4322dc2471cb6",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHOYZPkKD14kw/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1735431057047?e=1794441600&v=beta&t=maXQshKO9k5K7rIqeZ8r_Gp4QrWtQoNAxMbbNJXJqUo",
+      "alt": ""
+    }
+  ]
+}

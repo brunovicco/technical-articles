@@ -1,0 +1,55 @@
+{
+  "id": "harness-engineering-como-tornar-agentes-confiaveis",
+  "originalLanguage": "pt-br",
+  "date": "2026-07-06",
+  "sourceUrl": "https://www.linkedin.com/pulse/harness-engineering-como-tornar-agentes-confi%C3%A1veis-bruno-vicco-la55f",
+  "tags": [
+    "governance",
+    "agents",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Harness engineering: como tornar agentes confiáveis",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Harness engineering: how to make agents reliable",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "b13b4e437a33914b5185",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGiwriumvVDVw/article-inline_image-shrink_1500_2232/B4DZ8jBJG8HgAU-/0/1782998930648?e=1794441600&v=beta&t=Hs73JCTBf9eZ39wybquGTDDcZlmkrewCWIM68CKLbSM",
+      "alt": ""
+    },
+    {
+      "key": "390e9232704452fe394c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGZYwbb0V_o5Q/article-inline_image-shrink_1500_2232/B4DZ8jCTSkJwAQ-/0/1782999234531?e=1794441600&v=beta&t=Np2UsCDxZQons6GvY7yReaS7Oh34twuSJBpjCfhcl1Q",
+      "alt": ""
+    },
+    {
+      "key": "8796da1e2fc470eb91f3",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEkqBRtS9RyMg/article-inline_image-shrink_1500_2232/B4DZ8jD3n8H0AQ-/0/1782999645466?e=1794441600&v=beta&t=boTMlDPiYDmc9jWd_vEVzUuWMDGYHOXnbaP7kzl4_iQ",
+      "alt": ""
+    },
+    {
+      "key": "1c6098a7479b5bce1705",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQF0eoYYVLjqmA/article-inline_image-shrink_1500_2232/B4DZ8jFxA.GkAQ-/0/1783000142395?e=1794441600&v=beta&t=w03vJpaO-HbvIxp1RAYskMxN92o7Rt7h7BwfNXJP6vs",
+      "alt": ""
+    },
+    {
+      "key": "1a9df73990b2e3d9383c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQE-OaLwesHjeA/article-inline_image-shrink_1500_2232/B4DZ8jJpy6JQAQ-/0/1783001161451?e=1794441600&v=beta&t=DZx9N5_Y7LDBMX5eqCWkFc8UV2iUaatuqK6TkHCkkws",
+      "alt": ""
+    },
+    {
+      "key": "0b96c6107ba2033194a4",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQF1Cto64Eu7YQ/article-inline_image-shrink_1500_2232/B4DZ8jIscTI0AQ-/0/1783000910146?e=1794441600&v=beta&t=PRvodB5W7Uf89mO9RlYFkhxIKROpRPRTrXJ9d9v6vVg",
+      "alt": ""
+    }
+  ]
+}

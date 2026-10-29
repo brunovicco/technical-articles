@@ -1,0 +1,79 @@
+{
+  "id": "dspy-na-pratica-o-que-muda-quando-o-roteador-ja-e-llm-mas-ainda-nao-e-compilavel",
+  "originalLanguage": "pt-br",
+  "date": "2026-03-26",
+  "sourceUrl": "https://www.linkedin.com/pulse/dspy-na-pr%C3%A1tica-o-que-muda-quando-roteador-j%C3%A1-%C3%A9-llm-mas-bruno-vicco-glzhf",
+  "tags": [
+    "governance",
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "DSPy na prática: o que muda quando o roteador já é LLM, mas ainda não é compilável",
+      "kind": "original"
+    },
+    "en": {
+      "title": "DSPy in practice: what changes when the router is already an LLM but is not yet compilable",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "c0cc3bd02ebfa44482aa",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGgIEV2Y95rRg/article-inline_image-shrink_1500_2232/B4DZ0n8pkrHcAU-/0/1774491704662?e=1794441600&v=beta&t=K3wNeJ2TUHz6h0wfpBHziAEMmWwCs_c1J7nvAlD-GnM",
+      "alt": ""
+    },
+    {
+      "key": "ebccc43f3eec6f992cb2",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGNJO5BNO_Ucw/article-inline_image-shrink_1500_2232/B4DZ0n8zmGKUAU-/0/1774491745681?e=1794441600&v=beta&t=A4nosWCGb2rfBR3aKmCm1OxVtyGD3cN7gzF3k8GLIGQ",
+      "alt": ""
+    },
+    {
+      "key": "bc7b6965a6772f20a32b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEd4GPzuhhNUg/article-inline_image-shrink_1000_1488/B4DZ0n9qr2GcAQ-/0/1774491971482?e=1794441600&v=beta&t=Z8ht0XtGBPyMjsIbYE6q1GX07Ds3iY7NksGoQf868jM",
+      "alt": ""
+    },
+    {
+      "key": "56d2e4f1999b8bccd273",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFZL587slJPoA/article-inline_image-shrink_1500_2232/B4DZ0n92VRIYAU-/0/1774492019271?e=1794441600&v=beta&t=25KAfYdhaiRQ5pnYFN1pbCo-NJNCeavRiIUXXO-SuUQ",
+      "alt": ""
+    },
+    {
+      "key": "3012c5f9a3a412d7f7b3",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFWggLFNaJouQ/article-inline_image-shrink_1500_2232/B4DZ0n.TfxH4AY-/0/1774492138919?e=1794441600&v=beta&t=bAnstoOBQCw1j0uLZTOvcrVQvn_To3gwYt7-IioTz0w",
+      "alt": ""
+    },
+    {
+      "key": "3f9b056456f3a1e340c2",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGfA1XVLkofYA/article-inline_image-shrink_1500_2232/B4DZ0n.vr8IwAU-/0/1774492254142?e=1794441600&v=beta&t=w9G3GY1Z5chYSLTiRsAE888i-jG_GYyxlz-k3Mrv428",
+      "alt": ""
+    },
+    {
+      "key": "f7f418a1d0fa87217154",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFoRn52NQzUmg/article-inline_image-shrink_1500_2232/B4DZ0n_KDqJoAU-/0/1774492362410?e=1794441600&v=beta&t=JxUjWx4fz-aQm48AXbi-W6gRBacjNymP60dL0mAnzsU",
+      "alt": ""
+    },
+    {
+      "key": "920d735d8d7c31b9a525",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH2tX_pjU-1zg/article-inline_image-shrink_1500_2232/B4DZ0n_gjSHEAU-/0/1774492454238?e=1794441600&v=beta&t=nrRmqwxJhLaBa06UAqLG_UdlkbImtBgif446YW_GrVI",
+      "alt": ""
+    },
+    {
+      "key": "ba49386bc8346dacff60",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHc6a36Gg8g0Q/article-inline_image-shrink_1500_2232/B4DZ0n_tfrJoAU-/0/1774492506744?e=1794441600&v=beta&t=d2f3-wBa0qDX1qyIG1e-sOCZKbAWxP84y7IYmIRekp4",
+      "alt": ""
+    },
+    {
+      "key": "a54c4f406a5cd64bc56e",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGi8R_a17UwZw/article-inline_image-shrink_1500_2232/B4DZ0n_3KfIIAY-/0/1774492546703?e=1794441600&v=beta&t=RlnSCoeOzqGhKCjxkVE9UmOemEMOQTXNCqWG0v8czH0",
+      "alt": ""
+    },
+    {
+      "key": "9b71514711509b8fedec",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHRst2WAz-qEA/article-inline_image-shrink_1000_1488/B4DZ0oAEBMJoAQ-/0/1774492599188?e=1794441600&v=beta&t=Cj7dPFcSZcmNIqjvdDx_XOXAQfUrnkYKa6DR6tt0c2E",
+      "alt": ""
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "from-search-to-generation-unlocking-the-power-of-retrieval-augmented-generation-rag",
+  "originalLanguage": "en",
+  "date": "2025-01-14",
+  "sourceUrl": "https://www.linkedin.com/pulse/from-search-generation-unlocking-power-rag-bruno-vicco-acuaf",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "en": {
+      "title": "From Search to Generation: Unlocking the Power of Retrieval-Augmented Generation (RAG)",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Da busca à geração: explorando o poder da geração aumentada por recuperação (RAG)",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "36817745cbb99456d442",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHu9fUYVDLxiw/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1736818321126?e=1794441600&v=beta&t=apy8tHhI8N2AvR2ZfZgiCZ-62mTnvMv9xc-m2k6YRoQ",
+      "alt": ""
+    },
+    {
+      "key": "fb830dd692bca20573d7",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFDc2JaSfk_kA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1736812266788?e=1794441600&v=beta&t=ICEFwi7b0k0xTefGms4bcVlTFgv_NAKpdQvdl9noS3I",
+      "alt": ""
+    },
+    {
+      "key": "8e0b62e3a30d726bcc60",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQElV3d7dB6h1w/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1736812566002?e=1794441600&v=beta&t=JWBRL5tKZrPVvTzT2EdGwEyB_3A4jvV1au9Cdxr-nDA",
+      "alt": ""
+    },
+    {
+      "key": "c4c0126c50c8f8c910f8",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEOG0TvroFcRA/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1736813190975?e=1794441600&v=beta&t=90lJtQzgQnetA0ajZWwZgvXvmMYfD4Uetelu9U8Hr18",
+      "alt": ""
+    },
+    {
+      "key": "db7db4bb60fa9886f44d",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEivNaoS_JUhQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1736812604300?e=1794441600&v=beta&t=X0SXqPXwSeoZwq9_9curqF9v6AvA3-5Ol42YyEu28A4",
+      "alt": ""
+    },
+    {
+      "key": "15ccad811ade251598b0",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHAwUnaGixq-A/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1736812623611?e=1794441600&v=beta&t=LZLYj70wZrcaRJ_DdAT1ivLF_hawmqIqDQ6RWymXHLw",
+      "alt": ""
+    },
+    {
+      "key": "a2bca0f14e2fd589a3df",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGeFawivlJWMg/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1736812746955?e=1794441600&v=beta&t=tQpHzLQWDWBlrqOJPlu-QjJVDbAyMvXr_oDnalpW-V8",
+      "alt": ""
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "seu-agente-esqueceu-a-conversa-ou-sua-arquitetura-perdeu-a-identidade-da-execucao",
+  "originalLanguage": "pt-br",
+  "date": "2026-09-16",
+  "sourceUrl": "https://www.linkedin.com/pulse/seu-agente-esqueceu-conversa-ou-sua-arquitetura-perdeu-bruno-vicco-ny4nf",
+  "tags": [
+    "security",
+    "agents",
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Seu agente esqueceu a conversa ou sua arquitetura perdeu a identidade da execução?",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Did your agent forget the conversation, or did your architecture lose execution identity?",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "9139c226d1d378e098f1",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGttuc19sY1YA/article-inline_image-shrink_1000_1488/B4DaClPV3UKoAM-/0/1789478657800?e=1794441600&v=beta&t=ghb8qLpR3tJUrdMAKaX5W8kbJVaw8c0f2QUUSctNXvs",
+      "alt": ""
+    },
+    {
+      "key": "ebdf4224922d5bb3b6ab",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGkDeXxmZjFSg/article-inline_image-shrink_1000_1488/B4DaClPY.TKEAM-/0/1789478670461?e=1794441600&v=beta&t=meOJT_EFImEhAGVvFMIXXAANelyEKbIMIGGcOHbKHVI",
+      "alt": ""
+    },
+    {
+      "key": "a1a2a79a62ed9faca01e",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH5C_XavT51ig/article-inline_image-shrink_1000_1488/B4DaClPbasHwAI-/0/1789478680630?e=1794441600&v=beta&t=k9Gbcf5ZcaAm99yWf6R-6cwdgtHzToItDVlhrKM_G0o",
+      "alt": ""
+    },
+    {
+      "key": "7bcaa44c8fd1a8db9407",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFkD6dOWqurmw/article-inline_image-shrink_1000_1488/B4DaClPeyqGkAI-/0/1789478694302?e=1794441600&v=beta&t=BuSqOP_S_zAKh_k5EfgVrX-2lVJvS415FdRDataKDwo",
+      "alt": ""
+    },
+    {
+      "key": "0bdf89bf1e9d04f6a168",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFwWLRk7lgNSA/article-inline_image-shrink_1500_2232/B4DaClPhp7LAAQ-/0/1789478706035?e=1794441600&v=beta&t=k0Nkv4L4YwFFCMK2rW7LY4_85Pp9WGAgFgHyPQb1-I0",
+      "alt": ""
+    },
+    {
+      "key": "fe3f50660b3767697586",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGm5aYh1hjsAw/article-inline_image-shrink_1500_2232/B4DaClPlCRKYAQ-/0/1789478719853?e=1794441600&v=beta&t=iWmwLz5iiODhA5sxaP9G1ci6yuvLT961VUuzwy-Pep0",
+      "alt": ""
+    },
+    {
+      "key": "0c8b1a2f28209e6e1f3c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHZRXkK8tc9jQ/article-inline_image-shrink_1000_1488/B4DaClPnewKoAM-/0/1789478730049?e=1794441600&v=beta&t=TpIbM4GVNdKo9GL0TISJeMLDfHStqmbr-REXc3zw2Ec",
+      "alt": ""
+    },
+    {
+      "key": "6e6c29184abb90b9dd65",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFHD1YlClhHVw/article-inline_image-shrink_1500_2232/B4DaClPql5IMAQ-/0/1789478742640?e=1794441600&v=beta&t=pQKJTB-yv9rD35I7uIlhpFv4ZPwDPKIi2HCUGGocNj8",
+      "alt": ""
+    },
+    {
+      "key": "01e7d99e8e1e69124f23",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHf55EvdUp41Q/article-inline_image-shrink_1500_2232/B4DaClPtQYGYAQ-/0/1789478753780?e=1794441600&v=beta&t=mUoNyV8UK69_McAFsSc1-qrGtENUHbNajeYn9tV2AuY",
+      "alt": ""
+    }
+  ]
+}

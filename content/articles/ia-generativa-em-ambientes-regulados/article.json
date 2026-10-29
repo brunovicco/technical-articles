@@ -1,0 +1,28 @@
+{
+  "id": "ia-generativa-em-ambientes-regulados",
+  "originalLanguage": "pt-br",
+  "date": "2026-06-16",
+  "sourceUrl": "https://www.linkedin.com/pulse/ia-generativa-em-ambientes-regulados-bruno-vicco-xvn0f",
+  "tags": [
+    "governance"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "IA Generativa em Ambientes Regulados",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Generative AI in regulated environments",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "42bfdcac130e6b9b48e6",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEKwcEmVPq9Ig/article-inline_image-shrink_1000_1488/B4DZ7Np89WGwAM-/0/1781566790756?e=1794441600&v=beta&t=l4ZwHyTTCqPSu3f8tUDuGAEQhmslqM-5nORpc5vSwFE",
+      "alt": ""
+    }
+  ]
+}

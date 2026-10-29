@@ -1,0 +1,44 @@
+{
+  "id": "spec-driven-development-com-ia-cinco-anti-padroes-e-o-fluxo-que-torna-a-resposta-rastreavel",
+  "originalLanguage": "pt-br",
+  "date": "2026-07-02",
+  "sourceUrl": "https://www.linkedin.com/pulse/spec-driven-development-com-ia-cinco-anti-padr%C3%B5es-e-o-bruno-vicco-0jgef",
+  "tags": [
+    "governance",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Spec-driven development com IA: cinco anti-padrões e o fluxo que torna a resposta rastreável",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Spec-Driven Development with AI: Five Anti-Patterns and the Workflow That Makes Responses Traceable",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "d65fad7076fa3fbdf414",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFLzvr5f9dSsg/article-inline_image-shrink_1500_2232/B4DZ8bptpFI8AQ-/0/1782875347941?e=1794441600&v=beta&t=9OHcJy3f8Kmy0c1PswN2R1cDS0DDu73ODrap_DDInTI",
+      "alt": ""
+    },
+    {
+      "key": "a2ae6a449a618ef220c1",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHY5s0VGyEoYQ/article-inline_image-shrink_1500_2232/B4DZ8bqwM1IEAQ-/0/1782875620790?e=1794441600&v=beta&t=DCpZKBE38QpYrQ23bJpIjq9FK9CGbV9NHkL0XSaAsiU",
+      "alt": ""
+    },
+    {
+      "key": "245a6db8ecb1fbe22dc9",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGZ58zSIJ4iGQ/article-inline_image-shrink_1500_2232/B4DZ8btnV6JQAQ-/0/1782876371294?e=1794441600&v=beta&t=m3DaMb123Cm6LpMAL5gcXG-EpfCCNCmFIIioUPPExaU",
+      "alt": ""
+    },
+    {
+      "key": "c83e8187cb33af4d49d7",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQE2Jptox1R6DA/article-inline_image-shrink_1500_2232/B4DZ8btfl8JwAQ-/0/1782876339208?e=1794441600&v=beta&t=8zKA_Q5Hod_cnQ_sLDxgG_GYmC05bHyH5Uxb5Jcdgng",
+      "alt": ""
+    }
+  ]
+}

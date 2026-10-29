@@ -1,0 +1,104 @@
+{
+  "id": "o-pipeline-completo-do-texto-do-usuario-a-resposta-formatada",
+  "originalLanguage": "pt-br",
+  "date": "2026-04-28",
+  "sourceUrl": "https://www.linkedin.com/pulse/o-pipeline-completo-do-texto-usu%C3%A1rio-%C3%A0-resposta-formatada-bruno-vicco-53ffe",
+  "tags": [
+    "observability",
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "O pipeline completo: do texto do usuário à resposta formatada",
+      "kind": "original"
+    },
+    "en": {
+      "title": "The Complete Pipeline: From User Text to the Formatted Response",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "8ca9a6e5e3e2e3747038",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHeXCP9x5Iriw/article-inline_image-shrink_1500_2232/B4DZ1vCaHvLQAY-/0/1775684396033?e=1794441600&v=beta&t=NrZRN7uIjRJ2Qnc3bTgR9OduVXgBlKG6pMAks-23McU",
+      "alt": ""
+    },
+    {
+      "key": "1e3aadf87f30179e684c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFsDKf0qVSplw/article-inline_image-shrink_1500_2232/B4DZ1vCma6G0AU-/0/1775684446711?e=1794441600&v=beta&t=MfLZFZzk7gMK_QGQfbD3VhJsUKbTR5Bkojh58vKt3MQ",
+      "alt": ""
+    },
+    {
+      "key": "9872ae9644a4bcadc077",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHhpst-B_zYLw/article-inline_image-shrink_1500_2232/B4DZ1vCv1KJ0AU-/0/1775684485094?e=1794441600&v=beta&t=1g9zQfrdKxYIceaRNbDv5dV7uRL1rRxCbulTTVzqVrI",
+      "alt": ""
+    },
+    {
+      "key": "88a00f847d07fd685cdd",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFvIxb7Sga1vA/article-inline_image-shrink_1500_2232/B4DZ1vC_5_GUAU-/0/1775684551163?e=1794441600&v=beta&t=bsx842tC7XUFU6EJI1gwvhlmFFBn8wEd5x8u57L4GOE",
+      "alt": ""
+    },
+    {
+      "key": "6011d3227d445b8412b8",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFyoO-HcQpYug/article-inline_image-shrink_1000_1488/B4DZ1vDXTQHwAU-/0/1775684647153?e=1794441600&v=beta&t=3-CwcX1Gv_ZMl10o5SmmQtRfLp8B5vggqM8LhJy1mIA",
+      "alt": ""
+    },
+    {
+      "key": "fc55c64c3a30fb83c26d",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEvC62jiqoKuA/article-inline_image-shrink_1500_2232/B4DZ1vDjWDGUAU-/0/1775684696085?e=1794441600&v=beta&t=keMTx9oiVHJ-J2Pd0yW2XnrZRI-YkQ2db7cy9PESmkE",
+      "alt": ""
+    },
+    {
+      "key": "021e1961b3701dafecc6",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFmyRhVYKGzEQ/article-inline_image-shrink_1500_2232/B4DZ1vDtabHMAU-/0/1775684737776?e=1794441600&v=beta&t=DoQBZ-ux23Wgcm1jWUGtHIAaNOefIwP3PaU9yqkLE6Y",
+      "alt": ""
+    },
+    {
+      "key": "2174c1f65a5dd89f0631",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFb-Y_bzvbd9A/article-inline_image-shrink_1000_1488/B4DZ1vEBMNKIAQ-/0/1775684818202?e=1794441600&v=beta&t=UPhA3Sjoi2AdCyzP1ckSslZDt01C_qM9PMl53N8Bitw",
+      "alt": ""
+    },
+    {
+      "key": "5ef71bf5048115e742b7",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH606VKUMqv6w/article-inline_image-shrink_1000_1488/B4DZ1vEHpaJoAQ-/0/1775684844926?e=1794441600&v=beta&t=1wplAiM_8SeE1mh_UQcAZBekSZkMup-WI2H229C0xik",
+      "alt": ""
+    },
+    {
+      "key": "6229fb48f680e241737b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGoccWll3BJOQ/article-inline_image-shrink_1000_1488/B4DZ1vEPwnIEAQ-/0/1775684878104?e=1794441600&v=beta&t=62pYm8mObp2nF6UZpTIwaM_h3RK9Hq7dCcr-o8MlE6w",
+      "alt": ""
+    },
+    {
+      "key": "adc2bec45f50cb632825",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHnVIJZFFAMow/article-inline_image-shrink_1500_2232/B4DZ1vEWHjIEAU-/0/1775684904071?e=1794441600&v=beta&t=mDKdAvqpnVyXHxStm37d3Lq8qyuuxZL090xX2YHpH3M",
+      "alt": ""
+    },
+    {
+      "key": "f8586c4b5a4f6214ada2",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGo5V_Agnl7Bg/article-inline_image-shrink_1500_2232/B4DZ1vEmSiKoAc-/0/1775684970473?e=1794441600&v=beta&t=9yhsd7Q2yajc8jZrytFw4Q5jl4kID0_b5da5IvTNVfQ",
+      "alt": ""
+    },
+    {
+      "key": "dc92b55ab17572e4b9d7",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGDzFtkj_c7yw/article-inline_image-shrink_1500_2232/B4DZ1vEtW6H8AU-/0/1775684999393?e=1794441600&v=beta&t=vUTKJX9rGj3nm6Ep9s7L2ebSUZNRaESO_KVbav6iVP4",
+      "alt": ""
+    },
+    {
+      "key": "546ada68ccec6eab6bfc",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEyQC2tsmJIow/article-inline_image-shrink_1000_1488/B4DZ1vE26IHwAU-/0/1775685038420?e=1794441600&v=beta&t=PKxbo-LBIbPGcP0biA5DYDOjswG00_lN2apD6YSFm-E",
+      "alt": ""
+    },
+    {
+      "key": "9b2382c34bcc53399937",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGX9XizMen_sw/article-inline_image-shrink_1000_1488/B4DZ1vE.DCLEAQ-/0/1775685067606?e=1794441600&v=beta&t=IVPTIwtuDTedihKECWdoTzGc2asJQs6AZZl08-jR4qo",
+      "alt": ""
+    },
+    {
+      "key": "db88738a19cfabb6e815",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEXmFRLFFZp-g/article-inline_image-shrink_1500_2232/B4DZ1vFegOLMAU-/0/1775685200803?e=1794441600&v=beta&t=kucZv2ZkqxuT2HrrbM5bwI48-5H1f7xhuBwmRjwYbI8",
+      "alt": ""
+    }
+  ]
+}

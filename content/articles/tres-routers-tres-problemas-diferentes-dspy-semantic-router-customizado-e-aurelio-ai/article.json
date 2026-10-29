@@ -1,0 +1,95 @@
+{
+  "id": "tres-routers-tres-problemas-diferentes-dspy-semantic-router-customizado-e-aurelio-ai",
+  "originalLanguage": "pt-br",
+  "date": "2026-04-01",
+  "sourceUrl": "https://www.linkedin.com/pulse/tr%C3%AAs-routers-problemas-diferentes-dspy-semantic-router-bruno-vicco-dbi7f",
+  "tags": [
+    "agents",
+    "engineering",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Três routers, três problemas diferentes: DSPy, Semantic Router customizado e Aurélio AI",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Three routers, three different problems: DSPy, a custom Semantic Router, and Aurélio AI",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "93f2c45ce4af4cfec946",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFDu_JJMZfE5w/article-inline_image-shrink_1500_2232/B4DZ1LFcGqKoAU-/0/1775081212126?e=1794441600&v=beta&t=twDuQz5cLU76kzddf0028YReM1A2Cd4OKsPrk-k84xE",
+      "alt": ""
+    },
+    {
+      "key": "351b726c35d3b3adf329",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG0v_h7vZ5tAw/article-inline_image-shrink_1500_2232/B4DZ1LFmdKIwAU-/0/1775081253529?e=1794441600&v=beta&t=h724XTlHdHFRwWMUEuAarPr7yUT6ufEUaXS9qmwtGI0",
+      "alt": ""
+    },
+    {
+      "key": "99f149a3a21de7f74615",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQF2If5QDndQhA/article-inline_image-shrink_1500_2232/B4DZ1LF0j_IoAU-/0/1775081311218?e=1794441600&v=beta&t=AnsWGvdDrYiZByppAabEhKiOHXESzbgzNeUyFALXCuM",
+      "alt": ""
+    },
+    {
+      "key": "dc8c76b2bcb34418dcb1",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHaWMAMyWy3_g/article-inline_image-shrink_1500_2232/B4DZ1LGFpxG4AU-/0/1775081381285?e=1794441600&v=beta&t=zaBAtM_jefoUgFEdUNHeTSvdQLlYfAEnb7M170YfHmY",
+      "alt": ""
+    },
+    {
+      "key": "f46c2abda97c9834d111",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGYwfR9VgEU5Q/article-inline_image-shrink_1500_2232/B4DZ1LGiGVIwAU-/0/1775081497655?e=1794441600&v=beta&t=Cqmhc-i18DfazzqWMHaNXcg3fiiiTEEu8CLgsaOe45Q",
+      "alt": ""
+    },
+    {
+      "key": "3d764fa8cb9af6c52d2c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQECt_VF65VuQg/article-inline_image-shrink_1000_1488/B4DZ1LGrW_KMAQ-/0/1775081535594?e=1794441600&v=beta&t=sYazdOoyUoId27c7Q0VNnC5cwUWM3CC_0K-XbnUwT9w",
+      "alt": ""
+    },
+    {
+      "key": "a22678d8d71428ed6fcf",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFk0ELKjaeTmw/article-inline_image-shrink_1500_2232/B4DZ1LG79eHIAU-/0/1775081604110?e=1794441600&v=beta&t=LDZ9olS3KEqwCCsm6NSJSc8XIpZCMn07NBfygkOOZuo",
+      "alt": ""
+    },
+    {
+      "key": "1fa0b0892e540ad0a431",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQE0oH1Cx--UHw/article-inline_image-shrink_1500_2232/B4DZ1LalgTJQAU-/0/1775086754670?e=1794441600&v=beta&t=8J8BcMNRf0yiRz_v7uMU9ZrCvAZ28D9slN8_uoIqzFk",
+      "alt": ""
+    },
+    {
+      "key": "13fd29bd9cfda3f7bfeb",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG7pDQTa0VhAQ/article-inline_image-shrink_1500_2232/B4DZ1LHmBVIwAU-/0/1775081775914?e=1794441600&v=beta&t=gNAV6zDqB-17ks2LVYIOYbZ9Bk52H8CaTIXih9RvHXI",
+      "alt": ""
+    },
+    {
+      "key": "e6cc6eab45f408bbfa4c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQF139ibafDw6g/article-inline_image-shrink_1500_2232/B4DZ1LINuWJMAg-/0/1775081938768?e=1794441600&v=beta&t=e31IUIaChblGsdMrkFYEu6GPXXJxWJNFcr3pzxmndPc",
+      "alt": ""
+    },
+    {
+      "key": "e22867808eb6ca236c49",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGboJHBq_-L3A/article-inline_image-shrink_1000_1488/B4DZ1La_f2HgAQ-/0/1775086861344?e=1794441600&v=beta&t=B7QEkKb7uPsBa6odwpXCcKpuzFVxdvs3_qTrr68NS2A",
+      "alt": ""
+    },
+    {
+      "key": "bc838303322063e9f7df",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH6f3u1V71-fA/article-inline_image-shrink_1500_2232/B4DZ1Lb1P5H4AU-/0/1775087081545?e=1794441600&v=beta&t=sYflyoUiPJ7Xb5uZ5CtU-aVh1ubwBfW8PBBPfhCla-c",
+      "alt": ""
+    },
+    {
+      "key": "53c28ad944e564a71b50",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG_rH_eS440AQ/article-inline_image-shrink_1500_2232/B4DZ1LcF4fIoAU-/0/1775087150414?e=1794441600&v=beta&t=Tz2CJv6KbI-J-9lYFks2H1lUypPult1aifQVDY0xL-s",
+      "alt": ""
+    },
+    {
+      "key": "d552388bd04375af1fdd",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFAunDVsT0cvw/article-inline_image-shrink_1500_2232/B4DZ1LKe2JIcAU-/0/1775082532907?e=1794441600&v=beta&t=-3Bg3wjZ7LhSUBjVlaEi4IqRKJtxdAFc0FcLhNZgYCw",
+      "alt": ""
+    }
+  ]
+}

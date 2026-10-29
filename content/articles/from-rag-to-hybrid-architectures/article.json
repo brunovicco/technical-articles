@@ -1,0 +1,33 @@
+{
+  "id": "from-rag-to-hybrid-architectures",
+  "originalLanguage": "en",
+  "date": "2025-02-02",
+  "sourceUrl": "https://www.linkedin.com/pulse/from-rag-hybrid-architectures-bruno-vicco-yorpf",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "en": {
+      "title": "From RAG to Hybrid Architectures",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "De RAG a arquiteturas híbridas",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "d18d64d7e926d5d72eb9",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGJR19ydTLg2w/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1738531863026?e=1794441600&v=beta&t=0mFW6p0wzIU8KWUW2AvX6Lbh7-Yr0syiDBujPXRGw5Q",
+      "alt": ""
+    },
+    {
+      "key": "34f5143c3a36edd33e59",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHZrgSzlingAw/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1738531922268?e=1794441600&v=beta&t=H-1xFlbP24_iNHk4vmojIoXgHjt5ob7Z9e3-V1HJW2g",
+      "alt": ""
+    }
+  ]
+}

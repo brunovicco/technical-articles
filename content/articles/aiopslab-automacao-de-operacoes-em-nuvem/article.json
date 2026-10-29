@@ -1,0 +1,35 @@
+{
+  "id": "aiopslab-automacao-de-operacoes-em-nuvem",
+  "originalLanguage": "pt-br",
+  "date": "2024-12-30",
+  "sourceUrl": "https://www.linkedin.com/pulse/aiopslab-automa%C3%A7%C3%A3o-de-opera%C3%A7%C3%B5es-em-nuvem-bruno-vicco-foqif",
+  "tags": [
+    "governance",
+    "agents",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "AIOpsLab: Automação de Operações em Nuvem",
+      "kind": "original"
+    },
+    "en": {
+      "title": "AIOpsLab: Automating Cloud Operations",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "449148afafc54ffcbdb6",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFoCQ__magqvw/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1735433530392?e=1794441600&v=beta&t=CgUrHc9JvUNzBMYYXYc3Pi_ASDVhPyrUNxcjWPYjWrw",
+      "alt": ""
+    },
+    {
+      "key": "151aee3dff79ab1d17da",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFKdMVMHT2W4Q/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1735433571244?e=1794441600&v=beta&t=1sE181Ox6bEE2M-Hu0QuRRt1l73WCB640Q56WRA4ls0",
+      "alt": ""
+    }
+  ]
+}

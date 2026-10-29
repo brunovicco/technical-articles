@@ -1,0 +1,23 @@
+{
+  "id": "seven-frameworks-for-governing-llm-systems-the-map-before-the-territory",
+  "originalLanguage": "en",
+  "date": "2026-04-28",
+  "sourceUrl": "https://www.linkedin.com/pulse/seven-frameworks-governing-llm-systems-map-before-territory-vicco-nealf",
+  "tags": [
+    "security",
+    "governance"
+  ],
+  "versions": {
+    "en": {
+      "title": "Seven frameworks for governing LLM systems: the map before the territory",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Sete frameworks para governar sistemas com LLMs: o mapa antes do território",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": []
+}

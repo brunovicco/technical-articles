@@ -1,0 +1,39 @@
+{
+  "id": "o-labirinto-regulatorio-brasileiro-o-que-bacen-cvm-anbima-e-lgpd-exigem-antes-do-primeiro-prompt",
+  "originalLanguage": "pt-br",
+  "date": "2026-06-18",
+  "sourceUrl": "https://www.linkedin.com/pulse/o-labirinto-regulat%C3%B3rio-brasileiro-que-bacen-cvm-anbima-bruno-vicco-o0ixf",
+  "tags": [
+    "governance",
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "O labirinto regulatório brasileiro: o que BACEN, CVM, ANBIMA e LGPD exigem antes do primeiro prompt",
+      "kind": "original"
+    },
+    "en": {
+      "title": "The Brazilian Regulatory Maze: What BACEN, CVM, ANBIMA, and the LGPD Require Before the First Prompt",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "53e0ebd829f77be0f34a",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFnCD0fNwJHeg/article-inline_image-shrink_1500_2232/B4DZ7W7YYhIIAU-/0/1781722358853?e=1794441600&v=beta&t=RXsvdm5jFu9MrMTic-JAcJzc9dkcRVy5XB24sVNCboQ",
+      "alt": ""
+    },
+    {
+      "key": "95ae7841398c19ed5257",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGqvUP9pEmrGQ/article-inline_image-shrink_1500_2232/B4DZ7a5IqvJwAo-/0/1781788878733?e=1794441600&v=beta&t=rat-T_i9kvp-clX0mveKXabpCmUm9mfz7-b-JvwkglE",
+      "alt": ""
+    },
+    {
+      "key": "359f3746b17679ed3ee2",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEa8NTWJZSXfw/article-inline_image-shrink_1500_2232/B4DZ7XRq_yI8AQ-/0/1781728202692?e=1794441600&v=beta&t=IiIzEnVm2SL9DB6eYRkAl-VZL7Bbwhhl7aadc6db6QM",
+      "alt": ""
+    }
+  ]
+}

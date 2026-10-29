@@ -1,0 +1,53 @@
+{
+  "id": "langgraph-agno-na-mesma-aplicacao",
+  "originalLanguage": "pt-br",
+  "date": "2026-09-22",
+  "sourceUrl": "https://www.linkedin.com/pulse/langgraph-agno-na-mesma-aplica%C3%A7%C3%A3o-bruno-vicco-pn2rf",
+  "tags": [
+    "agents"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "LangGraph + Agno na mesma aplicação",
+      "kind": "original"
+    },
+    "en": {
+      "title": "LangGraph + Agno in the same application",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "0760d16863d405b8c59b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEX8_SJnjTVcg/article-inline_image-shrink_1500_2232/B4DaCnZkbGIAAQ-/0/1789514893324?e=1794441600&v=beta&t=6o1O_5hMCtHdFIwiUNr3c8gQvwXgx2CRThh1xxSFHQA",
+      "alt": ""
+    },
+    {
+      "key": "e4f0387ec5c77845ef9e",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG-oArXlovTlQ/article-inline_image-shrink_1000_1488/B4DaCnZ_SsIAAI-/0/1789515003434?e=1794441600&v=beta&t=JAimpiXMcPyXP8Ls4cqSsVCw5-GaDJjDJVaoGTRaA0Y",
+      "alt": ""
+    },
+    {
+      "key": "ee353484cf2812c03f0f",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGT1YRchioDEA/article-inline_image-shrink_1500_2232/B4DaCnaIZaI4AQ-/0/1789515040730?e=1794441600&v=beta&t=5MPuzzPdFWMEubbgCL2TCaUFvlFKNLlbgnK20ixaw-Y",
+      "alt": ""
+    },
+    {
+      "key": "1dd7adb7ae31a8cb531c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEYenoSlxH-xw/article-inline_image-shrink_1500_2232/B4DaCna47JGUAU-/0/1789515239368?e=1794441600&v=beta&t=KxPaeRIcrqFH2w7JivRuOxRWMx8TU4wq9hqPyK--Umo",
+      "alt": ""
+    },
+    {
+      "key": "16807f55cb2502efd83b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG7qhux2JhbbQ/article-inline_image-shrink_1000_1488/B4DaCnbOPJJsAM-/0/1789515326653?e=1794441600&v=beta&t=NBvuUIjdNEHWMpgmDCeVj7owgy61hxlYv6HwqLftNvY",
+      "alt": ""
+    },
+    {
+      "key": "7e5b6f7b212834916a04",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGb5z0nVClXwg/article-inline_image-shrink_1500_2232/B4DaCnbXORJEAQ-/0/1789515363467?e=1794441600&v=beta&t=dFobhs9atRWJjwEQjT6Zdh58B5LpATR9NeZ4pVP-c-k",
+      "alt": ""
+    }
+  ]
+}

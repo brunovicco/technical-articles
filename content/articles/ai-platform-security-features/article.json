@@ -1,0 +1,45 @@
+{
+  "id": "ai-platform-security-features",
+  "originalLanguage": "en",
+  "date": "2025-02-10",
+  "sourceUrl": "https://www.linkedin.com/pulse/ai-platform-security-features-bruno-vicco-immxf",
+  "tags": [
+    "security",
+    "agents",
+    "platforms"
+  ],
+  "versions": {
+    "en": {
+      "title": "AI Platform Security Features",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Recursos de segurança de plataformas de IA",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "a8e3a25854be1ede9b03",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQF_fnEFOzTP1Q/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1739029511045?e=1794441600&v=beta&t=8xFe3m0b3mgXGaEs1bUe60rMOzlhB1yx1DmrqLAovVM",
+      "alt": ""
+    },
+    {
+      "key": "81da305a9aa179ece6dd",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGbP8bzpqbuXg/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1739030266260?e=1794441600&v=beta&t=zqkfb30Zu4S1O4B68k9BnGS6kL3Qfqm4B3ficKKQQJ4",
+      "alt": ""
+    },
+    {
+      "key": "0bc3762d55cf9f44b02d",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHOUBnTPCrOQw/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1739029921327?e=1794441600&v=beta&t=yY4dG61RQ_OYKvlWkDjTKQfMRSJeqlkrq-cpnqGGUD0",
+      "alt": ""
+    },
+    {
+      "key": "480b825254dacf1cbd6c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHrItbD8WMA3Q/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1739029720632?e=1794441600&v=beta&t=zdvnDYdhQU8vTHRvy2HZTKYh-2Q8_EQ-6FFNOVedoxQ",
+      "alt": ""
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "observabilidade-num-grafo-langgraph-o-que-o-langfuse-ve-que-o-log-nao-ve",
+  "originalLanguage": "pt-br",
+  "date": "2026-04-08",
+  "sourceUrl": "https://www.linkedin.com/pulse/observabilidade-num-grafo-langgraph-o-que-langfuse-v%C3%AA-bruno-vicco-wue0f",
+  "tags": [
+    "agents",
+    "observability",
+    "engineering"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Observabilidade num grafo LangGraph: o que o Langfuse vê que o log não vê",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Observability in a LangGraph Graph: What Langfuse Sees That Logs Do Not",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "bb6f1c55d980beece1f4",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEukIXqk8FwvQ/article-inline_image-shrink_1500_2232/B4DZ1pkcPOGUAY-/0/1775592654922?e=1794441600&v=beta&t=WOfp10hE2ToZMXqfhkZDSZws-94gEi-_KWML0L1fatI",
+      "alt": ""
+    },
+    {
+      "key": "45a3d9bdfaec54ba5c88",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFlCZFwGOAy1Q/article-inline_image-shrink_1500_2232/B4DZ1pkuphHkAU-/0/1775592730329?e=1794441600&v=beta&t=fxc_nTAo4b5juNo19KbA4I1HHPHOEd-rKkN5zmmK0bs",
+      "alt": ""
+    },
+    {
+      "key": "52655d9cf75de61beb01",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEXTzjK6pbR7g/article-inline_image-shrink_1500_2232/B4DZ1pl2v5HIAU-/0/1775593025375?e=1794441600&v=beta&t=8vlGe-r9vPPuNXYUjJNls7YXJGl1Gxi4FxbEnQS-Zao",
+      "alt": ""
+    },
+    {
+      "key": "a2c4b794c8245bee2991",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFUckoQYprATA/article-inline_image-shrink_1500_2232/B4DZ1pmZsvH0AU-/0/1775593169290?e=1794441600&v=beta&t=tKh0OuU8XcG3VXIBoBANl8jUXTCbsP4QQZehpwI8lH0",
+      "alt": ""
+    },
+    {
+      "key": "0ef27e59b475c9f84637",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFqTCPWAtATcg/article-inline_image-shrink_1500_2232/B4DZ1pmrByI4AU-/0/1775593239658?e=1794441600&v=beta&t=vE9F8yxfZ4cu2HduV_uyON23KgU7Sr-omezfpv8ft-M",
+      "alt": ""
+    },
+    {
+      "key": "8da2a410691b486b8d4a",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH_WHkidXkyMA/article-inline_image-shrink_1000_1488/B4DZ1pm8vGIoAQ-/0/1775593311903?e=1794441600&v=beta&t=UITVAJ2TF7NvH_aTaIWf8j-37Mb1qq5PBVazgyXqJgk",
+      "alt": ""
+    },
+    {
+      "key": "0d9c4dbeda1aa5d38c41",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEtM4FJNR-kbQ/article-inline_image-shrink_1500_2232/B4DZ1pnR6UKoAc-/0/1775593399123?e=1794441600&v=beta&t=l3du50XSFDj2fJMXI46MVyIHmOfqBu08OuyGGXDJEi8",
+      "alt": ""
+    }
+  ]
+}

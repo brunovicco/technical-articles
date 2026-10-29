@@ -1,0 +1,34 @@
+{
+  "id": "proactive-security-and-real-time-threat-detection-in-ai-systems",
+  "originalLanguage": "en",
+  "date": "2025-02-24",
+  "sourceUrl": "https://www.linkedin.com/pulse/proactive-security-real-time-threat-detection-ai-systems-bruno-vicco-iltpf",
+  "tags": [
+    "security",
+    "platforms"
+  ],
+  "versions": {
+    "en": {
+      "title": "Proactive Security and Real-Time Threat Detection in AI Systems",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Segurança proativa e detecção de ameaças em tempo real em sistemas de IA",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "2c8e74b16891d9989614",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEsYTVAbmeN_w/article-inline_image-shrink_1000_1488/B4DZU5hdQRG4AQ-/0/1740426827537?e=1794441600&v=beta&t=38iVGGPQGHcJtzQGQm2zWNW5_7SOHHhS19cHtmBqg28",
+      "alt": ""
+    },
+    {
+      "key": "3d411ed227ca10b60654",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG7E_eI1e38nw/article-inline_image-shrink_1000_1488/B4DZU5iGK6HIAQ-/0/1740426995342?e=1794441600&v=beta&t=S58z3qilwZAl9phYJBErKRJ8KEDqjigKdAodFjjUVsU",
+      "alt": ""
+    }
+  ]
+}

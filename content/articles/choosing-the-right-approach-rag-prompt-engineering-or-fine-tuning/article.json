@@ -1,0 +1,22 @@
+{
+  "id": "choosing-the-right-approach-rag-prompt-engineering-or-fine-tuning",
+  "originalLanguage": "en",
+  "date": "2025-01-28",
+  "sourceUrl": "https://www.linkedin.com/pulse/choosing-right-approach-rag-prompt-engineering-bruno-vicco-eid0f",
+  "tags": [
+    "engineering"
+  ],
+  "versions": {
+    "en": {
+      "title": "Choosing the Right Approach: RAG, Prompt Engineering, or Fine-Tuning",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Escolhendo a abordagem certa: RAG, engenharia de prompts ou fine-tuning",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": []
+}

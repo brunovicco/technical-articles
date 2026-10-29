@@ -1,0 +1,58 @@
+{
+  "id": "frameworks-na-pratica-nist-ai-rmf-iso-42001-owasp-e-gaig-traduzidos-em-controle-e-evidencia",
+  "originalLanguage": "pt-br",
+  "date": "2026-06-23",
+  "sourceUrl": "https://www.linkedin.com/pulse/frameworks-na-pr%C3%A1tica-nist-ai-rmf-iso-42001-owasp-e-gaig-bruno-vicco-bgqhe",
+  "tags": [
+    "governance"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Frameworks na prática: NIST AI RMF, ISO 42001, OWASP e GAIG traduzidos em controle e evidência",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Frameworks in practice: NIST AI RMF, ISO 42001, OWASP, and GAIG translated into controls and evidence",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "563d05076e78da233ec9",
+      "url": "https://media.licdn.com/dms/image/v2/D4E12AQHX-h9N_jO59g/article-inline_image-shrink_1500_2232/B4EZ70HfQbJkAU-/0/1782212064993?e=1794441600&v=beta&t=l4H0OlV3PsSbUzj2uvPY_KlmzKtgNMmzF-TRVd40vEs",
+      "alt": ""
+    },
+    {
+      "key": "d9eae10d759e0e40d2e1",
+      "url": "https://media.licdn.com/dms/image/v2/D4E12AQFvEtS9v6jwtQ/article-inline_image-shrink_1500_2232/B4EZ70HfQbKAAU-/0/1782212064821?e=1794441600&v=beta&t=eLF8FVHMXBf6uRxCDIdqCrLqRMVkCIWma_wrc0-YQCQ",
+      "alt": ""
+    },
+    {
+      "key": "e4a0a45a0d6daf49caf3",
+      "url": "https://media.licdn.com/dms/image/v2/D4E12AQGQ3eEZi-9d_g/article-inline_image-shrink_1500_2232/B4EZ70HfQVK4AU-/0/1782212065211?e=1794441600&v=beta&t=Fd49UB8UemCWJO7e1UWXb_mnF_E6SUlOpVrygJOPPMU",
+      "alt": ""
+    },
+    {
+      "key": "7b7bb9dc9a1b611b03d1",
+      "url": "https://media.licdn.com/dms/image/v2/D4E12AQEQHnzttwmeVQ/article-inline_image-shrink_1500_2232/B4EZ70HfQzKMAU-/0/1782212065390?e=1794441600&v=beta&t=Z21Xjsepnh9tlhNQ5lz7kIQWFb1qpXOkI7eTo9weJZQ",
+      "alt": ""
+    },
+    {
+      "key": "b1108b0b299d5ae21584",
+      "url": "https://media.licdn.com/dms/image/v2/D4E12AQGMe6VsrpAAJw/article-inline_image-shrink_1500_2232/B4EZ70HfQAJMAU-/0/1782212064788?e=1794441600&v=beta&t=3hcrtbU3ajFwn_cicWvQJSVS4VkK9IPhG-2MNnVUBTY",
+      "alt": ""
+    },
+    {
+      "key": "184eb5fd88e21935d0ef",
+      "url": "https://media.licdn.com/dms/image/v2/D4E12AQFQHdixJg7_VQ/article-inline_image-shrink_1500_2232/B4EZ70HfP.JkAc-/0/1782212074196?e=1794441600&v=beta&t=I4jZw5KRqlW9gJsEFoO8hWKi7qoboLL2NG3DpMMr2ms",
+      "alt": ""
+    },
+    {
+      "key": "2961d61694e1821a1d5e",
+      "url": "https://media.licdn.com/dms/image/v2/D4E12AQFT0Jaoz34h_g/article-inline_image-shrink_1500_2232/B4EZ70HfQcIkAY-/0/1782212065038?e=1794441600&v=beta&t=vuy6S5IMwWIUBb7GwgatM-Vt1iKlyjZP2RzoCOtZKdI",
+      "alt": ""
+    }
+  ]
+}

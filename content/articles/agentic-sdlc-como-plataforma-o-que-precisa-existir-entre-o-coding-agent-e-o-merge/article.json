@@ -1,0 +1,45 @@
+{
+  "id": "agentic-sdlc-como-plataforma-o-que-precisa-existir-entre-o-coding-agent-e-o-merge",
+  "originalLanguage": "pt-br",
+  "date": "2026-10-22",
+  "sourceUrl": "https://www.linkedin.com/pulse/agentic-sdlc-como-plataforma-o-que-precisa-existir-entre-bruno-vicco-9yjdf",
+  "tags": [
+    "security",
+    "agents",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Agentic SDLC como plataforma: o que precisa existir entre o coding agent e o merge",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Agentic SDLC as a platform: what needs to exist between the coding agent and the merge",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "b567297444b91b2a7692",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFAKYX4aX_PRg/article-inline_image-shrink_1500_2232/B4DaExLmUCJoAQ-/0/1791826487789?e=1794441600&v=beta&t=JydrkeCK_RDsUjJhAmRQYiFNf-achCqob9XJ4vaGMYI",
+      "alt": ""
+    },
+    {
+      "key": "a5588f8328858f7da9cd",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHL36UOgQdK8g/article-inline_image-shrink_1500_2232/B4DaExLzT6KwAQ-/0/1791826540716?e=1794441600&v=beta&t=Jg4hnaEPeUjUS-tCCvDWRrnZjYJ3NvflylXXkd2NTXE",
+      "alt": ""
+    },
+    {
+      "key": "2d105304782b97a044d9",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFqQ6ip4EGnPQ/article-inline_image-shrink_1500_2232/B4DaExMBoJHoAQ-/0/1791826599257?e=1794441600&v=beta&t=KflTIp6-7iK9OE8zXMdvDL5yD0QCnSUzHwLvz2TF8Is",
+      "alt": ""
+    },
+    {
+      "key": "01097e0b85ee58cf15f9",
+      "url": "https://media.licdn.com/dms/image/v2/D5612AQG6NWkb-YVPqA/article-inline_image-shrink_1500_2232/B56aEhjrruGgAY-/0/1791564365829?e=1794441600&v=beta&t=XQkj0VP7dhm_mrO4pjNn5jWSwORwThBDBPERIR04aLs",
+      "alt": ""
+    }
+  ]
+}

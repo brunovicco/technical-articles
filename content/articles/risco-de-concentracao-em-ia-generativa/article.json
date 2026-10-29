@@ -1,0 +1,49 @@
+{
+  "id": "risco-de-concentracao-em-ia-generativa",
+  "originalLanguage": "pt-br",
+  "date": "2026-07-13",
+  "sourceUrl": "https://www.linkedin.com/pulse/risco-de-concentra%C3%A7%C3%A3o-em-ia-generativa-bruno-vicco-opncf",
+  "tags": [
+    "governance",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Risco de Concentração em IA Generativa",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Concentration Risk in Generative AI",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "8e4c9b4730ccacae2def",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFxfHQrXwFs3g/article-inline_image-shrink_1500_2232/B4DZ8p0GBxH0AQ-/0/1783112950982?e=1794441600&v=beta&t=EVeZITO-OMpvkiYHB5RUUq-fatmpfnun0nGCpzragPs",
+      "alt": ""
+    },
+    {
+      "key": "bc805dfeb67f59af11e2",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHgkFnOjtV84A/article-inline_image-shrink_1500_2232/B4DZ8p1LnUI0AU-/0/1783113236102?e=1794441600&v=beta&t=1qonPr79bADg_4OWMscvjVMuvo7j9xQpCrfgSmsCp4M",
+      "alt": ""
+    },
+    {
+      "key": "a18d8b88df784b3fe952",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHWvRwVTX4z5g/article-inline_image-shrink_1500_2232/B4DZ84CgJtJQAQ-/0/1783351609048?e=1794441600&v=beta&t=NMipHE4hdxUe8DZnzRTxQAazJ2__53o-o6JaLEKFKaA",
+      "alt": ""
+    },
+    {
+      "key": "289fc276a961b99ee9dc",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHMvk7E88snfg/article-inline_image-shrink_1500_2232/B4DZ9MKCuhJQAQ-/0/1783689130010?e=1794441600&v=beta&t=dGNZFzmJLdgBtJECdcn9A25pYsXM4cphp736FuqbUM4",
+      "alt": ""
+    },
+    {
+      "key": "cb798453fcf9d6e56e6c",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFP35dJwKzeUQ/article-inline_image-shrink_1500_2232/B4DZ84Ek_nJQAY-/0/1783352153887?e=1794441600&v=beta&t=Rwq06RSvJJGKqcIlvCoNpXhkuhhSZsVN6iak7cF6jWU",
+      "alt": ""
+    }
+  ]
+}

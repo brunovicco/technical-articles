@@ -1,0 +1,33 @@
+{
+  "id": "observabilidade-em-ia",
+  "originalLanguage": "pt-br",
+  "date": "2025-03-25",
+  "sourceUrl": "https://www.linkedin.com/pulse/observabilidade-em-ia-bruno-vicco-ydv2f",
+  "tags": [
+    "observability"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Observabilidade em IA",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Observability in AI",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "d73611269594c0b86ec4",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFU7HOYL9Yfng/article-inline_image-shrink_1000_1488/B4DZXNit24G4AQ-/0/1742910185493?e=1794441600&v=beta&t=yOtbqLMR5hcZnE6uggaheod2ekuvkgbC1FawKRNQoXY",
+      "alt": ""
+    },
+    {
+      "key": "fcc1f079048df2630891",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGh3sVtHWqNww/article-inline_image-shrink_1500_2232/B4DZXN72kyGkAU-/0/1742916774785?e=1794441600&v=beta&t=dLPTx5bQqPpopb063mQ3bLSgn7en2rd2K13nWeLpZhE",
+      "alt": ""
+    }
+  ]
+}

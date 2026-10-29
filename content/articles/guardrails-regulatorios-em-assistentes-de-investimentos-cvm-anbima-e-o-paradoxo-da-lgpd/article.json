@@ -1,0 +1,70 @@
+{
+  "id": "guardrails-regulatorios-em-assistentes-de-investimentos-cvm-anbima-e-o-paradoxo-da-lgpd",
+  "originalLanguage": "pt-br",
+  "date": "2026-03-22",
+  "sourceUrl": "https://www.linkedin.com/pulse/guardrails-regulat%C3%B3rios-em-assistentes-de-cvm-anbima-e-bruno-vicco-rksff",
+  "tags": [
+    "governance",
+    "engineering",
+    "platforms"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "Guardrails regulatórios em assistentes de investimentos: CVM, ANBIMA e o paradoxo da LGPD",
+      "kind": "original"
+    },
+    "en": {
+      "title": "Regulatory Guardrails in Investment Assistants: CVM, ANBIMA, and the LGPD Paradox",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "89c275facf0e9c5d9531",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEBl66qnx_hfg/article-inline_image-shrink_1500_2232/B4DZ0STySXH4AU-/0/1774128670570?e=1794441600&v=beta&t=Ds8f5ZqG43lA6W5AJqfOX1U6PnnSPFJLiLNVKmOBvRw",
+      "alt": ""
+    },
+    {
+      "key": "e5d7d9267d97a8bcc4d4",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGV2L2lvhK6xA/article-inline_image-shrink_1500_2232/B4DZ0SUqBWGcAU-/0/1774128898948?e=1794441600&v=beta&t=upT7xKJthSEXXjd4rhgem01n6opCP20MElOmt6Q8Xd4",
+      "alt": ""
+    },
+    {
+      "key": "9f2a5d772d13bf8288a6",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFyQDW6yzbWhA/article-inline_image-shrink_1500_2232/B4DZ0SXoT6IYAU-/0/1774129679129?e=1794441600&v=beta&t=DgASs7Du8ebyvzMOd89zdk7AW6FNMH6DnlzenpVaLBc",
+      "alt": ""
+    },
+    {
+      "key": "1c0804ca26856b7cecaf",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEqX0h7JFDHaQ/article-inline_image-shrink_1500_2232/B4DZ0SYfwoGUAU-/0/1774129905976?e=1794441600&v=beta&t=KZUYEr3Vpjft8wZu8jAmbRGNnhMVtL4LElNX-bdwoXM",
+      "alt": ""
+    },
+    {
+      "key": "da7adb9942d0d1c116b6",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQFGjryHP49fMw/article-inline_image-shrink_1000_1488/B4DZ0SYq._JQAQ-/0/1774129951387?e=1794441600&v=beta&t=tAgliyP2KNO79D1-3azjLwO_H8socKJaeWepmfLa4Lk",
+      "alt": ""
+    },
+    {
+      "key": "86c8946b39a0df72479f",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQH6YTN5OL-D2w/article-inline_image-shrink_1500_2232/B4DZ0SZ9.JGcAU-/0/1774130292707?e=1794441600&v=beta&t=LXgcnqGbB0EmJ4BCowq79ihlcMQc_fZYvnu5PhGx6BI",
+      "alt": ""
+    },
+    {
+      "key": "e021a25c64bff535fd69",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG0UOeQtYXx5Q/article-inline_image-shrink_1500_2232/B4DZ0SbC1JGsAU-/0/1774130574221?e=1794441600&v=beta&t=U2jp5RPUH8dnKis7zyXHI8E5Cyg5pS7AnkVzkewI6LE",
+      "alt": ""
+    },
+    {
+      "key": "a70d6a9eb4645dbb44d8",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHjuJT8K2Ebzg/article-inline_image-shrink_1500_2232/B4DZ0ScmIBIYAU-/0/1774130980169?e=1794441600&v=beta&t=KTGuJynSjpzsZxZQ6OG7X2YuB2hvpjCNOZpvBgNad2k",
+      "alt": ""
+    },
+    {
+      "key": "eec3b8733bc3bddf6a58",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHqRRVzc1qMlA/article-inline_image-shrink_1000_1488/B4DZ0TFZk7GoAQ-/0/1774141676844?e=1794441600&v=beta&t=ULufxgcoUp-wUSnuFKojB0LfMEtEJidpr6Apfog2hXU",
+      "alt": ""
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "6-padroes-de-arquitetura-llm-aprendizados-de-234-celulas-experimentais-sobre-controle-e-autonomia",
+  "originalLanguage": "pt-br",
+  "date": "2026-09-01",
+  "sourceUrl": "https://www.linkedin.com/pulse/6-padr%C3%B5es-de-arquitetura-llm-aprendizados-234-c%C3%A9lulas-bruno-vicco-9ipif",
+  "tags": [
+    "agents"
+  ],
+  "versions": {
+    "pt-br": {
+      "title": "6 padrões de arquitetura LLM: aprendizados de 234 células experimentais sobre controle e autonomia",
+      "kind": "original"
+    },
+    "en": {
+      "title": "6 LLM Architecture Patterns: Lessons from 234 Experimental Cells on Control and Autonomy",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": [
+    {
+      "key": "d90cfd3e3d60428f143b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQHGUwm4Qm5wMw/article-inline_image-shrink_1500_2232/B4DaBdlApiKkAU-/0/1788276379629?e=1794441600&v=beta&t=shGlsP5ZZuBKwdeYg7-vlkyQc0mhIeRYhTtkc5UqVg8",
+      "alt": ""
+    },
+    {
+      "key": "a15b9af7268492f32ab5",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEKwv8X4SHcdA/article-inline_image-shrink_1000_1488/B4DaBeo5UeIEAI-/0/1788294174304?e=1794441600&v=beta&t=qR7CbbdNz_7FcDHV4mzPow4htCJJFoxaEcd6iqMOa5c",
+      "alt": ""
+    },
+    {
+      "key": "63a4fe4e6a35eea921ac",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQGSSlC9WaOiCg/article-inline_image-shrink_1000_1488/B4DaBepif0JsAI-/0/1788294342936?e=1794441600&v=beta&t=XS4zu4JAWpZm-Qrfg_3lxC-Dym35-Av8ZNRp-rXuYSE",
+      "alt": ""
+    },
+    {
+      "key": "5a423a6b9d3598087862",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEtGlHETXUq2Q/article-inline_image-shrink_1500_2232/B4DaBdlZ07KQAQ-/0/1788276482824?e=1794441600&v=beta&t=ZVknSe4FHsN87ebaPaOxpKQ216c4HxHTTgfTE70tqjI",
+      "alt": ""
+    },
+    {
+      "key": "7f43a10b9904dfe8021b",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQF3KaNonct00w/article-inline_image-shrink_1500_2232/B4DaBep1QBGYAQ-/0/1788294420078?e=1794441600&v=beta&t=EoySnamvMSNvNkzTKrfEMTzOyXo3sWAfflTdIAXBbC8",
+      "alt": ""
+    },
+    {
+      "key": "7ca38e065e556662f99d",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEHx2-uQDSGNg/article-inline_image-shrink_1000_1488/B4DaBeqKW6KkAI-/0/1788294506186?e=1794441600&v=beta&t=Dm-ijd1NBRd0m_0I-YW0SJyS3kkCYJXwyNz0ko548Bs",
+      "alt": ""
+    },
+    {
+      "key": "37ac912bf378dcac6110",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEfBxH67_vs9Q/article-inline_image-shrink_1500_2232/B4DaBdl0dVHsAQ-/0/1788276591834?e=1794441600&v=beta&t=lV_rDrI7OgUrcH12Rsz-4Q49ukXfSz7nUvOg7QFhuyM",
+      "alt": ""
+    },
+    {
+      "key": "b3498a82d4d70e9ed7da",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQG1tzbFSQQtVg/article-inline_image-shrink_1500_2232/B4DaBetN2.KIAQ-/0/1788295307040?e=1794441600&v=beta&t=YyvFbesV5gEesIlUdxCpsVN0ddcqwAJge2p7r9GjTRA",
+      "alt": ""
+    },
+    {
+      "key": "d582c74c26b91b030fbf",
+      "url": "https://media.licdn.com/dms/image/v2/D4D12AQEjTRg-E9zJoA/article-inline_image-shrink_1500_2232/B4DaBdmV_8LAAU-/0/1788276729261?e=1794441600&v=beta&t=HDayJ3JK0yLWOhmezaZUFpDoRpqrGOYOG7vfXtjty3k",
+      "alt": ""
+    }
+  ]
+}
