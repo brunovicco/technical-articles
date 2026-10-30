@@ -56,6 +56,8 @@ O `id` é estável e forma a URL nos dois idiomas. Use apenas letras minúsculas
 
 Temas suportados: `agents`, `security`, `governance`, `engineering`, `platforms`, `observability`. Eles alimentam filtros e rótulos nos dois idiomas.
 
+O build aplica destaque semântico de código a identificadores inequívocos (como `dspy.Predict`, `execution_id` e chamadas de função), trechos delimitados por crases e termos específicos dos artigos DSPy. Para identificar outros nomes de classes ou símbolos, acrescente uma lista `codeTerms` ao `article.json`. Os HTMLs importados não são reescritos por essa formatação. Blocos vazios da exportação são omitidos na renderização; o exemplo `"question → answer"` do artigo introdutório de DSPy foi recuperado da captura fornecida pelo autor. Outros trechos ausentes não foram reconstruídos por inferência.
+
 Cada versão em `versions` usa `title` e `kind`. A versão original tem `kind: "original"`; a tradução tem `kind: "translation"`, `translatedFrom` e `reviewStatus: "unreviewed"` ou `"reviewed"`. Depois de revisar o texto, mude o estado para `reviewed`; o aviso público passa a refletir essa revisão.
 
 Por padrão, o build interrompe a publicação se faltar uma versão. Para desenvolvimento temporário de uma importação incompleta, `ALLOW_INCOMPLETE_TRANSLATIONS=1 npm run build` produz somente as versões já disponíveis; não use esse modo em produção.
