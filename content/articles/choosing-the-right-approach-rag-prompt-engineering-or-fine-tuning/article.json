@@ -6,6 +6,10 @@
   "tags": [
     "engineering"
   ],
+  "series": {
+    "id": "llm-foundations",
+    "part": 4
+  },
   "versions": {
     "en": {
       "title": "Choosing the Right Approach: RAG, Prompt Engineering, or Fine-Tuning",

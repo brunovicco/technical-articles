@@ -7,6 +7,10 @@
     "governance",
     "agents"
   ],
+  "series": {
+    "id": "multi-agent-state",
+    "part": 4
+  },
   "versions": {
     "pt-br": {
       "title": "LangGraph, Agno ou CrewAI? Como escolher a abstração que combina com o problema",

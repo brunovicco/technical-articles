@@ -8,6 +8,10 @@
     "observability",
     "engineering"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 7
+  },
   "versions": {
     "pt-br": {
       "title": "Observabilidade num grafo LangGraph: o que o Langfuse vê que o log não vê",

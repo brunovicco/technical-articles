@@ -6,6 +6,10 @@
   "tags": [
     "governance"
   ],
+  "series": {
+    "id": "ai-regulation-eu-us",
+    "part": 2
+  },
   "versions": {
     "en": {
       "title": "AI Regulation in the USA: A Patchwork Approach",

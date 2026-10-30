@@ -93,3 +93,12 @@ test('About and projects update from one response and keep independent fallbacks
   assert.equal(await refreshProfile(about,'en',async()=>{throw new Error('Offline');},projects),false);
   assert.equal(projects.innerHTML,previous);
 });
+
+test('About pages show the local portrait with localized alt text',async()=>{
+  const portrait=await fs.readFile(new URL('../dist/assets/bruno-vicco.jpg',import.meta.url));
+  assert.ok(portrait[0]===0xff&&portrait[1]===0xd8);
+  for(const [locale,alt] of [['en','Portrait of Bruno Vicco'],['pt-br','Retrato de Bruno Vicco']]){
+    const html=await fs.readFile(new URL(`../dist/${locale}/${locale==='en'?'about':'sobre'}/index.html`,import.meta.url),'utf8');
+    assert.ok(html.includes(`src="/technical-articles/assets/bruno-vicco.jpg" alt="${alt}"`));
+  }
+});

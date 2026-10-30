@@ -7,6 +7,10 @@
     "governance",
     "engineering"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 5
+  },
   "versions": {
     "pt-br": {
       "title": "DSPy na prática: o que muda quando o roteador já é LLM, mas ainda não é compilável",

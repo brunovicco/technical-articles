@@ -8,6 +8,10 @@
     "agents",
     "platforms"
   ],
+  "cover": {
+    "en": "agentic-sdlc-como-plataforma-en.png",
+    "pt-br": "agentic-sdlc-como-plataforma-en.png"
+  },
   "versions": {
     "pt-br": {
       "title": "Agentic SDLC como plataforma: o que precisa existir entre o coding agent e o merge",

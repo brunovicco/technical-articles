@@ -8,6 +8,10 @@
     "governance",
     "platforms"
   ],
+  "series": {
+    "id": "enterprise-ai-security",
+    "part": 4
+  },
   "versions": {
     "en": {
       "title": "Building an End-to-End AI Governance Framework",

@@ -7,6 +7,10 @@
     "agents",
     "platforms"
   ],
+  "series": {
+    "id": "measuring-engineering",
+    "part": 2
+  },
   "versions": {
     "pt-br": {
       "title": "DORA, Developer Experience e coortes: como eu mediria o impacto da IA em engenharia",

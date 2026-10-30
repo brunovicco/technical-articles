@@ -8,6 +8,10 @@
     "engineering",
     "platforms"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 6
+  },
   "versions": {
     "pt-br": {
       "title": "Três routers, três problemas diferentes: DSPy, Semantic Router customizado e Aurélio AI",

@@ -6,6 +6,10 @@
   "tags": [
     "engineering"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 8
+  },
   "versions": {
     "pt-br": {
       "title": "dspy.Refine: autocorreção em runtime sem recompilar o modelo",

@@ -7,6 +7,10 @@
     "governance",
     "engineering"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 2
+  },
   "versions": {
     "pt-br": {
       "title": "DSPy, o framework que trata prompts como código compilável, não como strings",

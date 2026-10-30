@@ -6,6 +6,10 @@
   "tags": [
     "governance"
   ],
+  "series": {
+    "id": "ai-regulation-eu-us",
+    "part": 1
+  },
   "versions": {
     "en": {
       "title": "The EU Artificial Intelligence Act: Shaping the Future of AI Regulation",

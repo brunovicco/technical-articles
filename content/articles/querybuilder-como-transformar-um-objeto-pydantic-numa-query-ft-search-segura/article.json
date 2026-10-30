@@ -6,6 +6,10 @@
   "tags": [
     "engineering"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 9
+  },
   "versions": {
     "pt-br": {
       "title": "QueryBuilder: como transformar um objeto Pydantic numa query FT.SEARCH segura",

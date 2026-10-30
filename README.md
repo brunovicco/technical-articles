@@ -13,7 +13,7 @@ A bilingual technical publication about AI engineering, architecture, agents, se
 - Separate RSS feeds, a sitemap, canonical URLs, `hreflang`, and structured article metadata.
 - Automated builds and tests, with deployment controlled by an explicit manual action.
 
-The collection contains 49 articles, 98 language versions, and 226 inline images. Original publication dates and references are preserved. AI-assisted translations are labeled and track editorial review status separately from the technical review of their claims.
+The collection contains 48 articles, 96 language versions, and 225 inline images. Original publication dates and references are preserved. AI-assisted translations track editorial review status separately from the technical review of their claims.
 
 ## Quick start
 
@@ -83,9 +83,13 @@ Each entry in `versions` specifies a title and version type:
 
 - `kind: "original"` identifies the original-language text.
 - `kind: "translation"` includes `translatedFrom` and `reviewStatus`.
-- `reviewStatus: "unreviewed"` or `"reviewed"` controls the translation notice on the article page.
+- `reviewStatus: "unreviewed"` or `"reviewed"` records the editorial review state of a translation. Article pages do not display a translation notice.
 
 The normal build requires both languages. For a temporary preview during an incomplete import, use `ALLOW_INCOMPLETE_TRANSLATIONS=1 npm run build`. Always use the complete validation workflow before deployment.
+
+### Reading tracks
+
+`content/tracks.json` defines ordered reading tracks (`id`, plus `title` and `description` in both languages). An article joins a track with `"series": { "id": "<track id>", "part": 1 }` in `article.json`. The build fails on an unknown track, a duplicate part, or a track without articles. Tracks are listed on the home page and get their own pages at `/en/tracks/<id>/` and `/pt-br/trilhas/<id>/`; track articles show a track eyebrow and a "This track" rail. Track numbers follow the order in `tracks.json`.
 
 ### Code and figures
 

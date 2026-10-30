@@ -7,6 +7,10 @@
     "security",
     "platforms"
   ],
+  "series": {
+    "id": "enterprise-ai-security",
+    "part": 3
+  },
   "versions": {
     "en": {
       "title": "Proactive Security and Real-Time Threat Detection in AI Systems",

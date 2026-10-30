@@ -8,6 +8,10 @@
     "agents",
     "platforms"
   ],
+  "series": {
+    "id": "enterprise-ai-security",
+    "part": 2
+  },
   "versions": {
     "en": {
       "title": "AI Platform Security Features",

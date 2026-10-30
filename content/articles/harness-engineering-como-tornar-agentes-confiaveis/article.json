@@ -8,6 +8,10 @@
     "agents",
     "platforms"
   ],
+  "series": {
+    "id": "regulated-finance",
+    "part": 6
+  },
   "versions": {
     "pt-br": {
       "title": "Harness engineering: como tornar agentes confiáveis",

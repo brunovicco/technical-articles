@@ -6,6 +6,10 @@
   "tags": [
     "governance"
   ],
+  "series": {
+    "id": "ai-regulation-eu-us",
+    "part": 3
+  },
   "versions": {
     "en": {
       "title": "Summary of AI Regulations: EU and USA",

@@ -6,6 +6,10 @@
   "tags": [
     "governance"
   ],
+  "series": {
+    "id": "regulated-finance",
+    "part": 3
+  },
   "versions": {
     "pt-br": {
       "title": "Frameworks na prática: NIST AI RMF, ISO 42001, OWASP e GAIG traduzidos em controle e evidência",
