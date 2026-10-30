@@ -143,3 +143,23 @@ The site has no backend, analytics, tracking cookies, or remote fonts. Theme pre
 Changes to `main` go through pull requests and the required `build` check, with the branch up to date before merge. Force pushes and branch deletion are blocked, including for administrators. Conversations must be resolved before merging. A second person's approval is not required for this single-maintainer project.
 
 Secret scanning and push protection are enabled on GitHub. Never commit private LinkedIn exports, credentials, or personal contact data. Deployment remains an explicit manual action after merge.
+
+## About page and GitHub profile
+
+The About page uses the **About** section from
+[`brunovicco/brunovicco/README.md`](https://github.com/brunovicco/brunovicco/blob/main/README.md)
+and **Sobre mim** from
+[`README.pt-BR.md`](https://github.com/brunovicco/brunovicco/blob/main/README.pt-BR.md).
+Edit each language at its source. Keep these level-two headings; the section ends
+at the next level-two heading or horizontal rule. Other profile sections are not imported.
+
+On each visit, the browser fetches the public source from `raw.githubusercontent.com`
+without credentials and safely renders the selected section. Changes appear on the
+next page load after GitHub's cache refreshes, without a site deployment. Both source
+files must be maintained; translations are not generated automatically.
+
+`content/profile/en.md` and `pt-br.md` contain the initial offline/no-JavaScript
+snapshots. Update these copies when refreshing the offline fallback; builds never
+require network access. If the request fails, times out, or the expected section is
+missing, the page keeps its snapshot. Basic paragraphs, emphasis, inline code,
+HTTPS links, lists, and blockquotes are supported. Remote HTML is escaped.

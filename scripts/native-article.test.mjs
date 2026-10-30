@@ -12,7 +12,9 @@ test('the bilingual template builds native articles and preserves external prove
   t.after(()=>fs.rm(fixture,{recursive:true,force:true}));
   for(const dir of ['scripts','templates'])await fs.cp(path.join(root,dir),path.join(fixture,dir),{recursive:true});
   for(const file of ['site.config.json','package.json'])await fs.copyFile(path.join(root,file),path.join(fixture,file));
-  await fs.mkdir(path.join(fixture,'public'));
+  await fs.mkdir(path.join(fixture,'public/assets'),{recursive:true});
+  await fs.copyFile(path.join(root,'public/assets/profile-content.mjs'),path.join(fixture,'public/assets/profile-content.mjs'));
+  await fs.cp(path.join(root,'content/profile'),path.join(fixture,'content/profile'),{recursive:true});
   const run=(script,...args)=>spawnSync(process.execPath,[path.join(fixture,'scripts',script),...args],{encoding:'utf8',env:{...process.env,GITHUB_REPOSITORY:'',ALLOW_INCOMPLETE_TRANSLATIONS:''}});
   for(const original of ['pt-br','en']){
     const result=run('new-article.mjs',`native-${original}`,original);
