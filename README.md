@@ -1,16 +1,15 @@
 # Bruno Vicco · Technical notes / Notas técnicas
 
-Site estático bilíngue de artigos técnicos, preparado para GitHub Pages. O design segue a referência visual fornecida pelo autor: azul-marinho, tipografia sem serifa, capas editoriais, sumário lateral e painel de leitura branco.
+Publicação técnica bilíngue sobre engenharia de IA, arquitetura, agentes, segurança, observabilidade e governança. Site estático, sem dependências de execução, com versões integrais dos artigos em português do Brasil e inglês.
 
 ## Conteúdo
 
-- 49 artigos publicados na exportação do LinkedIn, com versões integrais em PT-BR e inglês: 98 páginas de artigos.
+- 49 artigos técnicos, com versões integrais em PT-BR e inglês: 98 páginas de artigos.
 - 34 textos originalmente em português e 15 em inglês. Cada tradução tem atribuição, ligação ao original e indicação de revisão editorial pendente.
-- 226 imagens internas recuperadas e armazenadas localmente. As capas SVG são novas peças editoriais geradas pelo site; não substituem os diagramas originais.
-- Quatro HTMLs sem data de publicação confirmada não foram importados, nem incluídos no repositório.
-- Nenhum CSV de conexões, mensagens, candidaturas ou outros dados privados faz parte do site.
+- 226 imagens internas armazenadas localmente, com legendas e acesso em tamanho maior.
+- Capas editoriais SVG geradas durante o build.
 
-As datas dos artigos e suas afirmações históricas foram preservadas. A tradução não é uma atualização factual ou regulatória. Algumas lacunas de identificadores e pequenas inconsistências editoriais já presentes no HTML de origem foram mantidas; revise o artigo antes de fazer alterações que mudem seu significado.
+As datas e referências das publicações originais são preservadas. Traduções assistidas por IA são identificadas e possuem estado de revisão editorial por versão. A revisão de conteúdo técnico e regulatório é independente da tradução.
 
 ## Executar localmente
 
@@ -23,20 +22,26 @@ npm run serve
 
 Acesse `http://127.0.0.1:4173/technical-articles/pt-br/` ou `/technical-articles/en/`.
 
-O build gera `dist/`. A pasta é ignorada no Git; o GitHub Actions a recria a cada publicação.
+O build gera `dist/`. A pasta é ignorada no Git e recriada pelo GitHub Actions a cada validação.
 
-## Publicar no GitHub Pages
+| Comando | Função |
+|---|---|
+| `npm run build` | Gera o site estático em `dist/` |
+| `npm test` | Executa os testes; requer um build atualizado |
+| `npm run check` | Executa o build e os testes |
+| `npm run serve` | Serve a versão de `dist/` localmente |
 
-1. Envie este projeto para `brunovicco/technical-articles`, branch `main`.
-2. Em **Settings → Pages → Build and deployment**, escolha **GitHub Actions**.
-3. O workflow `.github/workflows/pages.yml` valida as duas línguas e publica `dist/`.
+## Integração contínua e publicação
 
-Endereços previstos:
+Pushes em `main` e pull requests executam **somente build e testes**. O merge de uma PR não publica o site.
 
-- PT-BR: `https://brunovicco.github.io/technical-articles/pt-br/`
-- English: `https://brunovicco.github.io/technical-articles/en/`
+A publicação no GitHub Pages é manual e vem desativada por padrão:
 
-Pull requests executam o build e os testes sem publicar. Pushes em `main` e execução manual publicam o site.
+1. Configure **Settings → Pages → Build and deployment → GitHub Actions** quando o site estiver pronto para publicação.
+2. Abra **Actions → Validate and optionally publish technical articles → Run workflow**.
+3. Selecione a branch `main` e marque o parâmetro **publish** explicitamente.
+
+Sem esse parâmetro, a execução manual também faz apenas a validação. A publicação a partir de outras branches é bloqueada. O job de implantação recebe permissões de Pages somente quando executado. O workflow não altera a visibilidade do repositório.
 
 Se mudar o repositório ou domínio, atualize `site.config.json`. Em Actions, o endereço padrão é derivado de `GITHUB_REPOSITORY`; `SITE_URL` permite informar um domínio personalizado. A configuração do domínio em Settings → Pages continua necessária.
 
@@ -56,6 +61,8 @@ O `id` é estável e forma a URL nos dois idiomas. Use apenas letras minúsculas
 
 Temas suportados: `agents`, `security`, `governance`, `engineering`, `platforms`, `observability`. Eles alimentam filtros e rótulos nos dois idiomas.
 
+O build aplica destaque semântico de código a identificadores inequívocos (como `dspy.Predict`, `execution_id` e chamadas de função), trechos delimitados por crases e termos específicos dos artigos DSPy. Para identificar outros nomes de classes ou símbolos, acrescente uma lista `codeTerms` ao `article.json`. Os HTMLs importados não são reescritos por essa formatação. Títulos, links e trechos já marcados como código são preservados. Blocos vazios não são exibidos; a importação não reconstrói trechos ausentes.
+
 Cada versão em `versions` usa `title` e `kind`. A versão original tem `kind: "original"`; a tradução tem `kind: "translation"`, `translatedFrom` e `reviewStatus: "unreviewed"` ou `"reviewed"`. Depois de revisar o texto, mude o estado para `reviewed`; o aviso público passa a refletir essa revisão.
 
 Por padrão, o build interrompe a publicação se faltar uma versão. Para desenvolvimento temporário de uma importação incompleta, `ALLOW_INCOMPLETE_TRANSLATIONS=1 npm run build` produz somente as versões já disponíveis; não use esse modo em produção.
@@ -70,7 +77,7 @@ python3 scripts/recover-media.py
 npm run check
 ```
 
-Ele exclui arquivos sem publicação datada e sanitiza a marcação. A reimportação atualiza o idioma original, preserva os metadados da tradução existente e exige revisão manual dessa tradução caso a origem tenha mudado. Não a execute apontando para dados de terceiros sem autorização.
+O importador processa somente artigos com data de publicação e sanitiza a marcação. A reimportação atualiza o idioma original e preserva os metadados das traduções existentes. Se o texto original mudar, revise também a tradução correspondente antes de integrar as alterações.
 
 ## Recursos e validação
 
@@ -88,4 +95,4 @@ A dependency-free static technical publication for GitHub Pages, with 49 source 
 
 Articles live in `content/articles/<id>/`, with metadata in `article.json` and full bodies in `pt-br.html` and `en.html`. Translations retain the original HTML structure, references and code. AI-assisted translations are labeled and await the author’s editorial review. Dates and historical claims are preserved, not updated or independently verified.
 
-The 226 original inline images are hosted locally. Four undated/unpublished source documents and the rest of the LinkedIn data export are excluded. The Pages workflow builds and tests every version before deployment, and pull requests never deploy.
+The 226 original inline images are hosted locally, and editorial SVG covers are generated at build time. Pushes to `main` and pull requests build and test the site without deploying. GitHub Pages deployment requires a manual workflow run on `main` with the **publish** input explicitly enabled; its default is **false**. The workflow does not change repository visibility.

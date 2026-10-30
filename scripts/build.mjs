@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { formatCode } from './format-code.mjs';
 
 export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const config=JSON.parse(await fs.readFile(path.join(root,'site.config.json'),'utf8'));
@@ -91,7 +92,7 @@ try{assets=JSON.parse(await fs.readFile(path.join(root,'public/assets/media.json
 const sourceMap=new Map(articles.filter(a=>a.sourceUrl).map(a=>[decodeURIComponent(new URL(a.sourceUrl).pathname).replace(/\/$/,''),a]));
 function localizeBody(article,lang){
   const text=messages[lang];const headings=[];let index=0;
-  let content=article.content[lang].replace(/<h([234])>([\s\S]*?)<\/h\1>/g,(_,level,label)=>{
+  let content=formatCode(article.content[lang], {id:article.id, terms:article.codeTerms || []}).replace(/<h([234])>([\s\S]*?)<\/h\1>/g,(_,level,label)=>{
     const id=`section-${++index}`;headings.push({id,title:plain(label),level:Number(level)});
     return `<h${level} id="${id}" tabindex="-1">${label}<a class="heading-anchor" href="#${id}" aria-label="${lang==='pt-br'?'Link para esta seção':'Link to this section'}">#</a></h${level}>`;
   });

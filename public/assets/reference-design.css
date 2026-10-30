@@ -13,3 +13,13 @@ h1,h2{font-weight:750;letter-spacing:-.045em}.hero{padding:63px 0 53px;grid-temp
 @media print{.topbar,.article-cover,.toc,.related,.translation-note{display:none!important}main{width:100%;max-width:none}.article-heading h1{font-size:30pt}.reading-layout{display:block}.prose{padding:10px 0;border:0;box-shadow:none;font-size:12pt}.prose figure{box-shadow:none;margin-inline:0}.prose h2,.prose h3{break-after:avoid}.article-heading{padding-top:0}}
 
 .figure-zoom{position:relative;display:block;text-decoration:none}.figure-zoom-label{position:absolute;right:7px;bottom:7px;font:10px var(--sans);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:4px 7px;box-shadow:0 2px 8px #13253c10;opacity:.9}.figure-zoom:hover .figure-zoom-label{background:var(--accent);color:var(--paper)}
+
+/* Inline identifiers and code blocks follow the author's supplied code reference. */
+:root{--code-bg:#edf2fa;--code-border:#bdcce1;--code-ink:#193650;--code-block-bg:#f0f4fb}
+html[data-theme=dark]{--code-bg:#1b233d;--code-border:#455171;--code-ink:#e5eaf7;--code-block-bg:#151b33}
+.prose :not(pre)>code{font-family:var(--mono);font-size:.86em;font-style:normal;font-weight:400;line-height:inherit;letter-spacing:0;background:var(--code-bg);color:var(--code-ink);border:1px solid var(--code-border);border-radius:5px;padding:.12em .38em;box-decoration-break:clone;-webkit-box-decoration-break:clone;overflow-wrap:anywhere;white-space:normal}
+.prose pre{background:var(--code-block-bg);color:var(--code-ink);border:1px solid var(--code-border);border-radius:12px;padding:44px 22px 24px;margin:28px 0 32px;font-family:var(--mono);font-size:14px;line-height:1.75;white-space:pre;overflow-x:auto;max-width:100%;tab-size:4}
+.prose pre>code{display:block;background:none;color:inherit;border:0;border-radius:0;padding:0;font:inherit;font-style:normal;font-weight:400;white-space:pre;overflow-wrap:normal;word-break:normal}
+.prose pre .copy-code{background:var(--code-bg);color:var(--code-ink);border:1px solid var(--code-border);top:9px;right:10px;font-size:10px;padding:4px 9px}
+@media(max-width:760px){.prose pre{padding:42px 16px 20px;font-size:12px;border-radius:10px}}
+@media print{.prose :not(pre)>code,.prose pre{background:#f3f4f6;color:#111827;border-color:#b5bac4;print-color-adjust:exact}.prose pre{white-space:pre-wrap}.prose pre>code{white-space:pre-wrap;overflow-wrap:anywhere}}

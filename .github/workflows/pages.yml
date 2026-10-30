@@ -1,9 +1,15 @@
-name: Publish technical articles
+name: Validate and optionally publish technical articles
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish the validated site to GitHub Pages'
+        type: boolean
+        required: false
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -20,11 +26,11 @@ jobs:
       - name: Build and validate both languages
         run: npm run check
       - uses: actions/upload-pages-artifact@v4
-        if: github.event_name != 'pull_request'
+        if: github.event_name == 'workflow_dispatch' && inputs.publish == true && github.ref == 'refs/heads/main'
         with:
           path: dist
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'workflow_dispatch' && inputs.publish == true && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     permissions:

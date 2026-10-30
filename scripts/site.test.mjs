@@ -86,6 +86,18 @@ test('media files have a safe file signature and every imported image is local',
   assert.equal(info.localImages,keys.size);
 });
 
+test('both rendered DSPy versions include inline identifiers and the screenshot code example',async()=>{
+  const id='dspy-o-framework-que-trata-prompts-como-codigo-compilavel-nao-como-strings';
+  for(const lang of ['pt-br','en']){
+    const html=await read(path.join(dist,lang,lang==='pt-br'?'artigos':'articles',id,'index.html'));
+    for(const identifier of ['Signature','Modules','dspy.Predict','dspy.ChainOfThought','dspy.ReAct','dspy.Retrieve']){
+      assert.ok(html.includes(`<code>${identifier}</code>`),`${lang}: missing inline code ${identifier}`);
+    }
+    assert.ok(html.includes('<pre><code>&quot;question → answer&quot;</code></pre>'));
+    assert.ok(!/<pre>\s*<\/pre>/.test(html));
+  }
+});
+
 test('catalogue and feeds include every article in each language, without private export data',async()=>{
   for(const lang of ['pt-br','en']){
     const homepage=await read(path.join(dist,lang,'index.html'));
