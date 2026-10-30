@@ -5,6 +5,7 @@
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
+    "new:article": "node scripts/new-article.mjs",
     "build": "node scripts/build.mjs",
     "test": "node --test scripts/*.test.mjs",
     "check": "npm run build && npm test",

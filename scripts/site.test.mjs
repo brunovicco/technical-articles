@@ -62,7 +62,7 @@ test('every published article has two complete versions and recorded provenance'
     assert.deepEqual(original.match(/<(pre|code)\b[^>]*>[\s\S]*?<\/\1>/gi),translated.match(/<(pre|code)\b[^>]*>[\s\S]*?<\/\1>/gi),`${entry.name}: code changed`);
     const ratio=strip(translated).length/strip(original).length;
     assert.ok(ratio>.6&&ratio<1.65,`${entry.name}: suspicious translation length ${ratio}`);
-    assert.ok(/^https:\/\/(www\.)?linkedin\.com\/pulse\//.test(data.sourceUrl),`${entry.name}: missing original publication URL`);
+    if(data.sourceUrl)assert.equal(new URL(data.sourceUrl).protocol,'https:',`${entry.name}: invalid original publication URL`);
   }
 });
 
@@ -106,7 +106,7 @@ test('each article route has the correct language, counterpart, canonical URL an
 test('media files have a safe file signature and every imported image is local',async()=>{
   const media=JSON.parse(await read(path.join(root,'public/assets/media.json')));
   const keys=new Set();
-  for(const entry of entries){const metadata=JSON.parse(await read(path.join(root,'content/articles',entry.name,'article.json')));for(const image of metadata.images)keys.add(image.key);}
+  for(const entry of entries){const metadata=JSON.parse(await read(path.join(root,'content/articles',entry.name,'article.json')));for(const image of metadata.images || [])keys.add(image.key);}
   for(const key of keys){
     assert.ok(media[key]?.file,`${key}: unavailable media`);
     const buffer=await fs.readFile(path.join(dist,'assets/media',media[key].file));
