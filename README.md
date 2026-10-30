@@ -115,7 +115,7 @@ The importer processes articles with recorded publication dates, sanitizes their
 
 ## Configuration
 
-Edit `site.config.json` to change the site identity, default language, author links, and URL. `defaultLanguage` is `en`; both `en` and `pt-br` are supported. The root entry point, fallback page, and preview link use this setting.
+Edit `site.config.json` to change the site identity, default language, author links, URL, and the optional GoatCounter code. `defaultLanguage` is `en`; both `en` and `pt-br` are supported. The root entry point, fallback page, and preview link use this setting.
 
 On GitHub Actions, the default site URL is derived from `GITHUB_REPOSITORY`. Set `SITE_URL` to build for a different address or custom domain. Custom domains also require configuration in **Settings → Pages**.
 
@@ -144,7 +144,13 @@ See [GitHub's custom Pages workflow documentation](https://docs.github.com/en/pa
 
 Tests verify bilingual coverage, preservation of translation structure and code, local references, media integrity, routes, language metadata, English defaults, and code formatting. Automated checks do not replace editorial review of technical content.
 
-The site has no backend, analytics, tracking cookies, or remote fonts. Theme preferences are stored only in the reader's browser.
+The site has no backend, tracking cookies, or remote fonts, and pages load no third-party scripts. Theme preferences are stored only in the reader's browser.
+
+### Page-view counting (optional)
+
+Page views are counted with [GoatCounter](https://www.goatcounter.com) using the site code in `site.config.json` (`"goatcounter"`). Set it to an empty string to disable counting, or set the `GOATCOUNTER` environment variable to override it for a single build (an empty value disables it). The build then adds `public/assets/goatcounter.js`, a self-hosted copy of GoatCounter's ISC-licensed script, to every page except the root redirect. The script sets no cookies and sends each page view, referrer, and screen size to `https://<code>.goatcounter.com`; localhost is ignored. Readers who block scripts are not counted, and RSS feed reads are not counted.
+
+To exclude your own visits, open any page of the site with `#toggle-goatcounter` appended to the URL once per browser. Update the self-hosted script by downloading `https://gc.zgo.at/count.js` again and reviewing the diff. Mention counting in the site's privacy notice if one is added.
 
 ## Repository protection
 

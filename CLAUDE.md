@@ -23,7 +23,7 @@ node --test scripts/site.test.mjs
 node --test --test-name-pattern="English is the default" scripts/site.test.mjs
 ```
 
-`ALLOW_INCOMPLETE_TRANSLATIONS=1 npm run build` permits a missing language version for previews only. `SITE_URL` overrides the site URL; on GitHub Actions it is derived from `GITHUB_REPOSITORY`.
+`ALLOW_INCOMPLETE_TRANSLATIONS=1 npm run build` permits a missing language version for previews only. `GOATCOUNTER` overrides the optional GoatCounter site code from `site.config.json` (empty disables counting); `SITE_URL` overrides the site URL; on GitHub Actions it is derived from `GITHUB_REPOSITORY`.
 
 ## Architecture
 
