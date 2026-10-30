@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { formatCode } from './format-code.mjs';
-import { renderProfile } from '../public/assets/profile-content.mjs';
+import { renderProfile, renderProjects, profileSources } from '../public/assets/profile-content.mjs';
 
 export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const config=JSON.parse(await fs.readFile(path.join(root,'site.config.json'),'utf8'));
@@ -194,10 +194,11 @@ function articlepage(article,lang){
   return shell({lang,title,description:article.excerpt[lang],route:articlePath(lang,article.id),alternate,body,article});
 }
 const profileSnapshots=Object.fromEntries(await Promise.all(['en','pt-br'].map(async lang=>[lang,await fs.readFile(path.join(root,'content/profile',`${lang}.md`),'utf8')])));
+const profileProjectSnapshots=Object.fromEntries(await Promise.all(['en','pt-br'].map(async lang=>[lang,await fs.readFile(path.join(root,'content/profile',`projects-${lang}.md`),'utf8')])));
 function aboutpage(lang){
   const t=messages[lang];
-  const body=`<script type="module" src="${url('/assets/profile-sync.mjs')}"></script><main id="main" class="about-page"><p class="eyebrow">${t.aboutEyebrow}</p><h1>${t.aboutTitle}</h1><div class="about-grid"><div class="about-monogram" aria-hidden="true">bv<span>•</span></div><div class="prose"><div data-profile-about data-profile-state="snapshot">${renderProfile(profileSnapshots[lang],lang)}</div><div class="about-links"><a class="text-cta" href="${config.github}">GitHub ↗</a><a class="text-cta" href="${config.linkedin}">LinkedIn ↗</a></div><a class="back-link" href="${url('/'+lang+'/')}#library">← ${t.back}</a></div></div></main>`;
-  return shell({lang,title:t.about,description:plain(profileSnapshots[lang]).slice(0,240),route:`/${lang}/${lang==='pt-br'?'sobre':'about'}/`,alternate:`/${other(lang)}/${lang==='pt-br'?'about':'sobre'}/`,body});
+  const body=`<script type="module" src="${url('/assets/profile-sync.mjs')}"></script><main id="main" class="about-page"><p class="eyebrow">${t.aboutEyebrow}</p><h1>${t.aboutTitle}</h1><div class="about-grid"><div class="about-monogram" aria-hidden="true">bv<span>•</span></div><div class="prose"><div data-profile-about data-profile-state="snapshot">${renderProfile(profileSnapshots[lang],lang)}</div><section class="profile-projects" aria-labelledby="profile-projects-heading"><h2 id="profile-projects-heading">${profileSources[lang].projectsHeading}</h2><div data-profile-projects data-profile-state="snapshot">${renderProjects(profileProjectSnapshots[lang],lang)}</div></section><div class="about-links"><a class="text-cta" href="${config.github}">GitHub ↗</a><a class="text-cta" href="${config.linkedin}">LinkedIn ↗</a></div><a class="back-link" href="${url('/'+lang+'/')}#library">← ${t.back}</a></div></div></main>`;
+  return shell({lang,title:t.about,description:plain(renderProfile(profileSnapshots[lang],lang)).slice(0,240),route:`/${lang}/${lang==='pt-br'?'sobre':'about'}/`,alternate:`/${other(lang)}/${lang==='pt-br'?'about':'sobre'}/`,body});
 }
 async function write(file,content){const destination=path.join(output,file);await fs.mkdir(path.dirname(destination),{recursive:true});await fs.writeFile(destination,content);}
 await fs.rm(output,{recursive:true,force:true});await fs.mkdir(output,{recursive:true});await fs.cp(path.join(root,'public'),output,{recursive:true});

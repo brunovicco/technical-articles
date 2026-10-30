@@ -32,3 +32,5 @@ html[data-theme=dark]{--code-bg:#1b233d;--code-border:#455171;--code-ink:#e5eaf7
 .languages>a:focus-visible{outline:2px solid #b9dcff;outline-offset:2px}
 .theme-toggle{min-width:44px;min-height:44px}
 @media(max-width:600px){.site-header{flex-wrap:wrap;padding-block:14px;row-gap:12px}.header-right{width:100%;justify-content:space-between;gap:10px}.main-nav{gap:18px}.main-nav a{font-size:12px}.languages{gap:4px;font-size:14px}.languages>a{min-width:46px;min-height:44px}.wordmark{font-size:11px;letter-spacing:.1em}}
+
+.profile-projects{margin-top:48px;min-width:0}.prose .profile-project-list{list-style:none;padding:0;margin:24px 0;display:grid;gap:16px}.prose .profile-project-list>li{margin:0;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--paper);overflow-wrap:anywhere}.prose .profile-project-list h3{margin:0 0 10px;font-size:21px;line-height:1.4}.prose .profile-project-list h3 a{text-decoration:none}.prose .profile-project-list h3 a:hover{text-decoration:underline}.prose .profile-project-list p{margin:0;font-size:15px;line-height:1.75;color:var(--muted)}
