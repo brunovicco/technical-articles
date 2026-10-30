@@ -143,7 +143,11 @@ function minutes(article,lang){return Math.max(1,Math.ceil(article.wordCount[lan
 function tagLabel(tag,lang){return messages[lang].tags[tag]||tag;}
 function tags(article,lang){return `<div class="tags">${article.tags.map(tag=>`<span>${escape(tagLabel(tag,lang))}</span>`).join('')}</div>`;}
 function languageSwitch(lang,alternate){
-  return `<nav class="languages" aria-label="${lang==='pt-br'?'Idioma':'Language'}"><a lang="pt-BR" hreflang="pt-BR" href="${url(lang==='pt-br'?alternate.current:alternate.other)}" ${lang==='pt-br'?'aria-current="page"':''}>PT<span class="sr-only"> · Português do Brasil</span></a><span aria-hidden="true">/</span><a lang="en" hreflang="en" href="${url(lang==='en'?alternate.current:alternate.other)}" ${lang==='en'?'aria-current="page"':''}>EN<span class="sr-only"> · English</span></a></nav>`;
+  const links=['en','pt-br'].map(candidate=>{
+    const name=candidate==='en'?'English':'Português do Brasil';
+    return `<a lang="${isoLocale(candidate)}" hreflang="${isoLocale(candidate)}" title="${name}" href="${url(candidate===lang?alternate.current:alternate.other)}" ${candidate===lang?'aria-current="page"':''}>${candidate==='en'?'EN':'PT'}<span class="sr-only"> · ${name}</span></a>`;
+  });
+  return `<nav class="languages" aria-label="${lang==='pt-br'?'Idioma':'Language'}">${links.join('')}</nav>`;
 }
 function shell({lang,title,description,route,alternate,body,article=null,noindex=false}){
   const t=messages[lang];

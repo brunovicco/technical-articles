@@ -31,6 +31,19 @@ test('English is the default entry point and fallback language while Portuguese 
   assert.ok(portuguese.includes('Notas técnicas'));
 });
 
+test('language choices list English first and preserve the matching article in both languages',async()=>{
+  const id='quem-esta-chamando-a-tool';
+  for(const lang of ['en','pt-br']){
+    const html=await read(path.join(dist,lang,lang==='en'?'articles':'artigos',id,'index.html'));
+    const navigation=html.match(/<nav class="languages"[^>]*>([\s\S]*?)<\/nav>/)[1];
+    assert.ok(navigation.indexOf('lang="en"')<navigation.indexOf('lang="pt-BR"'));
+    assert.ok(navigation.includes(`${base}/en/articles/${id}/`));
+    assert.ok(navigation.includes(`${base}/pt-br/artigos/${id}/`));
+    assert.equal((navigation.match(/aria-current="page"/g)||[]).length,1);
+    assert.ok(navigation.includes(`lang="${lang==='en'?'en':'pt-BR'}" hreflang="${lang==='en'?'en':'pt-BR'}" title="${lang==='en'?'English':'Português do Brasil'}" href="${base}/${lang}/${lang==='en'?'articles':'artigos'}/${id}/" aria-current="page"`));
+  }
+});
+
 test('every published article has two complete versions and recorded provenance',async()=>{
   assert.equal(info.articles,entries.length);
   assert.equal(info.versions,entries.length*2);
