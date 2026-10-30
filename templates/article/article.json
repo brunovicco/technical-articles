@@ -1,0 +1,19 @@
+{
+  "id": "article-slug",
+  "originalLanguage": "pt-br",
+  "date": "2026-01-01",
+  "tags": ["engineering"],
+  "versions": {
+    "en": {
+      "title": "Article title in English",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    },
+    "pt-br": {
+      "title": "Título do artigo em português",
+      "kind": "original"
+    }
+  },
+  "images": []
+}

@@ -33,12 +33,12 @@ const messages={
     results:'artigos encontrados',empty:'Nenhum artigo encontrado.',emptyHelp:'Tente outro termo ou remova os filtros.',reset:'Limpar filtros',
     read:'Ler artigo',minutes:'min de leitura',toc:'Neste artigo',original:'Texto original',translation:'Tradução do original em inglês',
     translationNote:'Esta é uma tradução assistida por IA do artigo original em inglês, ainda sem revisão editorial do autor. Código, referências e afirmações do texto de origem foram preservados. Em caso de dúvida, consulte o original.',
-    originalLink:'Ler o texto original',linkedin:'Publicado originalmente no LinkedIn',image:'Figura do artigo original — ver no LinkedIn',
+    native:'Publicado originalmente neste site',originalLink:'Ler o texto original',linkedin:'Publicado originalmente no LinkedIn',image:'Figura do artigo original — ver no LinkedIn',
     related:'Continue a leitura',back:'Voltar aos artigos',footer:'Engenharia, arquitetura e IA em produção.',feed:'Feed RSS',theme:'Alternar tema claro ou escuro',
     copied:'Copiado',copy:'Copiar código',aboutTitle:'Engenharia com contexto.',aboutEyebrow:'SOBRE O AUTOR',
     aboutBody:'Sou Bruno Vicco. Trabalho com engenharia e arquitetura de IA, com foco em sistemas que precisam funcionar em produção: agentes, RAG, plataformas, segurança, observabilidade e governança.',
     aboutSecond:'Minha trajetória em serviços financeiros influencia a forma como penso tecnologia. Interesso-me pela ligação entre decisões de arquitetura, necessidades do negócio e controles que podem ser demonstrados na prática.',
-    aboutThird:'Este espaço reúne meus artigos técnicos, originalmente publicados no LinkedIn. Os textos mantêm suas datas e referências históricas; as traduções são identificadas em cada artigo.',
+    aboutThird:'Este espaço reúne meus artigos técnicos: publicações inéditas e textos publicados anteriormente no LinkedIn. Os textos mantêm suas datas e referências históricas; as traduções são identificadas em cada artigo.',
     archiveNote:'Textos completos em português e inglês. As traduções estão identificadas nos artigos.',
     source:'ORIGEM',published:'Publicado em',notFound:'Página não encontrada',notFoundDesc:'O endereço pode ter mudado. Explore a biblioteca para encontrar o artigo.',
     tags:{agents:'Arquitetura & agentes',security:'Segurança',governance:'Governança',engineering:'Engenharia',platforms:'Plataformas',observability:'Observabilidade'},
@@ -54,12 +54,12 @@ const messages={
     results:'articles found',empty:'No articles found.',emptyHelp:'Try another term or remove the filters.',reset:'Reset filters',
     read:'Read article',minutes:'min read',toc:'On this page',original:'Original text',translation:'Translated from Portuguese',
     translationNote:'This is an AI-assisted translation of the original Portuguese article, pending editorial review by the author. Code, references and claims from the source have been preserved. When in doubt, consult the original.',
-    originalLink:'Read the original text',linkedin:'Originally published on LinkedIn',image:'Figure from the original article — view on LinkedIn',
+    native:'Originally published on this site',originalLink:'Read the original text',linkedin:'Originally published on LinkedIn',image:'Figure from the original article — view on LinkedIn',
     related:'Keep reading',back:'Back to articles',footer:'Engineering, architecture and AI in production.',feed:'RSS feed',theme:'Toggle light or dark theme',
     copied:'Copied',copy:'Copy code',aboutTitle:'Engineering in context.',aboutEyebrow:'ABOUT THE AUTHOR',
     aboutBody:'I’m Bruno Vicco. I work on AI engineering and architecture, focusing on systems that need to operate in production: agents, RAG, platforms, security, observability and governance.',
     aboutSecond:'My background in financial services shapes how I think about technology. I’m interested in the connection between architectural decisions, business needs and controls that can be demonstrated in practice.',
-    aboutThird:'This space brings together my technical articles, originally published on LinkedIn. The texts retain their dates and historical references; translations are identified on each article.',
+    aboutThird:'This space brings together my technical articles: original publications and texts previously published on LinkedIn. The texts retain their dates and historical references; translations are identified on each article.',
     archiveNote:'Full articles in Portuguese and English. Translations are identified on article pages.',
     source:'SOURCE',published:'Published on',notFound:'Page not found',notFoundDesc:'The address may have changed. Explore the library to find the article.',
     tags:{agents:'Architecture & agents',security:'Security',governance:'Governance',engineering:'Engineering',platforms:'Platforms',observability:'Observability'},
@@ -73,6 +73,12 @@ for(const entry of directories){
   const metadata=JSON.parse(await fs.readFile(path.join(dir,'article.json'),'utf8'));
   if(!/^[a-z0-9-]+$/.test(metadata.id)||metadata.id!==entry.name)throw new Error(`Invalid article id: ${entry.name}`);
   if(!/^\d{4}-\d{2}-\d{2}$/.test(metadata.date))throw new Error(`Invalid publication date: ${entry.name}`);
+  if(metadata.sourceUrl != null && metadata.sourceUrl !== ''){
+    const source=new URL(metadata.sourceUrl);
+    if(source.protocol!=='https:' || source.username || source.password)throw new Error(`Invalid source URL: ${entry.name}`);
+  }
+  metadata.sourceUrl=metadata.sourceUrl || undefined;
+  metadata.images ??= [];
   metadata.content={};metadata.excerpt={};metadata.wordCount={};
   for(const lang of ['pt-br','en']){
     if(!metadata.versions[lang]){
@@ -101,6 +107,7 @@ function localizeBody(article,lang){
   content=content.replace(/<img\s[^>]*data-asset="([a-f0-9]+)"[^>]*>/g,(original,key)=>{
     const asset=assets[key];
     if(asset?.file)return original.replace(/src="[^"]*"/,`src="${url('/assets/media/'+asset.file)}"`).replace('<img ',`<img ${asset.width?`width="${asset.width}" height="${asset.height}" `:''}`);
+    if(!article.sourceUrl)throw new Error(`Missing local media: ${article.id}/${key}`);
     return `<a class="image-fallback" href="${escape(article.sourceUrl)}" target="_blank" rel="noopener noreferrer">↗ ${text.image}</a>`;
   });
   content=content.replace(/<figure>([\s\S]*?)<\/figure>/g,(_,figure)=>{
@@ -173,11 +180,22 @@ function homepage(lang){
 <section class="library" id="library" aria-labelledby="library-title"><div class="section-top"><div><p class="eyebrow">${t.library}</p><h2 id="library-title">${t.all}<sup>${available.length}</sup></h2><p>${t.libraryDesc}</p></div><a class="rss-link" href="${url('/'+lang+'/feed.xml')}">${t.feed} ↗</a></div><div class="library-controls"><div class="search-field"><span aria-hidden="true">⌕</span><label class="sr-only" for="search">${t.searchLabel}</label><input type="search" id="search" placeholder="${t.search}" autocomplete="off"><button type="button" id="clear-search" aria-label="${t.clear}" hidden>×</button></div><label class="sr-only" for="year">${t.yearLabel}</label><select id="year"><option value="all">${t.allYears}</option>${years.map(y=>`<option>${y}</option>`).join('')}</select><label class="sr-only" for="sort">${t.sortLabel}</label><select id="sort"><option value="newest">${t.newest}</option><option value="oldest">${t.oldest}</option></select></div><div class="topics" role="group" aria-label="${lang==='pt-br'?'Filtrar por tema':'Filter by topic'}"><button type="button" data-topic="all" aria-pressed="true">${lang==='pt-br'?'Todos':'All'}</button>${Object.keys(t.tags).map(tag=>`<button type="button" data-topic="${tag}" aria-pressed="false">${t.tags[tag]}</button>`).join('')}</div><div class="results-bar"><p id="results" role="status" aria-live="polite">${available.length} ${t.results}</p><button type="button" id="reset-filters" hidden>${t.reset} ↺</button></div><ol class="article-list">${available.map((a,i)=>row(a,lang,i)).join('')}</ol><div class="empty-state" hidden><h3>${t.empty}</h3><p>${t.emptyHelp}</p></div><p class="archive-note">${t.archiveNote}</p><noscript><p>${lang==='pt-br'?'A lista completa está disponível abaixo. Ative JavaScript para usar a busca e os filtros.':'The full list is available below. Enable JavaScript to use search and filters.'}</p></noscript></section></main>`;
   return shell({lang,description:t.intro,route:`/${lang}/`,alternate:`/${other(lang)}/`,body});
 }
+function publicationSource(article,lang){
+  const t=messages[lang];
+  if(!article.sourceUrl)return {sidebar:`<p>${t.native}.</p>`,footer:`${t.native}.`};
+  const host=new URL(article.sourceUrl).hostname;
+  const linkedin=/(^|\.)linkedin\.com$/.test(host);
+  const label=linkedin?'LinkedIn':host;
+  const link=`<a href="${escape(article.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escape(label)} ↗</a>`;
+  const footerLink=linkedin?link.replace('>LinkedIn ↗</a>',`>${lang==='pt-br'?'Ver publicação':'View publication'} ↗</a>`):link;
+  return {sidebar:link,footer:linkedin?`${t.linkedin}. ${footerLink}`:`${lang==='pt-br'?'Publicado originalmente em':'Originally published on'} ${footerLink}.`};
+}
 function articlepage(article,lang){
   const t=messages[lang],version=article.versions[lang],title=version.title,{content,headings}=localizeBody(article,lang);
+  const source=publicationSource(article,lang);
   const alternate=article.versions[other(lang)]?articlePath(other(lang),article.id):`/${other(lang)}/`;
   const related=articles.filter(a=>a.id!==article.id&&a.versions[lang]).map(a=>({a,shared:a.tags.filter(tag=>article.tags.includes(tag)).length})).sort((a,b)=>b.shared-a.shared||b.a.date.localeCompare(a.a.date)).slice(0,3).map(r=>r.a);
-  const body=`<main id="main"><div class="article-cover"><img src="${url(`/assets/covers/${article.id}-${lang}.svg`)}" alt="${escape(title)}" width="1600" height="720" fetchpriority="high"></div><div class="article-heading"><a class="back-link" href="${url('/'+lang+'/')}#library">← ${t.back}</a>${tags(article,lang)}<h1>${escape(title)}</h1><div class="article-meta"><span class="author-badge" aria-hidden="true">BV</span><span><strong>Bruno Vicco</strong><span class="meta-detail"><time datetime="${article.date}">${dateLabel(article.date,lang)}</time> · ${minutes(article,lang)} ${t.minutes}</span></span><span class="version-type">${version.kind==='translation'?t.translation:t.original}</span></div></div><div class="reading-layout"><aside class="toc"><details open><summary>${t.toc}</summary><nav aria-label="${t.toc}">${headings.map(h=>`<a class="toc-level-${h.level}" href="#${h.id}">${escape(h.title)}</a>`).join('')}</nav></details><div class="toc-source"><span class="eyebrow">${t.source}</span><a href="${escape(article.sourceUrl)}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></aside><div class="reading-main">${version.kind==='translation'?`<aside class="translation-note"><span class="translation-label">${t.translation}</span><p>${version.reviewStatus==='reviewed'?(lang==='pt-br'?'Tradução do artigo original em inglês, com revisão editorial do autor.':'Translation of the original Portuguese article, editorially reviewed by the author.'):t.translationNote}</p><a href="${url(articlePath(article.originalLanguage,article.id))}">${t.originalLink} ↗</a></aside>`:''}<article class="prose" data-copy="${t.copy}" data-copied="${t.copied}">${content}</article><div class="article-end"><span class="end-mark" aria-hidden="true">✳</span><p>${t.linkedin}. <a href="${escape(article.sourceUrl)}" target="_blank" rel="noopener noreferrer">${lang==='pt-br'?'Ver publicação':'View publication'} ↗</a></p></div></div></div><section class="related"><p class="eyebrow">${lang==='pt-br'?'MAIS NOTAS':'MORE NOTES'}</p><h2>${t.related}</h2><ol class="article-list">${related.map((a,i)=>row(a,lang,i)).join('')}</ol></section></main>`;
+  const body=`<main id="main"><div class="article-cover"><img src="${url(`/assets/covers/${article.id}-${lang}.svg`)}" alt="${escape(title)}" width="1600" height="720" fetchpriority="high"></div><div class="article-heading"><a class="back-link" href="${url('/'+lang+'/')}#library">← ${t.back}</a>${tags(article,lang)}<h1>${escape(title)}</h1><div class="article-meta"><span class="author-badge" aria-hidden="true">BV</span><span><strong>Bruno Vicco</strong><span class="meta-detail"><time datetime="${article.date}">${dateLabel(article.date,lang)}</time> · ${minutes(article,lang)} ${t.minutes}</span></span><span class="version-type">${version.kind==='translation'?t.translation:t.original}</span></div></div><div class="reading-layout"><aside class="toc"><details open><summary>${t.toc}</summary><nav aria-label="${t.toc}">${headings.map(h=>`<a class="toc-level-${h.level}" href="#${h.id}">${escape(h.title)}</a>`).join('')}</nav></details><div class="toc-source"><span class="eyebrow">${t.source}</span>${source.sidebar}</div></aside><div class="reading-main">${version.kind==='translation'?`<aside class="translation-note"><span class="translation-label">${t.translation}</span><p>${version.reviewStatus==='reviewed'?(lang==='pt-br'?'Tradução do artigo original em inglês, com revisão editorial do autor.':'Translation of the original Portuguese article, editorially reviewed by the author.'):t.translationNote}</p><a href="${url(articlePath(article.originalLanguage,article.id))}">${t.originalLink} ↗</a></aside>`:''}<article class="prose" data-copy="${t.copy}" data-copied="${t.copied}">${content}</article><div class="article-end"><span class="end-mark" aria-hidden="true">✳</span><p>${source.footer}</p></div></div></div><section class="related"><p class="eyebrow">${lang==='pt-br'?'MAIS NOTAS':'MORE NOTES'}</p><h2>${t.related}</h2><ol class="article-list">${related.map((a,i)=>row(a,lang,i)).join('')}</ol></section></main>`;
   return shell({lang,title,description:article.excerpt[lang],route:articlePath(lang,article.id),alternate,body,article});
 }
 function aboutpage(lang){

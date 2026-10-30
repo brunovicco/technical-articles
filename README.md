@@ -61,7 +61,19 @@ Repository contribution guidance is recorded in [AGENTS.md](AGENTS.md).
 
 Each article directory contains metadata and a full HTML body for both supported languages. The stable `id` forms the article URL; use lowercase ASCII letters, digits, and hyphens.
 
-To add an article, follow an existing directory's structure and provide `article.json`, `en.html`, and `pt-br.html`. Bodies contain article content only, without document wrappers, scripts, or styles. The build applies a shared layout.
+To create a new article with ready-to-edit Portuguese and English bodies:
+
+```sh
+npm run new:article -- my-article-slug
+# Optional: choose English as the original language.
+npm run new:article -- another-article-slug en
+```
+
+Replace the sample titles and bodies, confirm the date and topics, and review the translation before merging. See [the template guide](templates/README.md) for the complete workflow. Templates stay outside the published catalogue.
+
+Each article provides `article.json`, `en.html`, and `pt-br.html`. Bodies contain article content only, without document wrappers, scripts, or styles. The build applies a shared layout.
+
+For an original article published on this site, omit `sourceUrl`. The page identifies this site as its original publication and omits external provenance from structured metadata. For a republication, set `sourceUrl` to the original HTTPS address; LinkedIn URLs retain their existing attribution and other sources display their domain. `images` defaults to an empty list when omitted.
 
 Available topics are `agents`, `security`, `governance`, `engineering`, `platforms`, and `observability`.
 
@@ -125,3 +137,9 @@ See [GitHub's custom Pages workflow documentation](https://docs.github.com/en/pa
 Tests verify bilingual coverage, preservation of translation structure and code, local references, media integrity, routes, language metadata, English defaults, and code formatting. Automated checks do not replace editorial review of technical content.
 
 The site has no backend, analytics, tracking cookies, or remote fonts. Theme preferences are stored only in the reader's browser.
+
+## Repository protection
+
+Changes to `main` go through pull requests and the required `build` check, with the branch up to date before merge. Force pushes and branch deletion are blocked, including for administrators. Conversations must be resolved before merging. A second person's approval is not required for this single-maintainer project.
+
+Secret scanning and push protection are enabled on GitHub. Never commit private LinkedIn exports, credentials, or personal contact data. Deployment remains an explicit manual action after merge.
