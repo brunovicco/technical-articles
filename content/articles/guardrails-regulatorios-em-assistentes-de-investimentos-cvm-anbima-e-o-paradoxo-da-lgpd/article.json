@@ -8,6 +8,10 @@
     "engineering",
     "platforms"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 4
+  },
   "versions": {
     "pt-br": {
       "title": "Guardrails regulatórios em assistentes de investimentos: CVM, ANBIMA e o paradoxo da LGPD",

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "regulated-finance",
+    "title": {
+      "en": "Generative AI in a regulated financial institution",
+      "pt-br": "IA generativa em instituição financeira regulada"
+    },
+    "description": {
+      "en": "Six parts on adopting generative AI where the standard is demonstrability: regulation, frameworks, architecture, development workflow and harness.",
+      "pt-br": "Seis partes sobre adotar IA generativa onde o critério é a demonstrabilidade: regulação, frameworks, arquitetura, fluxo de desenvolvimento e harness."
+    }
+  },
+  {
+    "id": "multi-agent-state",
+    "title": {
+      "en": "State and identity in multi-agent systems",
+      "pt-br": "Estado e identidade em sistemas multiagente"
+    },
+    "description": {
+      "en": "Why multi-agent systems break in state and execution identity before the prompt, and how to choose and combine LangGraph, Agno and CrewAI.",
+      "pt-br": "Por que sistemas multiagente quebram em estado e identidade de execução antes do prompt, e como escolher e combinar LangGraph, Agno e CrewAI."
+    }
+  },
+  {
+    "id": "controlled-autonomy",
+    "title": {
+      "en": "Controlled autonomy and authority",
+      "pt-br": "Autonomia controlada e autoridade"
+    },
+    "description": {
+      "en": "From six architecture patterns to the line between an agent's decision and its right to act, and who is actually calling the tool.",
+      "pt-br": "De seis padrões de arquitetura à fronteira entre a decisão do agente e o direito de agir, e quem de fato está chamando a tool."
+    }
+  },
+  {
+    "id": "measuring-engineering",
+    "title": {
+      "en": "Measuring engineering in the age of agents",
+      "pt-br": "Medindo engenharia na era dos agentes"
+    },
+    "description": {
+      "en": "Why tokens fail as a productivity metric, and how DORA, developer experience and cohorts can measure the real impact of AI.",
+      "pt-br": "Por que tokens falham como métrica de produtividade e como DORA, developer experience e coortes medem o impacto real da IA."
+    }
+  },
+  {
+    "id": "conversational-assistant",
+    "title": {
+      "en": "Building a conversational assistant: LangGraph, DSPy and Redis",
+      "pt-br": "Construindo um assistente conversacional: LangGraph, DSPy e Redis"
+    },
+    "description": {
+      "en": "A production assistant component by component, from memory and Redis modelling to routers, DSPy, guardrails, observability, and the full pipeline.",
+      "pt-br": "Um assistente em produção componente a componente, de memória e modelagem no Redis a routers, DSPy, guardrails, observabilidade e o pipeline completo."
+    }
+  },
+  {
+    "id": "enterprise-ai-security",
+    "title": {
+      "en": "Enterprise AI security",
+      "pt-br": "Segurança de IA corporativa"
+    },
+    "description": {
+      "en": "A four-part series: terms of service and data privacy, platform security features, proactive threat detection, and end-to-end governance.",
+      "pt-br": "Série em quatro partes: termos de serviço e privacidade de dados, recursos de segurança das plataformas, detecção proativa de ameaças e governança de ponta a ponta."
+    }
+  },
+  {
+    "id": "provider-dependency",
+    "title": {
+      "en": "AI provider dependency, cost and resilience",
+      "pt-br": "Dependência, custo e resiliência de provedores de IA"
+    },
+    "description": {
+      "en": "Resilient architectures, the cost of AI, concentration risk, and regulated infrastructure in Brazil.",
+      "pt-br": "Arquiteturas resilientes, o custo da IA, risco de concentração e infraestrutura regulada no Brasil."
+    }
+  },
+  {
+    "id": "ai-regulation-eu-us",
+    "title": {
+      "en": "AI regulation: EU and USA",
+      "pt-br": "Regulação de IA: UE e EUA"
+    },
+    "description": {
+      "en": "The EU AI Act, the fragmented US approach, and a side-by-side comparison.",
+      "pt-br": "O AI Act da UE, a abordagem fragmentada dos EUA e uma comparação lado a lado."
+    }
+  },
+  {
+    "id": "llm-foundations",
+    "title": {
+      "en": "Foundations: RAG, prompting and fine-tuning",
+      "pt-br": "Fundamentos: RAG, prompts e fine-tuning"
+    },
+    "description": {
+      "en": "The core techniques for adapting LLMs, and how to choose between them.",
+      "pt-br": "As técnicas centrais para adaptar LLMs e como escolher entre elas."
+    }
+  }
+]

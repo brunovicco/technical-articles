@@ -7,6 +7,10 @@
     "engineering",
     "platforms"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 1
+  },
   "versions": {
     "pt-br": {
       "title": "Fat vs Slim vs Híbrido no Redis Stack: o modelo que mudou minha forma de pensar em retrieval para LLM",

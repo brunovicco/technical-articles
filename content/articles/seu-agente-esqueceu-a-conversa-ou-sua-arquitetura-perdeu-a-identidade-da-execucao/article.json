@@ -8,6 +8,10 @@
     "agents",
     "engineering"
   ],
+  "series": {
+    "id": "multi-agent-state",
+    "part": 2
+  },
   "versions": {
     "pt-br": {
       "title": "Seu agente esqueceu a conversa ou sua arquitetura perdeu a identidade da execução?",

@@ -6,6 +6,10 @@
   "tags": [
     "governance"
   ],
+  "series": {
+    "id": "regulated-finance",
+    "part": 4
+  },
   "versions": {
     "pt-br": {
       "title": "Arquitetura: onde a política vira controle técnico e por que a residência de dados define o desenho",

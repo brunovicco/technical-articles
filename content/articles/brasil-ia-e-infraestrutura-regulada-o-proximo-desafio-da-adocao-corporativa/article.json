@@ -7,6 +7,10 @@
     "governance",
     "platforms"
   ],
+  "series": {
+    "id": "provider-dependency",
+    "part": 4
+  },
   "versions": {
     "pt-br": {
       "title": "Brasil, IA e infraestrutura regulada: o próximo desafio da adoção corporativa",

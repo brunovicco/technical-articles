@@ -6,6 +6,10 @@
   "tags": [
     "governance"
   ],
+  "series": {
+    "id": "regulated-finance",
+    "part": 1
+  },
   "versions": {
     "pt-br": {
       "title": "IA Generativa em Ambientes Regulados",

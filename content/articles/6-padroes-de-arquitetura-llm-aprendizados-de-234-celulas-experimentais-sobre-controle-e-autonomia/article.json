@@ -6,6 +6,10 @@
   "tags": [
     "agents"
   ],
+  "series": {
+    "id": "controlled-autonomy",
+    "part": 1
+  },
   "versions": {
     "pt-br": {
       "title": "6 padrões de arquitetura LLM: aprendizados de 234 células experimentais sobre controle e autonomia",

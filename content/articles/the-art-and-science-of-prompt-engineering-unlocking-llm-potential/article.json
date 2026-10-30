@@ -6,6 +6,10 @@
   "tags": [
     "engineering"
   ],
+  "series": {
+    "id": "llm-foundations",
+    "part": 2
+  },
   "versions": {
     "en": {
       "title": "The Art and Science of Prompt Engineering: Unlocking LLM Potential",

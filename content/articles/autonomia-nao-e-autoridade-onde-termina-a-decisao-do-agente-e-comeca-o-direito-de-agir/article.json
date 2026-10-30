@@ -6,6 +6,14 @@
   "tags": [
     "agents"
   ],
+  "series": {
+    "id": "controlled-autonomy",
+    "part": 2
+  },
+  "cover": {
+    "en": "autonomia-nao-e-autoridade-en.jpg",
+    "pt-br": "autonomia-nao-e-autoridade-en.jpg"
+  },
   "versions": {
     "pt-br": {
       "title": "Autonomia não é autoridade: onde termina a decisão do agente e começa o direito de agir",

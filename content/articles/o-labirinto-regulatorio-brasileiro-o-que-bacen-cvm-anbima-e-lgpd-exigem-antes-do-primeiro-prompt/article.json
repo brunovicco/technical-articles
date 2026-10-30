@@ -7,6 +7,10 @@
     "governance",
     "engineering"
   ],
+  "series": {
+    "id": "regulated-finance",
+    "part": 2
+  },
   "versions": {
     "pt-br": {
       "title": "O labirinto regulatório brasileiro: o que BACEN, CVM, ANBIMA e LGPD exigem antes do primeiro prompt",

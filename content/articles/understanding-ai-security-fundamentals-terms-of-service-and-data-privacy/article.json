@@ -6,6 +6,10 @@
   "tags": [
     "security"
   ],
+  "series": {
+    "id": "enterprise-ai-security",
+    "part": 1
+  },
   "versions": {
     "en": {
       "title": "Understanding AI Security Fundamentals: Terms of Service and Data Privacy",

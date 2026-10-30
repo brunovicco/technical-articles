@@ -6,6 +6,10 @@
   "tags": [
     "agents"
   ],
+  "series": {
+    "id": "multi-agent-state",
+    "part": 3
+  },
   "versions": {
     "pt-br": {
       "title": "LangGraph + Agno na mesma aplicação",

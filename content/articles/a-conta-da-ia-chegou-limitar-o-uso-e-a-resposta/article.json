@@ -7,6 +7,10 @@
     "governance",
     "platforms"
   ],
+  "series": {
+    "id": "provider-dependency",
+    "part": 2
+  },
   "versions": {
     "pt-br": {
       "title": "A conta da IA chegou: limitar o uso é a resposta?",

@@ -7,6 +7,14 @@
     "security",
     "agents"
   ],
+  "series": {
+    "id": "controlled-autonomy",
+    "part": 3
+  },
+  "cover": {
+    "en": "quem-esta-chamando-a-tool-en.png",
+    "pt-br": "quem-esta-chamando-a-tool-en.png"
+  },
   "versions": {
     "pt-br": {
       "title": "Quem está chamando a tool?",

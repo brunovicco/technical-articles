@@ -96,7 +96,7 @@ test('each article route has the correct language, counterpart, canonical URL an
       assert.ok(html.includes(`<link rel="canonical" href="${info.siteUrl}${route}">`));
       assert.ok(html.includes('application/ld+json'));
       assert.ok(html.includes(`/${lang==='en'?'pt-br/artigos':'en/articles'}/${entry.name}/`));
-      assert.equal(html.includes('class="translation-note"'),data.versions[lang].kind==='translation');
+      assert.ok(!html.includes('translation-note'));
       assert.ok(!/<img[^>]+src="https?:/i.test(html),'article image still depends on a remote CDN');
       assert.ok(!html.includes('image-fallback'),'unrecovered figure in output');
     }

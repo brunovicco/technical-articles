@@ -6,6 +6,10 @@
   "tags": [
     "engineering"
   ],
+  "series": {
+    "id": "llm-foundations",
+    "part": 1
+  },
   "versions": {
     "en": {
       "title": "From Search to Generation: Unlocking the Power of Retrieval-Augmented Generation (RAG)",

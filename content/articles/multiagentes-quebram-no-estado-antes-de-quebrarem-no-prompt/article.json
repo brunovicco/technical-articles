@@ -7,6 +7,10 @@
     "agents",
     "engineering"
   ],
+  "series": {
+    "id": "multi-agent-state",
+    "part": 1
+  },
   "versions": {
     "pt-br": {
       "title": "Multiagentes quebram no estado antes de quebrarem no prompt",

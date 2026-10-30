@@ -7,6 +7,10 @@
     "observability",
     "engineering"
   ],
+  "series": {
+    "id": "conversational-assistant",
+    "part": 10
+  },
   "versions": {
     "pt-br": {
       "title": "O pipeline completo: do texto do usuário à resposta formatada",

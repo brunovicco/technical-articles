@@ -6,6 +6,10 @@
   "tags": [
     "engineering"
   ],
+  "series": {
+    "id": "llm-foundations",
+    "part": 5
+  },
   "versions": {
     "en": {
       "title": "From RAG to Hybrid Architectures",

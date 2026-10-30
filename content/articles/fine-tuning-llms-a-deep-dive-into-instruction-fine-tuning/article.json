@@ -6,6 +6,10 @@
   "tags": [
     "engineering"
   ],
+  "series": {
+    "id": "llm-foundations",
+    "part": 3
+  },
   "versions": {
     "en": {
       "title": "Fine-tuning LLMs: A Deep Dive into Instruction Fine-tuning",

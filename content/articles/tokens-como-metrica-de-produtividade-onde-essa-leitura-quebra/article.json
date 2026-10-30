@@ -7,6 +7,10 @@
     "agents",
     "platforms"
   ],
+  "series": {
+    "id": "measuring-engineering",
+    "part": 1
+  },
   "versions": {
     "pt-br": {
       "title": "Tokens como métrica de produtividade: onde essa leitura quebra",
