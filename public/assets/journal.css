@@ -228,3 +228,49 @@ h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.03em}
   .site-footer{flex-direction:column;align-items:flex-start}
 }
 @media print{.topbar,.article-cover,.article-banner,.toc,.related{display:none!important}.prose{font-size:12pt}.prose figure,.prose figure:has(img){margin-inline:0}.prose figcaption{padding-left:0}.article-heading{padding-top:0;text-align:left;align-items:flex-start}}
+
+/* ── Patch 2026-10-30: featured cover, article eyebrow, mobile track rail, mobile menu ── */
+
+/* 5. Featured article with cover + excerpt */
+.featured{display:grid;grid-template-columns:minmax(0,1fr);gap:0;padding:64px 0;align-items:center}
+.featured.has-cover{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px}
+.featured-media{display:block}
+.featured-media img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line)}
+.featured-body{display:flex;flex-direction:column;align-items:flex-start;gap:18px;max-width:760px}
+.featured-label{display:flex;flex-direction:row;justify-content:flex-start;align-items:baseline;gap:16px;grid-column:auto}
+.featured-copy{text-decoration:none}
+.featured-copy h2{margin:0;font:400 clamp(34px,4vw,52px)/1.05 var(--serif);letter-spacing:-.02em;text-wrap:balance}
+.featured-copy:hover h2{color:var(--accent)}
+.featured-excerpt{margin:0;font:400 18px/1.6 var(--serif);color:var(--muted);text-wrap:pretty;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.featured-body .text-cta{margin-top:6px}
+
+/* 2. Track eyebrow leads; topics drop to quiet metadata */
+.article-heading .track-eyebrow~.tags{margin-top:4px;font:400 13px/1.5 var(--sans);letter-spacing:0;text-transform:none;color:var(--muted)}
+
+/* 4. Mobile menu (button is revealed by site.js; without JS the nav stays inline) */
+.menu-toggle{display:none}
+
+@media(max-width:900px){
+  .featured.has-cover{grid-template-columns:minmax(0,1fr);gap:28px}
+  /* 3. Track rail moves below the article on small screens */
+  .toc{display:contents}
+  .toc>details{order:0;width:100%;border-block:1px solid var(--line);padding:12px 0}
+  .reading-main{order:1}
+  .track-rail{order:2;margin-top:8px;padding-top:24px;border-top:1px solid var(--ink);font-size:14px}
+  .track-rail li{padding-block:4px}
+}
+@media(max-width:760px){
+  .featured{padding:32px 0}
+  .featured-copy h2{font-size:32px}
+  .featured-excerpt{font-size:17px}
+  .site-header{position:relative}
+  .header-right{gap:0}
+  .languages>a{min-width:44px}
+  .theme-toggle{min-width:44px}
+  .menu-toggle:not([hidden]){display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 0 0 8px;font:500 14px var(--sans);color:var(--ink)}
+  .site-header[data-menu] .main-nav{display:none}
+  .site-header[data-menu=open] .main-nav{display:flex;position:absolute;top:100%;left:0;right:0;z-index:10;flex-direction:column;align-items:stretch;gap:0;padding:4px var(--gutter) 12px;background:var(--bg);border-bottom:1px solid var(--line);font-size:16px}
+  .site-header[data-menu=open] .main-nav a{display:flex;align-items:center;min-height:48px;border-bottom:1px solid var(--line)}
+  .site-header[data-menu=open] .main-nav a:last-child{border-bottom:0}
+  .site-header[data-menu=open] .github-nav{display:flex}
+}

@@ -78,3 +78,16 @@
     for(const image of prose.querySelectorAll('img'))image.addEventListener('error',()=>{image.hidden=true;const link=document.createElement('a');link.className='image-fallback';link.textContent=pt?'↗ Ver figura na publicação original':'↗ View figure in the original publication';link.href=document.querySelector('.toc-source a').href;image.after(link);},{once:true});
   }
 })();
+
+(()=>{
+  'use strict';
+  const header=document.querySelector('.site-header'),button=document.querySelector('.menu-toggle'),nav=document.querySelector('#main-nav');
+  if(!header||!button||!nav)return;
+  const pt=document.body.dataset.locale==='pt-br';
+  const set=open=>{header.dataset.menu=open?'open':'closed';button.setAttribute('aria-expanded',String(open));button.textContent=open?(pt?'Fechar':'Close'):'Menu';};
+  button.hidden=false;set(false);
+  button.addEventListener('click',()=>set(header.dataset.menu!=='open'));
+  nav.addEventListener('click',event=>{if(event.target.closest('a'))set(false);});
+  addEventListener('keydown',event=>{if(event.key==='Escape'&&header.dataset.menu==='open'){set(false);button.focus();}});
+  document.addEventListener('click',event=>{if(header.dataset.menu==='open'&&!header.contains(event.target))set(false);});
+})();

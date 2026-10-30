@@ -9,7 +9,7 @@ A bilingual technical publication about AI engineering, architecture, agents, se
 - Full-text search, topic and year filters, chronological sorting, and shareable filter URLs.
 - Language switching on the same article, light/dark themes, and responsive layouts.
 - Linked table of contents, inline code styling, copyable code blocks, and print styles.
-- Locally hosted figures, captions, full-size images, and generated editorial SVG covers.
+- Locally hosted figures, captions, full-size images, and optional per-language article banners.
 - Separate RSS feeds, a sitemap, canonical URLs, `hreflang`, and structured article metadata.
 - Automated builds and tests, with deployment controlled by an explicit manual action.
 
@@ -91,11 +91,15 @@ The normal build requires both languages. For a temporary preview during an inco
 
 `content/tracks.json` defines ordered reading tracks (`id`, plus `title` and `description` in both languages). An article joins a track with `"series": { "id": "<track id>", "part": 1 }` in `article.json`. The build fails on an unknown track, a duplicate part, or a track without articles. Tracks are listed on the home page and get their own pages at `/en/tracks/<id>/` and `/pt-br/trilhas/<id>/`; track articles show a track eyebrow and a "This track" rail. Track numbers follow the order in `tracks.json`.
 
+### Banners
+
+An article can declare a banner per language with `"cover": { "en": "file.jpg", "pt-br": "file.jpg" }` in `article.json`. Files live in `public/assets/banners/` (PNG, JPEG or WebP, 16:9, preferably JPEG under about 250 KB). The banner appears below the article heading and as the home page featured image, and is used as `og:image`. A language without an entry shows no banner. The build fails if a listed file is missing.
+
 ### Code and figures
 
 The build marks technical identifiers, function calls, backtick-delimited snippets, and selected DSPy symbols as semantic code. An optional `codeTerms` list in `article.json` adds other symbols or class names. Imported bodies are not rewritten by presentation formatting; headings, links, and existing code markup are preserved.
 
-Inline figures are served from `public/assets/media/`. Editorial SVG covers are generated during the build. Empty code placeholders are omitted; missing source content is not reconstructed by the importer.
+Inline figures are served from `public/assets/media/`. Article banners live in `public/assets/banners/` and are referenced by the `cover` field in `article.json`. Empty code placeholders are omitted; missing source content is not reconstructed by the importer.
 
 ### Importing LinkedIn HTML articles
 

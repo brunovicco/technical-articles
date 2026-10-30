@@ -27,7 +27,7 @@ node --test --test-name-pattern="English is the default" scripts/site.test.mjs
 
 ## Architecture
 
-A dependency-free static site generator. `scripts/build.mjs` is the whole pipeline: it reads `site.config.json`, `content/articles/<id>/{article.json,en.html,pt-br.html}`, and `content/profile/*.md`, then writes `dist/` (not committed). All HTML is produced by template-literal functions in that file (`shell`, `homepage`, `articlepage`, `aboutpage`, ...), plus RSS feeds, sitemap, and generated SVG covers. Page-level UI strings live in the `messages` object (per language) at the top of `build.mjs`.
+A dependency-free static site generator. `scripts/build.mjs` is the whole pipeline: it reads `site.config.json`, `content/articles/<id>/{article.json,en.html,pt-br.html}`, and `content/profile/*.md`, then writes `dist/` (not committed). All HTML is produced by template-literal functions in that file (`shell`, `homepage`, `articlepage`, `aboutpage`, ...), plus RSS feeds, and sitemap. Page-level UI strings live in the `messages` object (per language) at the top of `build.mjs`.
 
 Key points that span files:
 
