@@ -146,20 +146,19 @@ Secret scanning and push protection are enabled on GitHub. Never commit private 
 
 ## About page and GitHub profile
 
-The About page uses the **About** section from
+The About page uses the **About** and **Flagship projects** sections from
 [`brunovicco/brunovicco/README.md`](https://github.com/brunovicco/brunovicco/blob/main/README.md)
-and **Sobre mim** from
+and **Sobre mim** and **Principais projetos** from
 [`README.pt-BR.md`](https://github.com/brunovicco/brunovicco/blob/main/README.pt-BR.md).
-Edit each language at its source. Keep these level-two headings; the section ends
-at the next level-two heading or horizontal rule. Other profile sections are not imported.
+Edit each language at its source. Keep these level-two headings; the sections end
+at the next level-two heading or horizontal rule. Other profile sections are not imported. Project tables are displayed as responsive lists with their original links and descriptions.
 
 On each visit, the browser fetches the public source from `raw.githubusercontent.com`
 without credentials and safely renders the selected section. Changes appear on the
 next page load after GitHub's cache refreshes, without a site deployment. Both source
 files must be maintained; translations are not generated automatically.
 
-`content/profile/en.md` and `pt-br.md` contain the initial offline/no-JavaScript
-snapshots. Update these copies when refreshing the offline fallback; builds never
+`content/profile/en.md`, `pt-br.md`, `projects-en.md`, and `projects-pt-br.md` contain the initial offline/no-JavaScript snapshots. Update these copies when refreshing the offline fallback; builds never
 require network access. If the request fails, times out, or the expected section is
-missing, the page keeps its snapshot. Basic paragraphs, emphasis, inline code,
+missing, each section keeps its own snapshot. About and projects share one request per page visit. Basic paragraphs, emphasis, inline code,
 HTTPS links, lists, and blockquotes are supported. Remote HTML is escaped.

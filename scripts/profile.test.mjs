@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import {extractAbout,renderProfile} from '../public/assets/profile-content.mjs';
+import {extractAbout,extractProjects,renderProfile,renderProjects,profileSources} from '../public/assets/profile-content.mjs';
 import {refreshProfile} from '../public/assets/profile-sync.mjs';
 
 test('profile extraction selects the localized About section without importing the rest of the profile',()=>{
@@ -47,8 +47,49 @@ test('built About pages contain the localized snapshot and load sync only on Abo
     const html=await fs.readFile(new URL(`../dist/${locale}/${locale==='en'?'about':'sobre'}/index.html`,import.meta.url),'utf8');
     const snapshot=await fs.readFile(new URL(`../content/profile/${locale}.md`,import.meta.url),'utf8');
     assert.ok(html.includes(renderProfile(snapshot,locale)));
+    const projects=await fs.readFile(new URL(`../content/profile/projects-${locale}.md`,import.meta.url),'utf8');
+    assert.ok(html.includes(renderProjects(projects,locale)));
     assert.ok(html.includes('type="module" src="/technical-articles/assets/profile-sync.mjs"'));
     const home=await fs.readFile(new URL(`../dist/${locale}/index.html`,import.meta.url),'utf8');
     assert.ok(!home.includes('profile-sync.mjs'));
   }
+});
+
+test('localized flagship projects preserve links and descriptions and exclude later profile sections',async()=>{
+  for(const locale of ['en','pt-br']){
+    const snapshot=await fs.readFile(new URL(`../content/profile/projects-${locale}.md`,import.meta.url),'utf8');
+    const source=`## ${profileSources[locale].projectsHeading}\n\n${snapshot}\n\n---\n\n## Other work\nExcluded`;
+    assert.equal(extractProjects(source,locale),snapshot.trim());
+    const html=renderProjects(extractProjects(source,locale),locale);
+    const links=[...snapshot.matchAll(/\]\((https:\/\/[^)]+)\)/g)].map(match=>match[1]);
+    assert.ok(links.length>0);
+    assert.equal((html.match(/<li>/g)||[]).length,links.length);
+    for(const link of links)assert.ok(html.includes(`href="${link}"`));
+    assert.ok(html.includes('>Governed LLM Gateway</strong></a>'));
+    assert.ok(!html.includes('**'));
+    assert.ok(!html.includes('Excluded'));
+  }
+  const malicious='| Project | Description |\n| --- | --- |\n| [**Unsafe**](javascript:alert) | <img src=x onerror=alert(1)> |';
+  const html=renderProjects(malicious,'en');
+  assert.ok(!html.includes('href="javascript:'));
+  assert.ok(!html.includes('<img'));
+});
+
+test('About and projects update from one response and keep independent fallbacks',async()=>{
+  const about={innerHTML:'About snapshot',dataset:{}};
+  const projects={innerHTML:'Projects snapshot',dataset:{}};
+  let requests=0;
+  const fetcher=async()=>{requests++;return {ok:true,text:async()=>'## About\nUpdated biography\n\n---\n\n## Flagship projects\n| Project | Description |\n| --- | --- |\n| [**New project**](https://github.com/example/new) | New description |\n\n## Other\nExcluded'};};
+  assert.equal(await refreshProfile(about,'en',fetcher,projects),true);
+  assert.equal(requests,1);
+  assert.equal(about.innerHTML,'<p>Updated biography</p>');
+  assert.ok(projects.innerHTML.includes('New description'));
+  assert.equal(projects.dataset.profileState,'live');
+  const previous=projects.innerHTML;
+  assert.equal(await refreshProfile(about,'en',async()=>({ok:true,text:async()=>'## About\nAnother update'}),projects),false);
+  assert.equal(about.innerHTML,'<p>Another update</p>');
+  assert.equal(projects.innerHTML,previous);
+  assert.equal(projects.dataset.profileState,'snapshot');
+  assert.equal(await refreshProfile(about,'en',async()=>{throw new Error('Offline');},projects),false);
+  assert.equal(projects.innerHTML,previous);
 });
