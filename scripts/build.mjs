@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { formatCode } from './format-code.mjs';
+import { renderProfile } from '../public/assets/profile-content.mjs';
 
 export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const config=JSON.parse(await fs.readFile(path.join(root,'site.config.json'),'utf8'));
@@ -36,9 +37,6 @@ const messages={
     native:'Publicado originalmente neste site',originalLink:'Ler o texto original',linkedin:'Publicado originalmente no LinkedIn',image:'Figura do artigo original — ver no LinkedIn',
     related:'Continue a leitura',back:'Voltar aos artigos',footer:'Engenharia, arquitetura e IA em produção.',feed:'Feed RSS',theme:'Alternar tema claro ou escuro',
     copied:'Copiado',copy:'Copiar código',aboutTitle:'Engenharia com contexto.',aboutEyebrow:'SOBRE O AUTOR',
-    aboutBody:'Sou Bruno Vicco. Trabalho com engenharia e arquitetura de IA, com foco em sistemas que precisam funcionar em produção: agentes, RAG, plataformas, segurança, observabilidade e governança.',
-    aboutSecond:'Minha trajetória em serviços financeiros influencia a forma como penso tecnologia. Interesso-me pela ligação entre decisões de arquitetura, necessidades do negócio e controles que podem ser demonstrados na prática.',
-    aboutThird:'Este espaço reúne meus artigos técnicos: publicações inéditas e textos publicados anteriormente no LinkedIn. Os textos mantêm suas datas e referências históricas; as traduções são identificadas em cada artigo.',
     archiveNote:'Textos completos em português e inglês. As traduções estão identificadas nos artigos.',
     source:'ORIGEM',published:'Publicado em',notFound:'Página não encontrada',notFoundDesc:'O endereço pode ter mudado. Explore a biblioteca para encontrar o artigo.',
     tags:{agents:'Arquitetura & agentes',security:'Segurança',governance:'Governança',engineering:'Engenharia',platforms:'Plataformas',observability:'Observabilidade'},
@@ -57,9 +55,6 @@ const messages={
     native:'Originally published on this site',originalLink:'Read the original text',linkedin:'Originally published on LinkedIn',image:'Figure from the original article — view on LinkedIn',
     related:'Keep reading',back:'Back to articles',footer:'Engineering, architecture and AI in production.',feed:'RSS feed',theme:'Toggle light or dark theme',
     copied:'Copied',copy:'Copy code',aboutTitle:'Engineering in context.',aboutEyebrow:'ABOUT THE AUTHOR',
-    aboutBody:'I’m Bruno Vicco. I work on AI engineering and architecture, focusing on systems that need to operate in production: agents, RAG, platforms, security, observability and governance.',
-    aboutSecond:'My background in financial services shapes how I think about technology. I’m interested in the connection between architectural decisions, business needs and controls that can be demonstrated in practice.',
-    aboutThird:'This space brings together my technical articles: original publications and texts previously published on LinkedIn. The texts retain their dates and historical references; translations are identified on each article.',
     archiveNote:'Full articles in Portuguese and English. Translations are identified on article pages.',
     source:'SOURCE',published:'Published on',notFound:'Page not found',notFoundDesc:'The address may have changed. Explore the library to find the article.',
     tags:{agents:'Architecture & agents',security:'Security',governance:'Governance',engineering:'Engineering',platforms:'Platforms',observability:'Observability'},
@@ -198,10 +193,11 @@ function articlepage(article,lang){
   const body=`<main id="main"><div class="article-cover"><img src="${url(`/assets/covers/${article.id}-${lang}.svg`)}" alt="${escape(title)}" width="1600" height="720" fetchpriority="high"></div><div class="article-heading"><a class="back-link" href="${url('/'+lang+'/')}#library">← ${t.back}</a>${tags(article,lang)}<h1>${escape(title)}</h1><div class="article-meta"><span class="author-badge" aria-hidden="true">BV</span><span><strong>Bruno Vicco</strong><span class="meta-detail"><time datetime="${article.date}">${dateLabel(article.date,lang)}</time> · ${minutes(article,lang)} ${t.minutes}</span></span><span class="version-type">${version.kind==='translation'?t.translation:t.original}</span></div></div><div class="reading-layout"><aside class="toc"><details open><summary>${t.toc}</summary><nav aria-label="${t.toc}">${headings.map(h=>`<a class="toc-level-${h.level}" href="#${h.id}">${escape(h.title)}</a>`).join('')}</nav></details><div class="toc-source"><span class="eyebrow">${t.source}</span>${source.sidebar}</div></aside><div class="reading-main">${version.kind==='translation'?`<aside class="translation-note"><span class="translation-label">${t.translation}</span><p>${version.reviewStatus==='reviewed'?(lang==='pt-br'?'Tradução do artigo original em inglês, com revisão editorial do autor.':'Translation of the original Portuguese article, editorially reviewed by the author.'):t.translationNote}</p><a href="${url(articlePath(article.originalLanguage,article.id))}">${t.originalLink} ↗</a></aside>`:''}<article class="prose" data-copy="${t.copy}" data-copied="${t.copied}">${content}</article><div class="article-end"><span class="end-mark" aria-hidden="true">✳</span><p>${source.footer}</p></div></div></div><section class="related"><p class="eyebrow">${lang==='pt-br'?'MAIS NOTAS':'MORE NOTES'}</p><h2>${t.related}</h2><ol class="article-list">${related.map((a,i)=>row(a,lang,i)).join('')}</ol></section></main>`;
   return shell({lang,title,description:article.excerpt[lang],route:articlePath(lang,article.id),alternate,body,article});
 }
+const profileSnapshots=Object.fromEntries(await Promise.all(['en','pt-br'].map(async lang=>[lang,await fs.readFile(path.join(root,'content/profile',`${lang}.md`),'utf8')])));
 function aboutpage(lang){
   const t=messages[lang];
-  const body=`<main id="main" class="about-page"><p class="eyebrow">${t.aboutEyebrow}</p><h1>${t.aboutTitle}</h1><div class="about-grid"><div class="about-monogram" aria-hidden="true">bv<span>•</span></div><div class="prose"><p>${t.aboutBody}</p><p>${t.aboutSecond}</p><p>${t.aboutThird}</p><div class="about-links"><a class="text-cta" href="${config.github}">GitHub ↗</a><a class="text-cta" href="${config.linkedin}">LinkedIn ↗</a></div><a class="back-link" href="${url('/'+lang+'/')}#library">← ${t.back}</a></div></div></main>`;
-  return shell({lang,title:t.about,description:t.aboutBody,route:`/${lang}/${lang==='pt-br'?'sobre':'about'}/`,alternate:`/${other(lang)}/${lang==='pt-br'?'about':'sobre'}/`,body});
+  const body=`<script type="module" src="${url('/assets/profile-sync.mjs')}"></script><main id="main" class="about-page"><p class="eyebrow">${t.aboutEyebrow}</p><h1>${t.aboutTitle}</h1><div class="about-grid"><div class="about-monogram" aria-hidden="true">bv<span>•</span></div><div class="prose"><div data-profile-about data-profile-state="snapshot">${renderProfile(profileSnapshots[lang],lang)}</div><div class="about-links"><a class="text-cta" href="${config.github}">GitHub ↗</a><a class="text-cta" href="${config.linkedin}">LinkedIn ↗</a></div><a class="back-link" href="${url('/'+lang+'/')}#library">← ${t.back}</a></div></div></main>`;
+  return shell({lang,title:t.about,description:plain(profileSnapshots[lang]).slice(0,240),route:`/${lang}/${lang==='pt-br'?'sobre':'about'}/`,alternate:`/${other(lang)}/${lang==='pt-br'?'about':'sobre'}/`,body});
 }
 async function write(file,content){const destination=path.join(output,file);await fs.mkdir(path.dirname(destination),{recursive:true});await fs.writeFile(destination,content);}
 await fs.rm(output,{recursive:true,force:true});await fs.mkdir(output,{recursive:true});await fs.cp(path.join(root,'public'),output,{recursive:true});
