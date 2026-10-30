@@ -15,6 +15,22 @@ const strip=html=>html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
 async function files(directory){const found=[];for(const entry of await fs.readdir(directory,{withFileTypes:true})){const file=path.join(directory,entry.name);found.push(...(entry.isDirectory()?await files(file):[file]));}return found;}
 const outputFiles=await files(dist);
 
+test('English is the default entry point and fallback language while Portuguese remains available',async()=>{
+  assert.equal(config.defaultLanguage,'en');
+  const landing=await read(path.join(dist,'index.html'));
+  assert.ok(landing.includes('<html lang="en">'));
+  assert.ok(landing.includes(`content="0;url=${base}/en/"`));
+  assert.ok(landing.includes(`<link rel="canonical" href="${info.siteUrl}/en/">`));
+  assert.ok(!landing.includes('Technical notes / Notas técnicas'));
+  const fallback=await read(path.join(dist,'404.html'));
+  assert.ok(fallback.includes('<html lang="en"'));
+  assert.ok(fallback.includes('Page not found'));
+  assert.ok(fallback.includes(`${base}/pt-br/`));
+  const portuguese=await read(path.join(dist,'pt-br/index.html'));
+  assert.ok(portuguese.includes('<html lang="pt-BR"'));
+  assert.ok(portuguese.includes('Notas técnicas'));
+});
+
 test('every published article has two complete versions and recorded provenance',async()=>{
   assert.equal(info.articles,entries.length);
   assert.equal(info.versions,entries.length*2);

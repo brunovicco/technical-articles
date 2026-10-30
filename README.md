@@ -1,98 +1,127 @@
-# Bruno Vicco · Technical notes / Notas técnicas
+# Bruno Vicco · Technical notes
 
-Publicação técnica bilíngue sobre engenharia de IA, arquitetura, agentes, segurança, observabilidade e governança. Site estático, sem dependências de execução, com versões integrais dos artigos em português do Brasil e inglês.
+A bilingual technical publication about AI engineering, architecture, agents, security, observability, and governance. This dependency-free static site includes full articles in English and Brazilian Portuguese.
 
-## Conteúdo
+**English is the default language** for the repository, documentation, tooling, and site entry point. Brazilian Portuguese remains available as a localized reading experience.
 
-- 49 artigos técnicos, com versões integrais em PT-BR e inglês: 98 páginas de artigos.
-- 34 textos originalmente em português e 15 em inglês. Cada tradução tem atribuição, ligação ao original e indicação de revisão editorial pendente.
-- 226 imagens internas armazenadas localmente, com legendas e acesso em tamanho maior.
-- Capas editoriais SVG geradas durante o build.
+## Features
 
-As datas e referências das publicações originais são preservadas. Traduções assistidas por IA são identificadas e possuem estado de revisão editorial por versão. A revisão de conteúdo técnico e regulatório é independente da tradução.
+- Full-text search, topic and year filters, chronological sorting, and shareable filter URLs.
+- Language switching on the same article, light/dark themes, and responsive layouts.
+- Linked table of contents, inline code styling, copyable code blocks, and print styles.
+- Locally hosted figures, captions, full-size images, and generated editorial SVG covers.
+- Separate RSS feeds, a sitemap, canonical URLs, `hreflang`, and structured article metadata.
+- Automated builds and tests, with deployment controlled by an explicit manual action.
 
-## Executar localmente
+The collection contains 49 articles, 98 language versions, and 226 inline images. Original publication dates and references are preserved. AI-assisted translations are labeled and track editorial review status separately from the technical review of their claims.
 
-Requisito: Node.js 22 ou superior. Não há dependências para instalar.
+## Quick start
+
+Requires **Node.js 22 or later**. No package installation is necessary.
 
 ```sh
 npm run check
 npm run serve
 ```
 
-Acesse `http://127.0.0.1:4173/technical-articles/pt-br/` ou `/technical-articles/en/`.
+Open `http://127.0.0.1:4173/technical-articles/` to enter the English edition. Both editions are also available directly:
 
-O build gera `dist/`. A pasta é ignorada no Git e recriada pelo GitHub Actions a cada validação.
+- English: `http://127.0.0.1:4173/technical-articles/en/`
+- Brazilian Portuguese: `http://127.0.0.1:4173/technical-articles/pt-br/`
 
-| Comando | Função |
+| Command | Purpose |
 |---|---|
-| `npm run build` | Gera o site estático em `dist/` |
-| `npm test` | Executa os testes; requer um build atualizado |
-| `npm run check` | Executa o build e os testes |
-| `npm run serve` | Serve a versão de `dist/` localmente |
+| `npm run build` | Generate the static site in `dist/` |
+| `npm test` | Run tests against an up-to-date build |
+| `npm run check` | Build the site and run all tests |
+| `npm run serve` | Serve `dist/` locally |
 
-## Integração contínua e publicação
+The generated `dist/` directory is not committed to Git.
 
-Pushes em `main` e pull requests executam **somente build e testes**. O merge de uma PR não publica o site.
-
-A publicação no GitHub Pages é manual e vem desativada por padrão:
-
-1. Configure **Settings → Pages → Build and deployment → GitHub Actions** quando o site estiver pronto para publicação.
-2. Abra **Actions → Validate and optionally publish technical articles → Run workflow**.
-3. Selecione a branch `main` e marque o parâmetro **publish** explicitamente.
-
-Sem esse parâmetro, a execução manual também faz apenas a validação. A publicação a partir de outras branches é bloqueada. O job de implantação recebe permissões de Pages somente quando executado. O workflow não altera a visibilidade do repositório.
-
-Se mudar o repositório ou domínio, atualize `site.config.json`. Em Actions, o endereço padrão é derivado de `GITHUB_REPOSITORY`; `SITE_URL` permite informar um domínio personalizado. A configuração do domínio em Settings → Pages continua necessária.
-
-Referência: [GitHub — workflows personalizados para Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
-
-## Editar ou adicionar artigos
-
-Cada diretório `content/articles/<id>/` contém:
+## Project structure
 
 ```text
-article.json   # título, data, temas, origem e estado de cada idioma
-pt-br.html     # corpo integral em português
-en.html        # corpo integral em inglês
+content/articles/<id>/
+  article.json             Metadata, topics, and language versions
+  en.html                  Full English article body
+  pt-br.html               Full Brazilian Portuguese article body
+public/assets/             Styles, browser scripts, and local media
+scripts/                   Build, import, code formatting, and tests
+site.config.json           Site identity, default language, URL, and links
+.github/workflows/pages.yml
 ```
 
-O `id` é estável e forma a URL nos dois idiomas. Use apenas letras minúsculas, números e hífens. Para criar um artigo, crie a pasta, os dois HTMLs e os metadados seguindo um artigo existente. Não inclua `<html>`, `<head>`, scripts ou CSS nos corpos: o layout é centralizado.
+## Repository language
 
-Temas suportados: `agents`, `security`, `governance`, `engineering`, `platforms`, `observability`. Eles alimentam filtros e rótulos nos dois idiomas.
+Write documentation, code comments, tooling messages, test descriptions, commit messages, and pull request titles and descriptions in English. Keep localized article bodies, titles, captions, and interface strings in their intended languages. Existing article identifiers and original publication URLs remain stable.
 
-O build aplica destaque semântico de código a identificadores inequívocos (como `dspy.Predict`, `execution_id` e chamadas de função), trechos delimitados por crases e termos específicos dos artigos DSPy. Para identificar outros nomes de classes ou símbolos, acrescente uma lista `codeTerms` ao `article.json`. Os HTMLs importados não são reescritos por essa formatação. Títulos, links e trechos já marcados como código são preservados. Blocos vazios não são exibidos; a importação não reconstrói trechos ausentes.
+Repository contribution guidance is recorded in [AGENTS.md](AGENTS.md).
 
-Cada versão em `versions` usa `title` e `kind`. A versão original tem `kind: "original"`; a tradução tem `kind: "translation"`, `translatedFrom` e `reviewStatus: "unreviewed"` ou `"reviewed"`. Depois de revisar o texto, mude o estado para `reviewed`; o aviso público passa a refletir essa revisão.
+## Editing and adding articles
 
-Por padrão, o build interrompe a publicação se faltar uma versão. Para desenvolvimento temporário de uma importação incompleta, `ALLOW_INCOMPLETE_TRANSLATIONS=1 npm run build` produz somente as versões já disponíveis; não use esse modo em produção.
+Each article directory contains metadata and a full HTML body for both supported languages. The stable `id` forms the article URL; use lowercase ASCII letters, digits, and hyphens.
 
-## Reimportar HTMLs do LinkedIn
+To add an article, follow an existing directory's structure and provide `article.json`, `en.html`, and `pt-br.html`. Bodies contain article content only, without document wrappers, scripts, or styles. The build applies a shared layout.
 
-O importador aceita somente a pasta de HTMLs dos artigos e exige Python 3, sem pacotes adicionais:
+Available topics are `agents`, `security`, `governance`, `engineering`, `platforms`, and `observability`.
+
+### Language versions and editorial review
+
+Each entry in `versions` specifies a title and version type:
+
+- `kind: "original"` identifies the original-language text.
+- `kind: "translation"` includes `translatedFrom` and `reviewStatus`.
+- `reviewStatus: "unreviewed"` or `"reviewed"` controls the translation notice on the article page.
+
+The normal build requires both languages. For a temporary preview during an incomplete import, use `ALLOW_INCOMPLETE_TRANSLATIONS=1 npm run build`. Always use the complete validation workflow before deployment.
+
+### Code and figures
+
+The build marks technical identifiers, function calls, backtick-delimited snippets, and selected DSPy symbols as semantic code. An optional `codeTerms` list in `article.json` adds other symbols or class names. Imported bodies are not rewritten by presentation formatting; headings, links, and existing code markup are preserved.
+
+Inline figures are served from `public/assets/media/`. Editorial SVG covers are generated during the build. Empty code placeholders are omitted; missing source content is not reconstructed by the importer.
+
+### Importing LinkedIn HTML articles
+
+The optional import and media recovery utilities require **Python 3**, with no additional packages:
 
 ```sh
-python3 scripts/import-linkedin.py /caminho/para/Articles/Articles
+python3 scripts/import-linkedin.py /path/to/Articles/Articles
 python3 scripts/recover-media.py
 npm run check
 ```
 
-O importador processa somente artigos com data de publicação e sanitiza a marcação. A reimportação atualiza o idioma original e preserva os metadados das traduções existentes. Se o texto original mudar, revise também a tradução correspondente antes de integrar as alterações.
+The importer processes articles with recorded publication dates, sanitizes their markup, and preserves existing translation metadata. Review the corresponding translation whenever the source body changes, and inspect the build before integrating content updates.
 
-## Recursos e validação
+## Configuration
 
-Busca no texto completo, filtros por assunto e ano, ordenação, URLs compartilháveis para filtros, alternância de idioma no mesmo artigo, tema claro/escuro, sumário com âncoras, cópia de código, impressão, RSS por idioma, sitemap, canonical, hreflang e metadados estruturados.
+Edit `site.config.json` to change the site identity, default language, author links, and URL. `defaultLanguage` is `en`; both `en` and `pt-br` are supported. The root entry point, fallback page, and preview link use this setting.
 
-`npm run check` verifica cobertura bilíngue, preservação estrutural de traduções, código e links, integridade das imagens, rotas internas, idiomas, avisos de tradução e ausência dos caminhos locais/dados privados conhecidos da exportação. Esses testes não substituem revisão editorial do texto técnico.
+On GitHub Actions, the default site URL is derived from `GITHUB_REPOSITORY`. Set `SITE_URL` to build for a different address or custom domain. Custom domains also require configuration in **Settings → Pages**.
 
-Não há analytics, cookies de rastreamento, fontes remotas, backend, API paga ou formulário de contato. A preferência de tema é salva apenas no navegador do leitor.
+Article routes retain the following structure:
 
----
+```text
+/en/articles/<id>/
+/pt-br/artigos/<id>/
+```
 
-## English
+## Continuous integration and deployment
 
-A dependency-free static technical publication for GitHub Pages, with 49 source articles and 98 full article pages in Brazilian Portuguese and English. Run `npm run check`, then `npm run serve` with Node.js 22+.
+Pushes to `main` and pull requests run **build and tests only**. Merging a pull request does not publish the site.
 
-Articles live in `content/articles/<id>/`, with metadata in `article.json` and full bodies in `pt-br.html` and `en.html`. Translations retain the original HTML structure, references and code. AI-assisted translations are labeled and await the author’s editorial review. Dates and historical claims are preserved, not updated or independently verified.
+GitHub Pages deployment is manual and disabled by default:
 
-The 226 original inline images are hosted locally, and editorial SVG covers are generated at build time. Pushes to `main` and pull requests build and test the site without deploying. GitHub Pages deployment requires a manual workflow run on `main` with the **publish** input explicitly enabled; its default is **false**. The workflow does not change repository visibility.
+1. Configure **Settings → Pages → Build and deployment → GitHub Actions** when ready to publish.
+2. Open **Actions → Validate and optionally publish technical articles → Run workflow**.
+3. Select `main` and explicitly enable the **publish** input.
+
+Without that input, a manual run only validates the site. Deployment from other branches is blocked. Pages permissions are granted only to the deployment job. The workflow does not change repository visibility.
+
+See [GitHub's custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+## Validation and privacy
+
+Tests verify bilingual coverage, preservation of translation structure and code, local references, media integrity, routes, language metadata, English defaults, and code formatting. Automated checks do not replace editorial review of technical content.
+
+The site has no backend, analytics, tracking cookies, or remote fonts. Theme preferences are stored only in the reader's browser.

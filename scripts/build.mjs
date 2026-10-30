@@ -5,6 +5,8 @@ import { formatCode } from './format-code.mjs';
 
 export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const config=JSON.parse(await fs.readFile(path.join(root,'site.config.json'),'utf8'));
+const defaultLanguage=config.defaultLanguage || 'en';
+if(!['en','pt-br'].includes(defaultLanguage))throw new Error(`Unsupported default language: ${defaultLanguage}`);
 const repository=process.env.GITHUB_REPOSITORY;
 const inferredUrl=repository ? `https://${repository.split('/')[0]}.github.io${repository.split('/')[1]===`${repository.split('/')[0]}.github.io`?'':'/'+repository.split('/')[1]}` : config.url;
 const siteUrl=(process.env.SITE_URL || inferredUrl).replace(/\/$/,'');
@@ -191,8 +193,8 @@ for(const lang of ['pt-br','en']){
   const feed=articles.filter(a=>a.versions[lang]).map(a=>`<item><title>${escape(a.versions[lang].title)}</title><link>${absolute(articlePath(lang,a.id))}</link><guid isPermaLink="true">${absolute(articlePath(lang,a.id))}</guid><pubDate>${new Date(a.date+'T12:00:00Z').toUTCString()}</pubDate><description>${escape(a.excerpt[lang])}</description></item>`).join('');
   await write(`${lang}/feed.xml`,`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Bruno Vicco — ${messages[lang].notes}</title><link>${absolute('/'+lang+'/')}</link><description>${escape(messages[lang].intro)}</description><language>${isoLocale(lang)}</language>${feed}</channel></rss>`);
 }
-await write('index.html',`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bruno Vicco — Technical notes / Notas técnicas</title><link rel="canonical" href="${absolute('/pt-br/')}"><meta http-equiv="refresh" content="0;url=${url('/pt-br/')}"></head><body><p><a href="${url('/pt-br/')}">Português do Brasil</a> · <a href="${url('/en/')}">English</a></p></body></html>`);
-await write('404.html',shell({lang:'pt-br',title:'404',description:messages['pt-br'].notFoundDesc,route:'/404.html',noindex:true,body:`<main class="not-found" id="main"><p class="eyebrow">404</p><h1>${messages['pt-br'].notFound}</h1><p>${messages['pt-br'].notFoundDesc}</p><a class="text-cta" href="${url('/pt-br/')}">Explorar artigos →</a><p><a href="${url('/en/')}">Browse articles in English →</a></p></main>`}));
+await write('index.html',`<!doctype html><html lang="${isoLocale(defaultLanguage)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bruno Vicco — ${messages[defaultLanguage].notes}</title><link rel="canonical" href="${absolute('/'+defaultLanguage+'/')}"><meta http-equiv="refresh" content="0;url=${url('/'+defaultLanguage+'/')}"></head><body><p><a href="${url('/en/')}" lang="en">English</a> · <a href="${url('/pt-br/')}" lang="pt-BR">Português do Brasil</a></p></body></html>`);
+await write('404.html',shell({lang:defaultLanguage,title:'404',description:messages[defaultLanguage].notFoundDesc,route:'/404.html',noindex:true,body:`<main class="not-found" id="main"><p class="eyebrow">404</p><h1>${messages[defaultLanguage].notFound}</h1><p>${messages[defaultLanguage].notFoundDesc}</p><a class="text-cta" href="${url('/'+defaultLanguage+'/')}">${messages[defaultLanguage].browse} →</a><p><a href="${url('/'+other(defaultLanguage)+'/')}">${other(defaultLanguage)==='en'?'Browse articles in English':'Explorar artigos em português'} →</a></p></main>`}));
 await write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${sitemap.map(route=>`<url><loc>${absolute(route)}</loc></url>`).join('')}</urlset>`);
 await write('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${absolute('/sitemap.xml')}\n`);
 await write('.nojekyll','');

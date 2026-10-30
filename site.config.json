@@ -1,6 +1,7 @@
 {
   "title": "Bruno Vicco",
-  "subtitle": { "pt-br": "Notas técnicas", "en": "Technical notes" },
+  "defaultLanguage": "en",
+  "subtitle": { "en": "Technical notes", "pt-br": "Notas técnicas" },
   "author": "Bruno Vicco",
   "url": "https://brunovicco.github.io/technical-articles",
   "github": "https://github.com/brunovicco",
