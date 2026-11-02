@@ -1,0 +1,169 @@
+<p><em>An approach for deciding how much judgment and autonomy a system really needs, considering variability, error tolerance, external effects and operating cost.</em></p>
+<p>A company wants to automate a financial process that involves receiving documents, checking information, querying internal systems, identifying discrepancies and preparing operations for approval.</p>
+<p>The first technical discussion could start with LangGraph, CrewAI, Agno or a managed agent service. All of them offer interesting capabilities and could be part of the solution.</p>
+<p>But important information about the problem is still missing. Some of the validations can be implemented in Python, some steps need to interpret documents in different formats, others follow a known approval process, and there are exceptions whose investigation depends on what is found along the way.</p>
+<p>If the whole architecture is treated as an agent, we end up handing the model decisions that could perhaps be solved in a simpler way. On the other hand, trying to represent every possible investigation as a rigid sequence of conditions can make the code hard to maintain and not very adaptable.</p>
+<p>This is a kind of decision that I consider prior to the choice of any framework: understanding where we need interpretation, where the execution path is known, and in which situations it is worth letting the model choose the next step.</p>
+<figure><img src="" data-asset="ef58f64e1256d63acb26" alt="Three execution styles: deterministic code, workflow and agent" loading="lazy" decoding="async"></figure>
+<h2>What the Controlled Autonomy Lab changed in how I look at this problem</h2>
+<p>In September, I published the article <a href="https://pt.linkedin.com/pulse/6-padr%C3%B5es-de-arquitetura-llm-aprendizados-234-c%C3%A9lulas-bruno-vicco-9ipif" rel="noopener noreferrer">6 LLM architecture patterns: lessons from 234 experimental cells on control and autonomy</a>.</p>
+<p>The study was born from a relatively specific question. I wanted to observe what happened when the decision about the next step of an execution stopped belonging entirely to the code and passed, to some extent, to the model.</p>
+<p>To investigate this, I built the <a href="https://github.com/brunovicco/controlled-autonomy-lab" rel="noopener noreferrer">Controlled Autonomy Lab</a>, comparing six patterns: augmented LLM, chaining, routing, parallelization, evaluator-optimizer and bounded agent.</p>
+<p>All of them analyzed incidents from controlled evidence. The difference was in how the task was decomposed, in the execution trajectory and in the degree of autonomy offered to the model.</p>
+<p>The lab recorded <strong>234 attempts distributed across three separate experimental generations</strong>. The results brought interesting observations about grounding, causal stance, tool choice, latency and token consumption.</p>
+<p>One of them was especially relevant for architecture decisions: increasing the number of model calls did not produce a consistent improvement in grounding.</p>
+<p>In the repeated-execution benchmark, chaining, with three sequential calls, showed lower specific grounding than the augmented LLM across the three sets of provider, model, API and configuration evaluated. This does not show that decomposing tasks harms quality in general. It shows that decomposition, by itself, does not guarantee improvement.</p>
+<p>The bounded agent also produced an interesting result. In the breadth generation, it finished ten observable cells with 95.4% average grounding and no detected causal overclaim. In the Epistemic v4.1 generation, however, there were four overclaims in twelve cells. The favorable result of the first generation was not fully repeated.</p>
+<p>These benchmarks use synthetic fixtures and limited samples. They do not allow establishing statistical superiority among architectures, much less generalizing the results to other domains.</p>
+<p>Even so, they helped make a distinction more concrete.</p>
+<p>There are processes in which we know the path to follow in advance. In others, we need to discover information during execution and decide what to investigate based on it.</p>
+<p>The second case may justify autonomy. The first can often be solved with a more predictable architecture.</p>
+<p>After that study, I started paying closer attention to a decision that happens before the very distribution of control between code and model: <strong>which part of the problem requires probabilistic behavior and which part should remain conventional software?</strong></p>
+<h2>A financial process with four different problems</h2>
+<p>Let's go back to the initial example.</p>
+<p>Imagine a finance department that wants to automate the receipt and preparation of supplier payments. Documents arrive through different channels and formats. The system needs to extract information, check the data against the corporate registry, verify internal rules and prepare the operations that require approval.</p>
+<p>In some situations, everything is consistent. In others, the amount on the document does not match the purchase order, the supplier identification differs from the registry, or a required document is missing.</p>
+<p>One way to approach this case would be to create an agent with access to all the necessary tools: query documents, verify suppliers, get balances, search purchase orders, prepare payments and request approval.</p>
+<p>Maybe it would work in a controlled demo. But I would have a hard time justifying why all of these decisions would need to go through the model.</p>
+<p>I would initially split the process into four kinds of work.</p>
+<p><strong>1. Validations with known rules.</strong> The system needs to check whether the supplier is registered, whether the account belongs to the expected payee, whether required documents are present, whether amounts respect the defined limits and whether the operation meets internal rules. When these conditions are explicit and can be evaluated over reliable structured data, deterministic code is a good choice.</p>
+<p><strong>2. Interpretation of heterogeneous documents.</strong> An invoice may arrive as a PDF, an image, an email or a document with a poorly predictable structure. At this point, an LLM can help interpret the content and produce a structured representation. Conventional OCR, parsers and specialized models should also be part of the comparison, depending on the formats and the quality of the material. Extraction should not automatically be treated as truth.</p>
+<p><strong>3. Execution of a process with states and approvals.</strong> After receiving and validating the data, the application may need to query a financial system, record the proposal, wait for approval and forward the operation for execution. The path is known, even if there are planned conditions and detours. A workflow with explicit transitions offers good visibility into what has already happened, what is pending and which events allow progress.</p>
+<p><strong>4. Investigation of discrepancies.</strong> An invoice shows an amount different from the purchase order. The system may need to query the contract, check amendments, look up previous payments and compare information obtained from different sources. The investigation sequence depends on the result of each query. Here, an agent with read-only tools can add value, as long as it works within a defined scope and returns structured evidence and conclusions.</p>
+<p>These are four problems inside a single business process. I see no reason to require that all of them use the same abstraction.</p>
+<figure><img src="" data-asset="502b18b4308ef3a9c64d" alt="Financial process split into four kinds of work" loading="lazy" decoding="async"></figure>
+<h2>Deterministic code remains an important capability</h2>
+<p>Conventional code is particularly suitable when inputs, rules and expected results can be specified objectively.</p>
+<p>Limit validation, financial calculations, identifier checks, application of eligibility rules and conditional transitions are examples.</p>
+<p>This does not mean that any rule will be easy to implement. A policy engine can become sophisticated, and integrations with legacy systems can introduce considerable operational complexity.</p>
+<p>The advantage lies in the nature of the behavior we expect to obtain.</p>
+<p>If a rule determines that a given payment exceeds the allowed limit, I want the decision to be reproducible, testable and independent of how an LLM interprets the request.</p>
+<p>I also want a rule change to be versionable and evaluated against a known set of tests.</p>
+<p>This level of predictability has value in systems that produce financial effects, modify data or need to explain afterwards why an operation was accepted or refused.</p>
+<p>There is also an economic question. If a given check involves only a few structured fields and a known rule, adding an LLM inference adds an external dependency, variable latency, token consumption and a new source of probabilistic behavior. These costs need to be offset by some real benefit.</p>
+<p>On the other hand, deterministic code can be a poor choice when the number of exceptions keeps growing and each new situation requires adding a textual rule, a specific parser or a combination that is hard to maintain.</p>
+<p>That is when it is worth evaluating whether some step would benefit from probabilistic interpretation.</p>
+<h2>When a single LLM call is enough</h2>
+<p>Not every need for interpretation requires an agent.</p>
+<p>If the task consists of receiving a document, identifying relevant fields and returning a known structure, a model call may solve the problem.</p>
+<p>I would start by defining the output contract: supplier identification, document number, amount, due date, purchase order reference and any additional fields needed for validation.</p>
+<p>The response would go through schema validation, consistency checks and business rules. When a required field was missing or contradictory, the system could request review or route the case to specific handling.</p>
+<p>In situations where the response needs to use corporate documents, retrieval can make the necessary context available before inference. This does not automatically turn the retrieved information into reliable evidence: provenance, validity period, access authorization and correspondence with the question remain relevant.</p>
+<p>This design is close to what Anthropic calls an <em>augmented LLM</em>: a model supported by context, retrieval, memory or tools as needed, without necessarily taking over global control of the execution.</p>
+<p><a href="https://www.anthropic.com/research/building-effective-agents" rel="noopener noreferrer">Anthropic's documentation on agent patterns</a> recommends starting with simple solutions and adding complexity when it improves the observed results. The same guidance appears in <a href="https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/" rel="noopener noreferrer">OpenAI's practical guide to building agents</a>.</p>
+<p>This recommendation makes sense, but it needs to be translated into engineering criteria.</p>
+<p>A single call may be enough if the task is bounded, the necessary context is available and the quality meets the defined requirements.</p>
+<p>When the task can be decomposed into known steps, it is worth considering a workflow.</p>
+<h2>Workflow when the path needs to be controlled</h2>
+<p>Workflows are useful when there are identifiable steps, transition conditions, validation points and business states that need to be preserved.</p>
+<p>In the financial example, an execution could follow this sequence:</p>
+<p><strong>Receipt → Extraction → Validation → System queries → Preparation → Approval → Execution.</strong></p>
+<p>Not every step needs to call a model.</p>
+<p>Extraction can use an LLM. Validation can be run by Python. System queries can be made through conventional APIs. A textual analysis can use another LLM, while approval and execution follow their own policies and mechanisms.</p>
+<p>The code keeps responsibility for the topology of the process.</p>
+<p>If validation fails, the flow goes to exception handling. If an approval expires, execution does not advance. If an integration times out, retry and recovery mechanisms need to consider whether there was any external effect before the failure.</p>
+<p>This last point is especially important in transactional processes. A workflow checkpoint does not, by itself, prove whether a remote operation was completed. Idempotency, effect records and reconciliation may be necessary to avoid duplicate executions.</p>
+<p>But I would not go deeper into the recovery discussion here, since I have already addressed these limits in the articles about state and continuity in multi-agent architectures.</p>
+<p>The architectural distinction that matters now is a different one: the workflow offers a predictable path for combining deterministic and probabilistic components.</p>
+<p>It also allows introducing intermediate controls.</p>
+<p>A classification produced by an LLM, for example, can choose among previously allowed routes. The result must be validated against a known set of options. An unexpected route needs explicit handling, without turning the model's free-form response into an executable instruction.</p>
+<p>This does not eliminate the possibility of the model choosing a valid but incorrect route. That part still requires evaluation.</p>
+<p>It is perfectly possible to build a workflow with several LLM calls without it becoming an autonomous agent. The number of calls, by itself, does not define who controls the execution trajectory.</p>
+<h2>Where autonomy starts to justify its cost</h2>
+<p>Now consider the discrepancy between the amount of an invoice and the purchase order.</p>
+<p>The system finds a difference of R$ 1,200 but does not yet know the cause.</p>
+<p>There may be a contract amendment, a pro-rata charge, an earlier partial payment or simply an error in the document. Depending on the result of the first query, it may be necessary to look at another source.</p>
+<p>One approach would be to code in advance all possible combinations of investigation. It may work if the domain has few, well-known exceptions, but it tends to get harder as the sources and possibilities grow.</p>
+<p>Another possibility is to let an agent choose which evidence to consult, in what order, and when it has enough information to produce an analysis.</p>
+<p>This is the kind of autonomy I find useful.</p>
+<p>The agent could receive read-only tools to query contracts, documents, previous payments and change records. It would also receive limits on the number of steps, tool calls, time and cost.</p>
+<p>Its output would be a structured analysis, with the evidence consulted, the discrepancies found, hypotheses and points that remain inconclusive.</p>
+<p>The application would remain responsible for validating the output and deciding which next steps are allowed.</p>
+<p>In the Controlled Autonomy Lab, I used a similar pattern for incident investigation. The bounded agent has five read-only tools and can choose its sequence of queries, but the runtime limits execution to six steps and eight tool calls. There are no write or production-changing tools in that experiment.</p>
+<p>These numbers are parameters of that lab, not universal configuration recommendations.</p>
+<p>The important property is that the freedom to investigate remains bounded by an environment whose capacity for action is known.</p>
+<p>This design offers an alternative between two extremes: trying to predict in code every possible sequence, or handing an open task to an agent with excessive permissions.</p>
+<p>I also would not assume that the agentic architecture will be superior in every investigation. Quality depends on the available tools, the relevance of the sources, the capability of the model, the context received and the evaluation criteria.</p>
+<p>An agent with access to many tools can choose unnecessary paths or produce an inconsistent analysis. Autonomy adds possibilities, including possibilities of failure.</p>
+<figure><img src="" data-asset="67c1bdb0fd91d0e3c2ec" alt="Bounded autonomy: an agent with read-only tools and execution limits" loading="lazy" decoding="async"></figure>
+<h2>The criteria I would use before choosing</h2>
+<p>To compare the alternatives, I would start by recording the characteristics of the problem.</p>
+<p>Some are mandatory constraints, such as permissions, execution limits, approval requirements or the impossibility of automatically performing irreversible operations. These conditions should eliminate unsuitable architectures before any comparison of cost or convenience.</p>
+<p>Then I would evaluate six dimensions.</p>
+<table><thead><tr><th>Dimension</th><th>What I would try to understand</th></tr></thead><tbody><tr><td><strong>Variability</strong></td><td>How many different paths can the task follow? Are they known in advance?</td></tr><tr><td><strong>Need for judgment</strong></td><td>Does the task require contextual interpretation, evaluation of evidence or discovery of information?</td></tr><tr><td><strong>Error tolerance</strong></td><td>What is the impact of an incorrect classification, an omission or an unsupported conclusion?</td></tr><tr><td><strong>External effects</strong></td><td>Does the solution only query information or also modify data and execute operations?</td></tr><tr><td><strong>Economics</strong></td><td>What are the expected volume, the acceptable latency and the total cost of operation?</td></tr><tr><td><strong>Operability</strong></td><td>How do we test, observe, recover, update and investigate the solution?</td></tr></tbody></table>
+<p>I would not immediately turn these dimensions into a single score.</p>
+<p>An architecture may get an excellent rating in flexibility and cost and still be unsuitable because it does not meet a mandatory security constraint.</p>
+<p>Likewise, the fact that a task is complex does not mean it needs an agent. Complexity of rules, of infrastructure and of judgment are different problems.</p>
+<p>A processing routine with hundreds of rules may require sophisticated engineering and remain deterministic. A relatively short analysis, on the other hand, may need probabilistic interpretation because the language used is ambiguous.</p>
+<p>The decisive point is understanding what kind of variability exists and where it should be resolved.</p>
+<figure><img src="" data-asset="05c5cefdf29c119c9405" alt="Decision criteria: variability, judgment, error tolerance, external effects, economics and operability" loading="lazy" decoding="async"></figure>
+<h2>An initial matrix for the financial case</h2>
+<p>In the payments process, my first architectural hypothesis would look like this:</p>
+<table><thead><tr><th>Capability</th><th>Initial approach</th><th>Rationale</th></tr></thead><tbody><tr><td>Check registry, limits and eligibility rules</td><td>Deterministic code</td><td>Explicit rules and reproducible results</td></tr><tr><td>Extract information from varied documents</td><td>LLM with structured output, compared with specialized alternatives</td><td>Interpretation of heterogeneous inputs</td></tr><tr><td>Coordinate validations and approvals</td><td>Workflow</td><td>Known states, transitions and control points</td></tr><tr><td>Investigate discrepancies between documents and systems</td><td>Agent with bounded tools</td><td>Need to acquire evidence dynamically</td></tr><tr><td>Execute payment</td><td>Transactional service under explicit authorization</td><td>High-impact external effect</td></tr></tbody></table>
+<p>This matrix would be a starting point for implementation and evaluation, not a final decision.</p>
+<p>If the documents are standardized, perhaps a conventional parser solves extraction with lower cost and variability. If the discrepancies follow a small set of known causes, a workflow may be enough to investigate them.</p>
+<p>If the exceptions are numerous, require unpredictable queries and benefit from dynamic investigation, the agent becomes a more interesting option.</p>
+<p>And if the process has very strict response-time requirements, it may be necessary to separate synchronous and asynchronous parts or to limit which cases can go on to a longer investigation.</p>
+<p>There is also an important architectural consequence: <strong>these approaches are not mutually exclusive.</strong></p>
+<p>A workflow can use deterministic code and LLMs. An agent can operate inside a larger workflow. A component with autonomy can produce a recommendation that will be validated and executed by another service.</p>
+<p>For this reason, I find it more useful to define the architecture by responsibility than to assign a single label to the whole product.</p>
+<h2>Multi-agent is not necessarily the next stage</h2>
+<p>When the investigation becomes more complex, the possibility arises of dividing the work among specialized agents: a document analyst, a finance specialist, a compliance agent and a component responsible for consolidation.</p>
+<p>This division can make sense, but I would avoid treating it as a natural evolution of any individual agent.</p>
+<p>In the article <em>LangGraph, Agno or CrewAI? How to choose the abstraction that fits the problem</em>, I explored how different frameworks make distinct abstractions easier, including workflows, reusable specialists and role-oriented collaboration.</p>
+<p>The decision to separate capabilities, however, needs to happen before the choice of these tools.</p>
+<p>If the specialists have clear responsibilities, can be evaluated separately, require different tools or belong to independent domains, decomposition has arguments in its favor.</p>
+<p>If the separation exists only to reproduce a human team structure, it may add handoffs, token consumption, coordination and persistence without necessarily improving quality.</p>
+<p>It can also make error analysis harder. An incorrect piece of information produced by one specialist can be reused in the final synthesis with an appearance of agreement that does not correspond to independent evidence.</p>
+<p>In the Controlled Autonomy Lab, the parallel pattern showed 94.9% average grounding in the breadth generation, but also recorded seven causal overclaims in the ten observed cells. It is an example of why putting partial analyses together does not guarantee a well-calibrated final conclusion.</p>
+<p>The experiment does not prove that parallel systems are more prone to overclaims. The result only shows that the quality of the parts and the quality of the synthesis need to be evaluated separately.</p>
+<p>This care becomes even more relevant when the collaboration involves remote agents, independent states and distinct authorization boundaries.</p>
+<h2>How I would validate the choice before investing in a full platform</h2>
+<p>After selecting two or three plausible alternatives, I would try to evaluate them on the same set of tasks.</p>
+<p>In the financial example, this could include complete documents, missing information, duplicate suppliers, divergent invoices, unexpected formats and situations in which the queried systems return contradictory data.</p>
+<p>For each case, there would need to be a known reference for the expected behavior, including situations in which the correct result is to stop processing or request human intervention.</p>
+<p>The evaluation should observe different dimensions.</p>
+<p><strong>Task quality.</strong> Did the solution extract the right fields, identify the discrepancies and preserve the relationship between claims and evidence?</p>
+<p><strong>Execution trajectory.</strong> Which tools were called, in what order and with what need? Did the flow run unnecessary steps or fail to query essential information?</p>
+<p><strong>Behavior under failure.</strong> What happens when an API times out, a response comes back incomplete or a tool returns inconsistent information?</p>
+<p><strong>Containment of external effects.</strong> Did the architecture prevent unauthorized operations? Did retry handling preserve idempotency? Was there an attempt to execute something outside the permitted capabilities?</p>
+<p><strong>Performance and cost.</strong> What was the latency distribution, including P95? How many calls were needed? What was the token consumption, infrastructure cost and associated operational effort?</p>
+<p>These dimensions should not be reduced to a generic success metric.</p>
+<p>An architecture can deliver better answers and still be unsuitable for the process because its latency is incompatible with the service level. Another can be economical but require human review in such a high proportion of cases that the automation stops producing the expected benefit.</p>
+<p>Cost per correctly completed task tends to be a more interesting measure than just the price of each model call. Even so, it needs to be analyzed together with the impact of errors, human interventions and operating costs.</p>
+<p>I would also avoid making definitive decisions based on few executions.</p>
+<p>The Controlled Autonomy Lab experiments themselves showed how a favorable observation in one generation can change in the next. For higher-impact decisions, repetition, diversity of cases and real operating conditions are indispensable.</p>
+<p>The evaluation must be able to demonstrate why a more complex architecture is worth what it costs.</p>
+<figure><img src="" data-asset="3d09c5739bf36a838bd9" alt="Dimensions for evaluating an architecture" loading="lazy" decoding="async"></figure>
+<h2>The architecture I would take to production</h2>
+<p>For the financial scenario, my initial tendency would be to build a main workflow with explicit responsibilities.</p>
+<p>The input would go through authentication, authorization and initial validations. The document component would perform extraction when necessary, delivering structured data to the domain. The business rules would check consistency, eligibility and limits.</p>
+<p>When a discrepancy arose that could not be resolved by the known rules, the workflow could trigger an investigation capability with bounded autonomy.</p>
+<p>The result of that investigation would return as evidence or a proposed course of action. The application would decide whether to continue, request a correction, route to approval or stop the process.</p>
+<p>Operations with external effects would remain under the appropriate transactional and authorization mechanisms.</p>
+<p>The design allows the probabilistic components to be evaluated and replaced without redesigning the whole process.</p>
+<p>If a specialized parser replaces the extraction LLM, the domain contract can remain the same. If the investigation evolves from a fixed workflow to an agent, the permissions and the return interface can remain bounded. If a new model provider shows better performance, the swap can be evaluated without modifying the business rules.</p>
+<p>This separation also helps size observability and testing.</p>
+<p>I do not need to apply the same kind of evaluation to a Python rule and to an analysis produced by an LLM. The first can be verified with deterministic tests and domain properties. The second requires evaluating semantic quality, grounding, handling of uncertainty and consistency across executions.</p>
+<p>Both need to be part of the same operational view, but they produce evidence of a different nature.</p>
+<h2>The choice needs to remain revisable</h2>
+<p>An architectural decision made at the beginning of a project should not be treated as permanent.</p>
+<p>A flow that today requires LLM interpretation may become deterministic after the organization standardizes the input data. An investigation initially solved by rules may come to require autonomy when new sources and exceptions make the space of possibilities hard to represent.</p>
+<p>Changes in volume, required latency, model cost or the criticality of the operation can also justify revisions.</p>
+<p>For this reason, I would record the architectural decision along with its assumptions: which alternatives were considered, which constraints eliminated options, which evidence supported the choice and which conditions should lead to its revision.</p>
+<p>This record is useful both for technical decisions and for conversations with leadership.</p>
+<p>When proposing an agentic architecture, the team should be able to explain what additional behavior it expects to obtain, why simpler approaches were considered insufficient and how it intends to measure whether the autonomy delivered actually improved the process.</p>
+<p>Likewise, a deterministic architecture should acknowledge its limits and make explicit where exceptions require different handling.</p>
+<h2>Before the framework</h2>
+<p>I have no universal preference for deterministic code, workflows or agents. I have worked with different approaches and I believe each one solves legitimate problems.</p>
+<p>What changed in the way I design is the order of the decisions.</p>
+<p>Today I would start by understanding the process and identifying its types of variability. Then I would separate the steps that require judgment from those with known rules and transitions. I would evaluate external effects, error tolerance, recovery needs and economic constraints.</p>
+<p>Only then would I choose the implementation abstractions.</p>
+<p>This analysis may lead to an entirely deterministic solution, to a single LLM call, to a workflow with probabilistic components, or to an agent able to investigate situations not anticipated in advance.</p>
+<p>In most of the more complex corporate processes, there will probably be a combination of these capabilities.</p>
+<p>The Controlled Autonomy Lab began by investigating who determines the next steps of an execution. The experience reinforced the importance of that boundary, but also showed that it is the consequence of an earlier choice.</p>
+<p>It is necessary to decide where the model's flexibility adds enough value to justify its costs and risks.</p>
+<p>When this decision is clear, choosing the framework becomes more objective. The tools remain important, but they come to implement an architecture that already has reasons to exist.</p>
+<hr>
+<h2>References and related material</h2>
+<ul><li><a href="https://github.com/brunovicco/controlled-autonomy-lab" rel="noopener noreferrer">Controlled Autonomy Lab — implementation, benchmarks and experimental limitations</a></li><li><a href="https://pt.linkedin.com/pulse/6-padr%C3%B5es-de-arquitetura-llm-aprendizados-234-c%C3%A9lulas-bruno-vicco-9ipif" rel="noopener noreferrer">6 LLM architecture patterns: lessons from 234 experimental cells on control and autonomy</a></li><li><a href="https://www.anthropic.com/research/building-effective-agents" rel="noopener noreferrer">Anthropic — Building Effective Agents</a></li><li><a href="https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/" rel="noopener noreferrer">OpenAI — A Practical Guide to Building AI Agents</a></li><li><a href="https://docs.cloud.google.com/architecture/choose-design-pattern-agentic-ai-system" rel="noopener noreferrer">Google Cloud — Choose a design pattern for your agentic AI system</a></li></ul>

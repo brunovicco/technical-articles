@@ -30,7 +30,7 @@ Open `http://127.0.0.1:4173/technical-articles/` to enter the English edition. B
 - Brazilian Portuguese: `http://127.0.0.1:4173/technical-articles/pt-br/`
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `npm run build` | Generate the static site in `dist/` |
 | `npm test` | Run tests against an up-to-date build |
 | `npm run check` | Build the site and run all tests |
