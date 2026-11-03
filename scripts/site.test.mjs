@@ -145,3 +145,13 @@ test('catalogue and feeds include every article in each language, without privat
     assert.ok(!content.includes('bfvicco@gmail.com'),`Private export contact leaked into ${file}`);
   }
 });
+
+test('article pages offer share links in both languages',async()=>{
+  for(const [route,label] of [['en/articles','Copy link'],['pt-br/artigos','Copiar link']]){
+    const dirs=(await fs.readdir(new URL(`../dist/${route}`,import.meta.url))).filter(d=>!d.includes('.'));
+    const html=await fs.readFile(new URL(`../dist/${route}/${dirs[0]}/index.html`,import.meta.url),'utf8');
+    assert.match(html,/linkedin\.com\/sharing\/share-offsite/);
+    assert.match(html,/data-share-copy=/);
+    assert.ok(html.includes(label));
+  }
+});

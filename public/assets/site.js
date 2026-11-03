@@ -8,6 +8,10 @@
     document.documentElement.dataset.theme=next;
     try{localStorage.setItem('bv-theme',next);}catch{}
   });
+  document.querySelectorAll('[data-share-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
+    const label=btn.textContent;
+    try{await navigator.clipboard.writeText(btn.dataset.shareCopy);btn.textContent=btn.dataset.copied;setTimeout(()=>{btn.textContent=label;},2000);}catch{}
+  }));
   const input=document.querySelector('#search');
   if(input){
     const rows=[...document.querySelectorAll('.article-list .article-row')];
