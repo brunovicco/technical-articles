@@ -275,7 +275,7 @@ h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.03em}
   .site-header[data-menu=open] .github-nav{display:flex}
 }
 
-.share{margin-top:32px;padding-top:20px;border-top:1px solid var(--line,currentColor);display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
-.share-actions{display:flex;flex-wrap:wrap;gap:8px 20px}
-.share-actions a,.share-actions button{font:inherit;color:inherit;background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.share{margin-top:40px;padding-top:28px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.share-actions{display:flex;flex-wrap:wrap;gap:14px 32px}
+.share-actions a,.share-actions button{font:inherit;color:inherit;background:none;border:0;padding:6px 0;margin:0;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 @media print{.share{display:none!important}}
