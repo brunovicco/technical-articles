@@ -3,14 +3,16 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {isPublished} from './article-status.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
 const info=JSON.parse(await fs.readFile(path.join(dist,'build-info.json'),'utf8'));
 const base=new URL(info.siteUrl).pathname.replace(/\/$/,'');
 const read=file=>fs.readFile(path.join(dist,file),'utf8');
-const tracks=JSON.parse(await fs.readFile(path.join(root,'content/tracks.json'),'utf8'));
-const articles=await Promise.all((await fs.readdir(path.join(root,'content/articles'))).map(async id=>JSON.parse(await fs.readFile(path.join(root,'content/articles',id,'article.json'),'utf8'))));
+const articles=(await Promise.all((await fs.readdir(path.join(root,'content/articles'))).map(async id=>JSON.parse(await fs.readFile(path.join(root,'content/articles',id,'article.json'),'utf8'))))).filter(isPublished);
+// Tracks whose articles are all held back are not published yet.
+const tracks=JSON.parse(await fs.readFile(path.join(root,'content/tracks.json'),'utf8')).filter(track=>articles.some(a=>a.series?.id===track.id));
 
 test('every track has a localized page listing its articles in part order',async()=>{
   for(const [lang,segment] of [['en','tracks'],['pt-br','trilhas']]){

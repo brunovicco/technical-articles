@@ -3,13 +3,14 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {publishedEntries} from './article-status.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
 const config=JSON.parse(await fs.readFile(path.join(root,'site.config.json'),'utf8'));
 const info=JSON.parse(await fs.readFile(path.join(dist,'build-info.json'),'utf8'));
 const base=new URL(info.siteUrl).pathname.replace(/\/$/,'');
-const entries=(await fs.readdir(path.join(root,'content/articles'),{withFileTypes:true})).filter(entry=>entry.isDirectory());
+const entries=await publishedEntries(root);
 const read=file=>fs.readFile(file,'utf8');
 const strip=html=>html.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
 async function files(directory){const found=[];for(const entry of await fs.readdir(directory,{withFileTypes:true})){const file=path.join(directory,entry.name);found.push(...(entry.isDirectory()?await files(file):[file]));}return found;}
