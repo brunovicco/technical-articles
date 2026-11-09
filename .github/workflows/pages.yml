@@ -16,6 +16,16 @@ concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  security:
+    name: Repository security invariants
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify workflow permissions, triggers and deploy gating
+        run: node scripts/security-invariants.mjs
   build:
     runs-on: ubuntu-latest
     steps:

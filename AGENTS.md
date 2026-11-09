@@ -18,4 +18,5 @@
 - Keep deployment manual: publishing requires an explicit `workflow_dispatch` run on `main` with `publish: true`.
 - Pushes, pull requests, and merges must not deploy the site.
 - Finished articles that should not go live yet carry `"status": "ready"` in `article.json` (see the README); check them with `npm run articles:status` before a deploy.
+- The required "Repository security invariants" check runs `node scripts/security-invariants.mjs`; keep workflow permissions at `contents: read` and the deploy job gated on a manual run from `main`.
 - Do not change repository visibility as part of routine implementation work.
