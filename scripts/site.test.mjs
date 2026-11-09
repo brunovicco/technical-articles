@@ -58,7 +58,9 @@ test('every published article has two complete versions and recorded provenance'
     assert.equal(data.versions[target].kind,'translation');
     assert.equal(data.versions[target].translatedFrom,data.originalLanguage);
     assert.ok(['unreviewed','reviewed'].includes(data.versions[target].reviewStatus));
-    assert.deepEqual(original.match(/<\/?[a-z][^>]*>/gi),translated.match(/<\/?[a-z][^>]*>/gi),`${entry.name}: translation changed structural markup, links or assets`);
+    // Local figures may point to a language-specific file (e.g. localized diagrams), with a localized alt.
+    const structure=html=>html.match(/<\/?[a-z][^>]*>/gi).map(tag=>/^<img\b[^>]*\ssrc="\/[^"]*assets\/media\//.test(tag)?tag.replace(/\s(?:src|alt)="[^"]*"/g,''):tag);
+    assert.deepEqual(structure(original),structure(translated),`${entry.name}: translation changed structural markup, links or assets`);
     assert.deepEqual(original.match(/<(pre|code)\b[^>]*>[\s\S]*?<\/\1>/gi),translated.match(/<(pre|code)\b[^>]*>[\s\S]*?<\/\1>/gi),`${entry.name}: code changed`);
     const ratio=strip(translated).length/strip(original).length;
     assert.ok(ratio>.6&&ratio<1.65,`${entry.name}: suspicious translation length ${ratio}`);

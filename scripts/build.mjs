@@ -23,11 +23,12 @@ const isoLocale=lang=>lang==='pt-br'?'pt-BR':'en';
 const other=lang=>lang==='pt-br'?'en':'pt-br';
 const articlePath=(lang,id)=>`/${lang}/${lang==='pt-br'?'artigos':'articles'}/${id}/`;
 const trackPath=(lang,id)=>`/${lang}/${lang==='pt-br'?'trilhas':'tracks'}/${id}/`;
+const pathPath=(lang,id)=>`/${lang}/${lang==='pt-br'?'caminhos':'paths'}/${id}/`;
 const url=route=>base+route;
 const absolute=route=>siteUrl+route;
 const messages={
   'pt-br':{
-    notes:'Notas técnicas',articles:'Artigos',tracks:'Trilhas',tracksEyebrow:'TRILHAS DE LEITURA',tracksDesc:'Sequências de artigos que se constroem uns sobre os outros, para ler em ordem.',trackLabel:'TRILHA',part:'PARTE',of:'DE',thisTrack:'Esta trilha',trackCount:'artigos',startTrack:'Começar a trilha',allTracks:'Todas as trilhas',about:'Sobre',menu:'Menu',skip:'Pular para o conteúdo',
+    notes:'Notas técnicas',articles:'Artigos',tracks:'Trilhas',paths:'Caminhos',pathsEyebrow:'CAMINHOS POR PÚBLICO',pathsDesc:'Roteiros curados que cruzam trilhas e artigos, de acordo com a pergunta que você quer responder.',pathLabel:'CAMINHO',comingSoon:'Em breve',allPaths:'Todos os caminhos',startPath:'Começar o caminho',pathCount:'etapas',tracksEyebrow:'TRILHAS DE LEITURA',tracksDesc:'Sequências de artigos que se constroem uns sobre os outros, para ler em ordem.',trackLabel:'TRILHA',part:'PARTE',of:'DE',thisTrack:'Esta trilha',trackCount:'artigos',startTrack:'Começar a trilha',allTracks:'Todas as trilhas',about:'Sobre',menu:'Menu',skip:'Pular para o conteúdo',
     eyebrow:'ENGENHARIA DE IA · ARQUITETURA · GOVERNANÇA',hero:'IA em produção.<br><em>Decisões em perspectiva.</em>',
     intro:'Notas sobre construir, observar e governar sistemas de IA. Da arquitetura de agentes às decisões que precisam continuar funcionando em produção.',
     browse:'Explorar os artigos',latest:'LEITURA EM DESTAQUE',all:'Todos os artigos',library:'BIBLIOTECA',
@@ -44,7 +45,7 @@ const messages={
     tags:{agents:'Arquitetura & agentes',security:'Segurança',governance:'Governança',engineering:'Engenharia',platforms:'Plataformas',observability:'Observabilidade'},
   },
   en:{
-    notes:'Technical notes',articles:'Articles',tracks:'Tracks',tracksEyebrow:'READING TRACKS',tracksDesc:'Sequences of articles that build on each other, meant to be read in order.',trackLabel:'TRACK',part:'PART',of:'OF',thisTrack:'This track',trackCount:'articles',startTrack:'Start the track',allTracks:'All tracks',about:'About',menu:'Menu',skip:'Skip to content',
+    notes:'Technical notes',articles:'Articles',tracks:'Tracks',paths:'Paths',pathsEyebrow:'PATHS BY AUDIENCE',pathsDesc:'Curated routes across tracks and articles, depending on the question you want answered.',pathLabel:'PATH',comingSoon:'Coming soon',allPaths:'All paths',startPath:'Start the path',pathCount:'steps',tracksEyebrow:'READING TRACKS',tracksDesc:'Sequences of articles that build on each other, meant to be read in order.',trackLabel:'TRACK',part:'PART',of:'OF',thisTrack:'This track',trackCount:'articles',startTrack:'Start the track',allTracks:'All tracks',about:'About',menu:'Menu',skip:'Skip to content',
     eyebrow:'AI ENGINEERING · ARCHITECTURE · GOVERNANCE',hero:'AI in production.<br><em>Decisions in perspective.</em>',
     intro:'Notes on building, observing and governing AI systems. From agent architectures to the decisions that need to hold up in production.',
     browse:'Explore the articles',latest:'FEATURED READING',all:'All articles',library:'THE LIBRARY',
@@ -69,6 +70,7 @@ for(const track of tracks){
   for(const lang of ['pt-br','en'])if(!track.title?.[lang]||!track.description?.[lang])throw new Error(`Track ${track.id} needs a title and description in ${lang}`);
 }
 if(new Set(tracks.map(track=>track.id)).size!==tracks.length)throw new Error('Duplicate track id');
+const paths=await fs.readFile(path.join(root,'content/paths.json'),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return [];throw error;});
 const articles=[];
 for(const entry of directories){
   const dir=path.join(root,'content/articles',entry.name);
@@ -112,6 +114,19 @@ for(const track of tracks){
   if(!track.articles.length)throw new Error(`Track without articles: ${track.id}`);
   if(new Set(track.articles.map(a=>a.series.part)).size!==track.articles.length)throw new Error(`Duplicate part in track: ${track.id}`);
 }
+for(const rp of paths){
+  if(!/^[a-z0-9-]+$/.test(rp.id))throw new Error(`Invalid path id: ${rp.id}`);
+  rp.number=String(paths.indexOf(rp)+1).padStart(2,'0');
+  for(const lang of ['pt-br','en'])if(!rp.title?.[lang]||!rp.description?.[lang]||!rp.audience?.[lang])throw new Error(`Path ${rp.id} needs a title, description and audience in ${lang}`);
+  if(!rp.items?.length)throw new Error(`Path without items: ${rp.id}`);
+  for(const item of rp.items){
+    item.meta=articles.find(a=>a.id===item.article);
+    if(!item.meta)throw new Error(`Unknown article in path ${rp.id}: ${item.article}`);
+    for(const lang of ['pt-br','en'])if(!item.note?.[lang])throw new Error(`Path ${rp.id}/${item.article} needs a note in ${lang}`);
+  }
+  for(const soon of rp.comingSoon||[])for(const lang of ['pt-br','en'])if(!soon.title?.[lang])throw new Error(`Path ${rp.id} coming-soon item needs a title in ${lang}`);
+}
+if(new Set(paths.map(rp=>rp.id)).size!==paths.length)throw new Error('Duplicate path id');
 const trackOf=article=>article.series&&tracks.find(track=>track.id===article.series.id);
 let assets={};
 try{assets=JSON.parse(await fs.readFile(path.join(root,'public/assets/media.json'),'utf8'));}catch{}
@@ -168,7 +183,7 @@ function shell({lang,title,description,route,alternate,body,article=null,noindex
   return `<!doctype html>
 <html lang="${isoLocale(lang)}" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(titleText)}</title><meta name="description" content="${escape(description)}"><meta name="color-scheme" content="light dark">${noindex?'<meta name="robots" content="noindex">':''}<link rel="canonical" href="${absolute(route)}"><link rel="alternate" hreflang="${isoLocale(lang)}" href="${absolute(route)}"><link rel="alternate" hreflang="${isoLocale(other(lang))}" href="${absolute(otherRoute)}"><link rel="alternate" type="application/rss+xml" title="${escape(t.notes)}" href="${url('/'+lang+'/feed.xml')}"><link rel="icon" type="image/svg+xml" href="${url('/assets/favicon.svg')}"><link rel="stylesheet" href="${url('/assets/style.css')}"><link rel="stylesheet" href="${url('/assets/journal.css')}"><script src="${url('/assets/theme.js')}"></script><script defer src="${url('/assets/site.js')}"></script>${goatcounterTag(goatcounter,url('/assets/goatcounter.js'))}<meta property="og:type" content="${article?'article':'website'}"><meta property="og:locale" content="${lang==='pt-br'?'pt_BR':'en_US'}"><meta property="og:title" content="${escape(titleText)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${absolute(route)}">${coverImage?`<meta property="og:image" content="${absolute('/assets/banners/'+coverImage)}"><meta name="twitter:card" content="summary_large_image">`:`<meta property="og:image" content="${absolute('/assets/og/preview.png')}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">`}${schema?`<script type="application/ld+json">${JSON.stringify(schema).replace(/</g,'\\u003c')}</script>`:''}</head>
 <body data-locale="${lang}" data-base="${base}"><a class="skip" href="#main">${t.skip}</a><div class="reading-progress" aria-hidden="true"></div>
-<div class="topbar"><header class="site-header"><a class="identity" href="${url('/'+lang+'/')}"><span class="wordmark">Bruno Vicco<small>${t.notes}</small></span></a><div class="header-right"><nav class="main-nav" id="main-nav" aria-label="${lang==='pt-br'?'Navegação principal':'Main navigation'}"><a href="${url('/'+lang+'/')}#library">${t.articles}</a>${tracks.length?`<a href="${url('/'+lang+'/')}#tracks">${t.tracks}</a>`:''}<a href="${url('/'+lang+'/'+(lang==='pt-br'?'sobre':'about')+'/')}">${t.about}</a><a class="github-nav" href="${config.github}" rel="me noopener noreferrer" target="_blank">GitHub ↗</a></nav>${languageSwitch(lang,{current:route,other:otherRoute})}<button class="theme-toggle" type="button" aria-label="${t.theme}" title="${t.theme}">◐</button><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>${t.menu}</button></div></header></div>
+<div class="topbar"><header class="site-header"><a class="identity" href="${url('/'+lang+'/')}"><span class="wordmark">Bruno Vicco<small>${t.notes}</small></span></a><div class="header-right"><nav class="main-nav" id="main-nav" aria-label="${lang==='pt-br'?'Navegação principal':'Main navigation'}"><a href="${url('/'+lang+'/')}#library">${t.articles}</a>${tracks.length?`<a href="${url('/'+lang+'/')}#tracks">${t.tracks}</a>`:''}${paths.length?`<a href="${url('/'+lang+'/')}#paths">${t.paths}</a>`:''}<a href="${url('/'+lang+'/'+(lang==='pt-br'?'sobre':'about')+'/')}">${t.about}</a><a class="github-nav" href="${config.github}" rel="me noopener noreferrer" target="_blank">GitHub ↗</a></nav>${languageSwitch(lang,{current:route,other:otherRoute})}<button class="theme-toggle" type="button" aria-label="${t.theme}" title="${t.theme}">◐</button><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>${t.menu}</button></div></header></div>
 ${body}
 <footer class="site-footer"><div><a href="${url('/'+lang+'/')}" class="footer-name">Bruno Vicco<span>•</span></a><p>${t.footer}</p></div><div class="footer-links"><a href="${config.github}">GitHub ↗</a><a href="${config.linkedin}" rel="me">LinkedIn ↗</a><a href="${url('/'+lang+'/feed.xml')}">${t.feed} ↗</a></div><small>© ${new Date().getUTCFullYear()} Bruno Vicco</small></footer></body></html>`;
 }
@@ -180,6 +195,16 @@ function tracksSection(lang){
   const t=messages[lang],available=tracks.filter(track=>track.articles.some(a=>a.versions[lang]));
   if(!available.length)return '';
   return `<section class="tracks" id="tracks" aria-labelledby="tracks-title"><div class="section-top"><div><p class="eyebrow">${t.tracksEyebrow}</p><h2 id="tracks-title">${t.tracks}</h2><p>${t.tracksDesc}</p></div></div><ol class="track-list">${available.map(track=>`<li class="track-card"><span class="track-num">${track.number}</span><div class="track-copy"><h3><a href="${url(trackPath(lang,track.id))}">${escape(track.title[lang])}</a></h3><p>${escape(track.description[lang])}</p></div><span class="track-count">${track.articles.filter(a=>a.versions[lang]).length} ${t.trackCount}</span></li>`).join('')}</ol></section>`;
+}
+function pathsSection(lang){
+  const t=messages[lang];
+  if(!paths.length)return '';
+  return `<section class="tracks paths" id="paths" aria-labelledby="paths-title"><div class="section-top"><div><p class="eyebrow">${t.pathsEyebrow}</p><h2 id="paths-title">${t.paths}</h2><p>${t.pathsDesc}</p></div></div><ol class="track-list">${paths.map(rp=>`<li class="track-card"><span class="track-num">${rp.number}</span><div class="track-copy"><h3><a href="${url(pathPath(lang,rp.id))}">${escape(rp.title[lang])}</a></h3><p>${escape(rp.audience[lang])}. ${escape(rp.description[lang])}</p></div><span class="track-count">${rp.items.length} ${t.pathCount}</span></li>`).join('')}</ol></section>`;
+}
+function pathpage(rp,lang){
+  const t=messages[lang];
+  const body=`<main id="main" class="track-page"><div class="track-heading"><a class="back-link" href="${url('/'+lang+'/')}#paths">← ${t.allPaths}</a><p class="eyebrow">${t.pathLabel} ${rp.number}</p><h1>${escape(rp.title[lang])}</h1><p class="track-lede">${escape(rp.description[lang])}</p><span class="read-time">${escape(rp.audience[lang])} · ${rp.items.length} ${t.pathCount}</span></div><ol class="track-articles">${rp.items.map((item,i)=>`<li class="track-item"><span class="track-part">${String(i+1).padStart(2,'0')}</span><div class="track-copy"><h2><a href="${url(articlePath(lang,item.article))}">${escape(item.meta.versions[lang].title)}</a></h2><p>${escape(item.note[lang])}</p><span class="read-time"><time datetime="${item.meta.date}">${dateLabel(item.meta.date,lang)}</time> · ${minutes(item.meta,lang)} ${t.minutes}</span></div></li>`).join('')}${(rp.comingSoon||[]).map((soon,i)=>`<li class="track-item is-soon"><span class="track-part">${String(rp.items.length+i+1).padStart(2,'0')}</span><div class="track-copy"><h2>${escape(soon.title[lang])}</h2><span class="read-time">${t.comingSoon}</span></div></li>`).join('')}</ol><a class="text-cta" href="${url(articlePath(lang,rp.items[0].article))}">${t.startPath} →</a></main>`;
+  return shell({lang,title:rp.title[lang],description:rp.description[lang],route:pathPath(lang,rp.id),alternate:pathPath(other(lang),rp.id),body});
 }
 function trackpage(track,lang){
   const t=messages[lang],available=track.articles.filter(a=>a.versions[lang]);
@@ -198,6 +223,7 @@ function homepage(lang){
   const body=`<main id="main"><section class="hero"><div class="hero-copy"><p class="eyebrow">${t.eyebrow}</p><h1>${t.hero}</h1><p class="hero-intro">${t.intro}</p><a class="text-cta" href="#library">${t.browse} <span aria-hidden="true">↓</span></a></div><div class="architecture-art" aria-hidden="true"><div class="art-top"><span>FIELDNOTES / BV</span><span>01 - ∞</span></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="diagram-label label-input">CONTEXT</div><div class="diagram-line line-one"></div><div class="diagram-core"><span>AI</span><small>SYSTEMS</small></div><div class="diagram-line line-two"></div><div class="diagram-label label-output">PRODUCTION</div><div class="art-bottom"><span>BUILD.<br>OBSERVE.<br>GOVERN.</span><span class="art-dot">✳</span></div></div></section>
 ${featuredSection(featured,lang)}
 ${tracksSection(lang)}
+${pathsSection(lang)}
 <section class="library" id="library" aria-labelledby="library-title"><div class="section-top"><div><p class="eyebrow">${t.library}</p><h2 id="library-title">${t.all}<sup>${available.length}</sup></h2><p>${t.libraryDesc}</p></div><a class="rss-link" href="${url('/'+lang+'/feed.xml')}">${t.feed} ↗</a></div><div class="library-controls"><div class="search-field"><span aria-hidden="true">⌕</span><label class="sr-only" for="search">${t.searchLabel}</label><input type="search" id="search" placeholder="${t.search}" autocomplete="off"><button type="button" id="clear-search" aria-label="${t.clear}" hidden>×</button></div><label class="sr-only" for="year">${t.yearLabel}</label><select id="year"><option value="all">${t.allYears}</option>${years.map(y=>`<option>${y}</option>`).join('')}</select><label class="sr-only" for="sort">${t.sortLabel}</label><select id="sort"><option value="newest">${t.newest}</option><option value="oldest">${t.oldest}</option></select></div><div class="topics" role="group" aria-label="${lang==='pt-br'?'Filtrar por tema':'Filter by topic'}"><button type="button" data-topic="all" aria-pressed="true">${lang==='pt-br'?'Todos':'All'}</button>${Object.keys(t.tags).map(tag=>`<button type="button" data-topic="${tag}" aria-pressed="false">${t.tags[tag]}</button>`).join('')}</div><div class="results-bar"><p id="results" role="status" aria-live="polite">${available.length} ${t.results}</p><button type="button" id="reset-filters" hidden>${t.reset} ↺</button></div><ol class="article-list">${available.map((a,i)=>row(a,lang,i)).join('')}</ol><div class="empty-state" hidden><h3>${t.empty}</h3><p>${t.emptyHelp}</p></div><p class="archive-note">${t.archiveNote}</p><noscript><p>${lang==='pt-br'?'A lista completa está disponível abaixo. Ative JavaScript para usar a busca e os filtros.':'The full list is available below. Enable JavaScript to use search and filters.'}</p></noscript></section></main>`;
   return shell({lang,description:t.intro,route:`/${lang}/`,alternate:`/${other(lang)}/`,body});
 }
@@ -241,6 +267,7 @@ for(const lang of ['pt-br','en']){
   await write(`${lang}/${lang==='pt-br'?'sobre':'about'}/index.html`,aboutpage(lang));
   sitemap.push(`/${lang}/`,`/${lang}/${lang==='pt-br'?'sobre':'about'}/`);
   for(const track of tracks.filter(track=>track.articles.some(a=>a.versions[lang]))){await write(trackPath(lang,track.id).slice(1)+'index.html',trackpage(track,lang));sitemap.push(trackPath(lang,track.id));}
+  for(const rp of paths){await write(pathPath(lang,rp.id).slice(1)+'index.html',pathpage(rp,lang));sitemap.push(pathPath(lang,rp.id));}
   for(const article of articles.filter(a=>a.versions[lang])){await write(articlePath(lang,article.id).slice(1)+'index.html',articlepage(article,lang));sitemap.push(articlePath(lang,article.id));}
   await write(`${lang}/search-index.json`,JSON.stringify(articles.filter(a=>a.versions[lang]).map(a=>({id:a.id,text:normalize(a.versions[lang].title+' '+a.tags.map(tag=>tagLabel(tag,lang)).join(' ')+' '+plain(a.content[lang]))}))));
   const feed=articles.filter(a=>a.versions[lang]).map(a=>`<item><title>${escape(a.versions[lang].title)}</title><link>${absolute(articlePath(lang,a.id))}</link><guid isPermaLink="true">${absolute(articlePath(lang,a.id))}</guid><pubDate>${new Date(a.date+'T12:00:00Z').toUTCString()}</pubDate><description>${escape(a.excerpt[lang])}</description></item>`).join('');

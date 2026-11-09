@@ -107,6 +107,8 @@ h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.03em}
 .track-articles{max-width:880px;margin:0 auto 40px}
 .track-item{display:grid;grid-template-columns:72px minmax(0,1fr);gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line)}
 .track-page>.text-cta{display:flex;width:max-content;max-width:880px;margin-inline:auto}
+.track-item.is-soon{opacity:.62}
+.track-item.is-soon h2{color:var(--muted)}
 .track-eyebrow{margin-bottom:20px;text-transform:uppercase}
 .track-eyebrow:hover{text-decoration:underline}
 .track-rail{margin-top:32px;font-size:13px}

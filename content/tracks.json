@@ -97,5 +97,16 @@
       "en": "The core techniques for adapting LLMs, and how to choose between them.",
       "pt-br": "As técnicas centrais para adaptar LLMs e como escolher entre elas."
     }
+  },
+  {
+    "id": "enterprise-ai-decisions",
+    "title": {
+      "en": "Architecture and investment decisions in enterprise AI",
+      "pt-br": "Decisões de arquitetura e investimento em IA corporativa"
+    },
+    "description": {
+      "en": "A five-part series, in progress, on what an enterprise should build, buy or compose in AI: capability decomposition, platforms, economics, TOGAF applied to AI, prioritization and scale decisions.",
+      "pt-br": "Série de cinco partes, em andamento, sobre o que uma empresa deve construir, comprar ou compor em IA: decomposição por capability, plataformas, economia, TOGAF aplicado à IA, priorização e decisões de escala."
+    }
   }
 ]

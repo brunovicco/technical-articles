@@ -91,6 +91,10 @@ The normal build requires both languages. For a temporary preview during an inco
 
 `content/tracks.json` defines ordered reading tracks (`id`, plus `title` and `description` in both languages). An article joins a track with `"series": { "id": "<track id>", "part": 1 }` in `article.json`. The build fails on an unknown track, a duplicate part, or a track without articles. Tracks are listed on the home page and get their own pages at `/en/tracks/<id>/` and `/pt-br/trilhas/<id>/`; track articles show a track eyebrow and a "This track" rail. Track numbers follow the order in `tracks.json`.
 
+### Reading paths
+
+`content/paths.json` defines curated reading paths by audience. Unlike tracks, a path may reuse any article, including articles that belong to a track. Each path has an `id`, localized `title`, `description` and `audience`, an ordered `items` list (`article` id plus a localized `note`), and an optional `comingSoon` list of localized titles for planned articles (rendered without links). The build fails on an unknown article id or a missing translation. Paths are listed on the home page (`#paths`) and get their own pages at `/en/paths/<id>/` and `/pt-br/caminhos/<id>/`.
+
 ### Banners
 
 An article can declare a banner per language with `"cover": { "en": "file.jpg", "pt-br": "file.jpg" }` in `article.json`. Files live in `public/assets/banners/` (PNG, JPEG or WebP, 16:9, preferably JPEG under about 250 KB). The banner appears below the article heading and as the home page featured image, and is used as `og:image`. A language without an entry shows no banner. The build fails if a listed file is missing.
@@ -99,7 +103,7 @@ An article can declare a banner per language with `"cover": { "en": "file.jpg", 
 
 The build marks technical identifiers, function calls, backtick-delimited snippets, and selected DSPy symbols as semantic code. An optional `codeTerms` list in `article.json` adds other symbols or class names. Imported bodies are not rewritten by presentation formatting; headings, links, and existing code markup are preserved.
 
-Inline figures are served from `public/assets/media/`. Article banners live in `public/assets/banners/` and are referenced by the `cover` field in `article.json`. Empty code placeholders are omitted; missing source content is not reconstructed by the importer.
+Inline figures are served from `public/assets/media/`. A figure may use a different localized file and `alt` per language (for example `diagram-en.svg` and `diagram-pt.svg`); the translation parity test ignores `src` and `alt` on local media images. Article banners live in `public/assets/banners/` and are referenced by the `cover` field in `article.json`. Empty code placeholders are omitted; missing source content is not reconstructed by the importer.
 
 ### Importing LinkedIn HTML articles
 
