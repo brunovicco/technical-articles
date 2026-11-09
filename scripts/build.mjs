@@ -270,8 +270,8 @@ function aboutpage(lang){
 }
 async function write(file,content){const destination=path.join(output,file);await fs.mkdir(path.dirname(destination),{recursive:true});await fs.writeFile(destination,content);}
 await fs.rm(output,{recursive:true,force:true});await fs.mkdir(output,{recursive:true});await fs.cp(path.join(root,'public'),output,{recursive:true});
-// Files that only held-back articles use (banners and local figures) are not shipped before release.
-const assetsOf=list=>new Set(list.flatMap(a=>[...Object.values(a.cover||{}).map(file=>`assets/banners/${file}`),...Object.values(a.content).flatMap(body=>[...body.matchAll(/\/assets\/media\/([^"'\s)]+)/g)].map(match=>`assets/media/${match[1]}`))]));
+// Files that only held-back articles use (banners, local figures and downloads) are not shipped before release.
+const assetsOf=list=>new Set(list.flatMap(a=>[...Object.values(a.cover||{}).map(file=>`assets/banners/${file}`),...Object.values(a.content).flatMap(body=>[...body.matchAll(/\/assets\/((?:media|downloads)\/[^"'\s)]+)/g)].map(match=>`assets/${match[1]}`))]));
 const shipped=assetsOf(articles);
 for(const file of assetsOf(held))if(!shipped.has(file))await fs.rm(path.join(output,file),{force:true});
 const sitemap=[];

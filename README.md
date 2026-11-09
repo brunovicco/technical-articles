@@ -93,7 +93,7 @@ The normal build requires both languages. For a temporary preview during an inco
 
 ### Publication status
 
-Articles are published by default. Add `"status": "ready"` to `article.json` to keep a finished article in the repository without releasing it: the build still validates it (metadata, both languages, media), but leaves it out of the home page, tracks, reading paths, feeds, search index and sitemap, and does not ship its banner or local figures. Tracks and paths that would end up with nothing published are skipped, and the build prints which articles were held back. `npm run articles:status` lists them with their date, series and paths, and flags those whose date has been reached. To release one, remove `status` (or set it to `published`), run `npm run check`, and deploy manually. Any other value fails the build.
+Articles are published by default. Add `"status": "ready"` to `article.json` to keep a finished article in the repository without releasing it: the build still validates it (metadata, both languages, media), but leaves it out of the home page, tracks, reading paths, feeds, search index and sitemap, and does not ship its banner, local figures or downloads. Tracks and paths that would end up with nothing published are skipped, and the build prints which articles were held back. `npm run articles:status` lists them with their date, series and paths, and flags those whose date has been reached. To release one, remove `status` (or set it to `published`), run `npm run check`, and deploy manually. Any other value fails the build.
 
 ### Reading paths
 

@@ -29,6 +29,13 @@
         }
       },
       {
+        "article": "quanto-custa-uma-capability-de-ia-tco-finops-e-unit-economics",
+        "note": {
+          "en": "The conditions that change the build, buy or compose decision, and what to bring to investment approval.",
+          "pt-br": "As condições que mudam a decisão build, buy ou compose e o que levar à aprovação de investimento."
+        }
+      },
+      {
         "article": "risco-de-concentracao-em-ia-generativa",
         "note": {
           "en": "What changes when one provider concentrates models, data and operations.",
@@ -101,6 +108,13 @@
         }
       },
       {
+        "article": "quanto-custa-uma-capability-de-ia-tco-finops-e-unit-economics",
+        "note": {
+          "en": "The core of the path: TCO, break-even by volume, cost per completed task and economic attribution.",
+          "pt-br": "O núcleo do caminho: TCO, ponto de equilíbrio por volume, custo por tarefa concluída e atribuição econômica."
+        }
+      },
+      {
         "article": "a-conta-da-ia-chegou-limitar-o-uso-e-a-resposta",
         "note": {
           "en": "When the bill arrives, is limiting usage the answer?",
@@ -130,12 +144,6 @@
       }
     ],
     "comingSoon": [
-      {
-        "title": {
-          "en": "How much does an AI capability cost? TCO, FinOps and unit economics",
-          "pt-br": "Quanto custa uma capability de IA? TCO, FinOps e unit economics"
-        }
-      },
       {
         "title": {
           "en": "Prioritization and business case",
