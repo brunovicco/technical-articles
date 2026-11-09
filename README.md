@@ -59,7 +59,7 @@ Repository contribution guidance is recorded in [AGENTS.md](AGENTS.md).
 
 ## Editing and adding articles
 
-Each article directory contains metadata and a full HTML body for both supported languages. The stable `id` forms the article URL; use lowercase ASCII letters, digits, and hyphens.
+Each article directory contains metadata and a full HTML body for both supported languages. The stable `id` forms the article URL; use short English slugs of lowercase ASCII letters, digits, and hyphens. If a published article's id changes, list the former ids in `aliases` in `article.json`: the build writes a redirect page at each old URL (both languages) pointing to the current one, and leaves them out of the sitemap.
 
 To create a new article with ready-to-edit Portuguese and English bodies:
 

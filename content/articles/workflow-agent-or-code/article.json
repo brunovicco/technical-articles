@@ -1,0 +1,59 @@
+{
+  "id": "workflow-agent-or-code",
+  "aliases": [
+    "llm-workflow-agente-ou-codigo-deterministico-como-escolher-antes-do-framework"
+  ],
+  "originalLanguage": "pt-br",
+  "date": "2026-11-03",
+  "tags": [
+    "agents",
+    "engineering"
+  ],
+  "series": {
+    "id": "controlled-autonomy",
+    "part": 4
+  },
+  "versions": {
+    "pt-br": {
+      "title": "LLM, workflow, agente ou código determinístico: como eu escolheria antes de discutir framework",
+      "kind": "original"
+    },
+    "en": {
+      "title": "LLM, workflow, agent or deterministic code: how I would choose before discussing frameworks",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "cover": {
+    "en": "workflow-agent-or-code-en.jpg",
+    "pt-br": "workflow-agent-or-code-en.jpg"
+  },
+  "images": [
+    {
+      "key": "ef58f64e1256d63acb26",
+      "url": "",
+      "alt": ""
+    },
+    {
+      "key": "502b18b4308ef3a9c64d",
+      "url": "",
+      "alt": ""
+    },
+    {
+      "key": "67c1bdb0fd91d0e3c2ec",
+      "url": "",
+      "alt": ""
+    },
+    {
+      "key": "05c5cefdf29c119c9405",
+      "url": "",
+      "alt": ""
+    },
+    {
+      "key": "3d09c5739bf36a838bd9",
+      "url": "",
+      "alt": ""
+    }
+  ]
+}

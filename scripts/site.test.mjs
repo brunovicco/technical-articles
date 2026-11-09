@@ -33,7 +33,7 @@ test('English is the default entry point and fallback language while Portuguese 
 });
 
 test('language choices list English first and preserve the matching article in both languages',async()=>{
-  const id='quem-esta-chamando-a-tool';
+  const id='who-is-calling-the-tool';
   for(const lang of ['en','pt-br']){
     const html=await read(path.join(dist,lang,lang==='en'?'articles':'artigos',id,'index.html'));
     const navigation=html.match(/<nav class="languages"[^>]*>([\s\S]*?)<\/nav>/)[1];
@@ -119,7 +119,7 @@ test('media files have a safe file signature and every imported image is local',
 });
 
 test('both rendered DSPy versions include inline identifiers and the screenshot code example',async()=>{
-  const id='dspy-o-framework-que-trata-prompts-como-codigo-compilavel-nao-como-strings';
+  const id='dspy-prompts-as-code';
   for(const lang of ['pt-br','en']){
     const html=await read(path.join(dist,lang,lang==='pt-br'?'artigos':'articles',id,'index.html'));
     for(const identifier of ['Signature','Modules','dspy.Predict','dspy.ChainOfThought','dspy.ReAct','dspy.Retrieve']){
@@ -151,10 +151,20 @@ test('catalogue and feeds include every article in each language, without privat
 
 test('article pages offer share links in both languages',async()=>{
   for(const [route,label] of [['en/articles','Copy link'],['pt-br/artigos','Copiar link']]){
-    const dirs=(await fs.readdir(new URL(`../dist/${route}`,import.meta.url))).filter(d=>!d.includes('.'));
-    const html=await fs.readFile(new URL(`../dist/${route}/${dirs[0]}/index.html`,import.meta.url),'utf8');
+    const html=await fs.readFile(new URL(`../dist/${route}/build-buy-or-compose/index.html`,import.meta.url),'utf8');
     assert.match(html,/linkedin\.com\/sharing\/share-offsite/);
     assert.match(html,/data-share-copy=/);
     assert.ok(html.includes(label));
+  }
+});
+
+test('former article ids redirect to the current article URL',async()=>{
+  const dist=new URL('../dist/',import.meta.url);
+  for(const [route,lang] of [['en/articles','en'],['pt-br/artigos','pt-br']]){
+    const html=await fs.readFile(new URL(`${route}/build-buy-ou-compose-o-que-uma-empresa-realmente-precisa-possuir-em-ia/index.html`,dist),'utf8');
+    assert.match(html,new RegExp(`<link rel="canonical" href="[^"]+/${route}/build-buy-or-compose/">`));
+    assert.match(html,/http-equiv="refresh" content="0; url=[^"]+\/build-buy-or-compose\/"/);
+    assert.match(html,/name="robots" content="noindex"/);
+    assert.ok(!(await fs.readFile(new URL('sitemap.xml',dist),'utf8')).includes('build-buy-ou-compose'),'sitemap lists only current URLs');
   }
 });

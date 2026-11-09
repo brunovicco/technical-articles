@@ -45,7 +45,7 @@ test('counting is present on every page only when a site code is configured',asy
   for(const file of await pages(dist)){
     const html=await fs.readFile(file,'utf8');
     const relative=path.relative(dist,file);
-    if(relative==='index.html'){assert.ok(!html.includes('goatcounter'),'redirect page stays free of scripts');continue;}
+    if(relative==='index.html'||html.includes('http-equiv="refresh"')){assert.ok(!html.includes('goatcounter'),'redirect page stays free of scripts');continue;}
     if(code)assert.equal(html.split(tag).length-1,1,`${relative} should include the counter once`);
     else assert.ok(!html.includes('goatcounter'),`${relative} must not include the counter when disabled`);
   }

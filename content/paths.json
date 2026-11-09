@@ -15,42 +15,42 @@
     },
     "items": [
       {
-        "article": "build-buy-ou-compose-o-que-uma-empresa-realmente-precisa-possuir-em-ia",
+        "article": "build-buy-or-compose",
         "note": {
           "en": "Start here: the unit of decision is the capability, not the platform.",
           "pt-br": "Comece aqui: a unidade de decisão é a capability, não a plataforma."
         }
       },
       {
-        "article": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar",
+        "article": "enterprise-agent-platforms",
         "note": {
           "en": "What to transfer to the vendor, what stays in the company, and the evidence that the split works.",
           "pt-br": "O que transferir ao fornecedor, o que permanece na empresa e a evidência de que a divisão funciona."
         }
       },
       {
-        "article": "quanto-custa-uma-capability-de-ia-tco-finops-e-unit-economics",
+        "article": "ai-capability-tco",
         "note": {
           "en": "The conditions that change the build, buy or compose decision, and what to bring to investment approval.",
           "pt-br": "As condições que mudam a decisão build, buy ou compose e o que levar à aprovação de investimento."
         }
       },
       {
-        "article": "risco-de-concentracao-em-ia-generativa",
+        "article": "genai-concentration-risk",
         "note": {
           "en": "What changes when one provider concentrates models, data and operations.",
           "pt-br": "O que muda quando um fornecedor concentra modelos, dados e operação."
         }
       },
       {
-        "article": "ia-generativa-em-ambientes-regulados",
+        "article": "generative-ai-regulated-environments",
         "note": {
           "en": "The standard in regulated environments is demonstrability.",
           "pt-br": "Em ambientes regulados, o critério é a demonstrabilidade."
         }
       },
       {
-        "article": "seven-frameworks-for-governing-llm-systems-the-map-before-the-territory",
+        "article": "seven-llm-governance-frameworks",
         "note": {
           "en": "A map of the governance frameworks behind the decision.",
           "pt-br": "Um mapa dos frameworks de governança por trás da decisão."
@@ -94,49 +94,49 @@
     },
     "items": [
       {
-        "article": "build-buy-ou-compose-o-que-uma-empresa-realmente-precisa-possuir-em-ia",
+        "article": "build-buy-or-compose",
         "note": {
           "en": "Start here: TCO, unit economics and the trade-offs of each option.",
           "pt-br": "Comece aqui: TCO, unit economics e os trade-offs de cada opção."
         }
       },
       {
-        "article": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar",
+        "article": "enterprise-agent-platforms",
         "note": {
           "en": "What to measure in a comparable pilot so the TCO in Part 3 is defensible.",
           "pt-br": "O que medir num piloto comparável para que o TCO da Parte 3 seja defensável."
         }
       },
       {
-        "article": "quanto-custa-uma-capability-de-ia-tco-finops-e-unit-economics",
+        "article": "ai-capability-tco",
         "note": {
           "en": "The core of the path: TCO, break-even by volume, cost per completed task and economic attribution.",
           "pt-br": "O núcleo do caminho: TCO, ponto de equilíbrio por volume, custo por tarefa concluída e atribuição econômica."
         }
       },
       {
-        "article": "a-conta-da-ia-chegou-limitar-o-uso-e-a-resposta",
+        "article": "ai-bill-usage-limits",
         "note": {
           "en": "When the bill arrives, is limiting usage the answer?",
           "pt-br": "Quando a conta chega, limitar o uso é a resposta?"
         }
       },
       {
-        "article": "tokens-como-metrica-de-produtividade-onde-essa-leitura-quebra",
+        "article": "tokens-productivity-metric",
         "note": {
           "en": "Why tokens are a weak productivity metric.",
           "pt-br": "Por que tokens são uma métrica fraca de produtividade."
         }
       },
       {
-        "article": "dora-developer-experience-e-coortes-como-eu-mediria-o-impacto-da-ia-em-engenharia",
+        "article": "dora-ai-impact-cohorts",
         "note": {
           "en": "Measuring the impact of AI on engineering with cohorts.",
           "pt-br": "Medindo o impacto da IA em engenharia com coortes."
         }
       },
       {
-        "article": "risco-de-concentracao-em-ia-generativa",
+        "article": "genai-concentration-risk",
         "note": {
           "en": "The economic side of provider concentration.",
           "pt-br": "O lado econômico da concentração em fornecedores."
@@ -168,49 +168,49 @@
     },
     "items": [
       {
-        "article": "build-buy-ou-compose-o-que-uma-empresa-realmente-precisa-possuir-em-ia",
+        "article": "build-buy-or-compose",
         "note": {
           "en": "Start here: which layers to govern even when execution is contracted.",
           "pt-br": "Comece aqui: quais camadas governar mesmo quando a execução é contratada."
         }
       },
       {
-        "article": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar",
+        "article": "enterprise-agent-platforms",
         "note": {
           "en": "Comparing AWS, Microsoft, Google, Databricks, Salesforce and own SDKs at the operational boundary.",
           "pt-br": "Comparando AWS, Microsoft, Google, Databricks, Salesforce e SDKs próprios na fronteira operacional."
         }
       },
       {
-        "article": "6-padroes-de-arquitetura-llm-aprendizados-de-234-celulas-experimentais-sobre-controle-e-autonomia",
+        "article": "llm-architecture-patterns",
         "note": {
           "en": "Six architecture patterns and the control/autonomy trade-off.",
           "pt-br": "Seis padrões de arquitetura e o trade-off entre controle e autonomia."
         }
       },
       {
-        "article": "llm-workflow-agente-ou-codigo-deterministico-como-escolher-antes-do-framework",
+        "article": "workflow-agent-or-code",
         "note": {
           "en": "Workflow, agent or deterministic code, before the framework.",
           "pt-br": "Workflow, agente ou código determinístico, antes do framework."
         }
       },
       {
-        "article": "arquitetura-onde-a-politica-vira-controle-tecnico-e-por-que-a-residencia-de-dados-define-o-desenho",
+        "article": "policy-to-technical-controls",
         "note": {
           "en": "Where policy becomes a technical control.",
           "pt-br": "Onde a política vira controle técnico."
         }
       },
       {
-        "article": "agentic-sdlc-como-plataforma-o-que-precisa-existir-entre-o-coding-agent-e-o-merge",
+        "article": "agentic-sdlc-platform",
         "note": {
           "en": "The platform that must exist between the coding agent and the merge.",
           "pt-br": "A plataforma que precisa existir entre o coding agent e o merge."
         }
       },
       {
-        "article": "harness-engineering-como-tornar-agentes-confiaveis",
+        "article": "harness-engineering",
         "note": {
           "en": "Making agents reliable with a harness.",
           "pt-br": "Tornando agentes confiáveis com um harness."

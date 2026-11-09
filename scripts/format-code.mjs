@@ -5,7 +5,7 @@ const dspyTerms = [
   'MIPROv2', 'COPRO',
 ];
 const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-const literalCodeExample = 'dspy-o-framework-que-trata-prompts-como-codigo-compilavel-nao-como-strings';
+const literalCodeExample = 'dspy-prompts-as-code';
 
 export function formatCode(html, { id = '', terms = [] } = {}) {
   const vocabulary = [...new Set([...terms, ...(id.includes('dspy') ? dspyTerms : [])])]

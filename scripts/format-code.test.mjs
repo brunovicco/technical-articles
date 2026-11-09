@@ -24,7 +24,7 @@ test('keeps code block whitespace, entities and copyable contents intact',()=>{
 });
 
 test('uses the screenshot example only for its matching article, without guessing other missing code',()=>{
-  const id='dspy-o-framework-que-trata-prompts-como-codigo-compilavel-nao-como-strings';
+  const id='dspy-prompts-as-code';
   assert.equal(formatCode('<pre></pre><pre></pre>',{id}),'<pre><code>&quot;question → answer&quot;</code></pre>');
   assert.equal(formatCode('<pre></pre>',{id:'other-article'}),'');
   assert.equal(formatCode('<p>Signature</p>',{id:'unrelated-article'}),'<p>Signature</p>');

@@ -1,0 +1,29 @@
+{
+  "id": "eu-usa-ai-regulation-summary",
+  "aliases": [
+    "summary-of-ai-regulations-eu-and-usa"
+  ],
+  "originalLanguage": "en",
+  "date": "2024-10-07",
+  "sourceUrl": "https://www.linkedin.com/pulse/summary-ai-regulations-eu-usa-bruno-vicco-b9brf",
+  "tags": [
+    "governance"
+  ],
+  "series": {
+    "id": "ai-regulation-eu-us",
+    "part": 3
+  },
+  "versions": {
+    "en": {
+      "title": "Summary of AI Regulations: EU and USA",
+      "kind": "original"
+    },
+    "pt-br": {
+      "title": "Resumo das regulações de IA: UE e EUA",
+      "kind": "translation",
+      "translatedFrom": "en",
+      "reviewStatus": "unreviewed"
+    }
+  },
+  "images": []
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ai-capability-tco",
+  "originalLanguage": "pt-br",
+  "status": "ready",
+  "date": "2026-11-22",
+  "tags": [
+    "platforms",
+    "governance"
+  ],
+  "series": {
+    "id": "enterprise-ai-decisions",
+    "part": 3
+  },
+  "versions": {
+    "en": {
+      "title": "How much does an AI capability cost? TCO, FinOps and unit economics",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    },
+    "pt-br": {
+      "title": "Quanto custa uma capability de IA? TCO, FinOps e unit economics",
+      "kind": "original"
+    }
+  },
+  "cover": {
+    "en": "ai-capability-tco-en.jpg",
+    "pt-br": "ai-capability-tco-en.jpg"
+  },
+  "images": []
+}
