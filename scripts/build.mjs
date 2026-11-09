@@ -83,6 +83,8 @@ for(const entry of directories){
     if(source.protocol!=='https:' || source.username || source.password)throw new Error(`Invalid source URL: ${entry.name}`);
   }
   if(!STATUSES.includes(statusOf(metadata)))throw new Error(`Invalid article status: ${entry.name} → ${metadata.status}`);
+  metadata.aliases??=[];
+  if(!Array.isArray(metadata.aliases)||metadata.aliases.some(alias=>typeof alias!=='string'||!/^[a-z0-9-]+$/.test(alias)||alias===metadata.id))throw new Error(`Invalid aliases: ${entry.name}`);
   metadata.sourceUrl=metadata.sourceUrl || undefined;
   metadata.images ??= [];
   for(const [coverLang,file] of Object.entries(metadata.cover||{})){
@@ -282,6 +284,11 @@ for(const lang of ['pt-br','en']){
   for(const track of tracks.filter(track=>track.articles.some(a=>a.versions[lang]))){await write(trackPath(lang,track.id).slice(1)+'index.html',trackpage(track,lang));sitemap.push(trackPath(lang,track.id));}
   for(const rp of paths){await write(pathPath(lang,rp.id).slice(1)+'index.html',pathpage(rp,lang));sitemap.push(pathPath(lang,rp.id));}
   for(const article of articles.filter(a=>a.versions[lang])){await write(articlePath(lang,article.id).slice(1)+'index.html',articlepage(article,lang));sitemap.push(articlePath(lang,article.id));}
+  // Former article ids keep working: each one redirects to the current article URL.
+  for(const article of articles.filter(a=>a.versions[lang]))for(const alias of article.aliases){
+    const target=absolute(articlePath(lang,article.id));
+    await write(articlePath(lang,alias).slice(1)+'index.html',`<!doctype html><html lang="${isoLocale(lang)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(article.versions[lang].title)}</title><meta name="robots" content="noindex"><link rel="canonical" href="${target}"><meta http-equiv="refresh" content="0; url=${target}"></head><body><p><a href="${target}">${escape(article.versions[lang].title)}</a></p></body></html>`);
+  }
   await write(`${lang}/search-index.json`,JSON.stringify(articles.filter(a=>a.versions[lang]).map(a=>({id:a.id,text:normalize(a.versions[lang].title+' '+a.tags.map(tag=>tagLabel(tag,lang)).join(' ')+' '+plain(a.content[lang]))}))));
   const feed=articles.filter(a=>a.versions[lang]).map(a=>`<item><title>${escape(a.versions[lang].title)}</title><link>${absolute(articlePath(lang,a.id))}</link><guid isPermaLink="true">${absolute(articlePath(lang,a.id))}</guid><pubDate>${new Date(a.date+'T12:00:00Z').toUTCString()}</pubDate><description>${escape(a.excerpt[lang])}</description></item>`).join('');
   await write(`${lang}/feed.xml`,`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Bruno Vicco - ${messages[lang].notes}</title><link>${absolute('/'+lang+'/')}</link><description>${escape(messages[lang].intro)}</description><language>${isoLocale(lang)}</language>${feed}</channel></rss>`);

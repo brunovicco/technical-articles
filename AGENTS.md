@@ -5,7 +5,7 @@
 - Use English for documentation, code comments, tooling messages, test descriptions, commit messages, and pull request titles and descriptions.
 - English is the default site language (`defaultLanguage: "en"`).
 - Preserve English and Brazilian Portuguese article versions and localized interface strings. Do not translate or remove Portuguese content when editing repository documentation.
-- Keep existing article identifiers and publication URLs stable.
+- Keep existing article identifiers and publication URLs stable. Use short English identifiers; when an id of a published article must change, list the former one in `aliases` so its URLs redirect.
 
 ## Commits and pull requests
 
