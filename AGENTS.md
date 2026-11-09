@@ -12,4 +12,5 @@
 - Run `npm run check` after changes affecting the generated site.
 - Keep deployment manual: publishing requires an explicit `workflow_dispatch` run on `main` with `publish: true`.
 - Pushes, pull requests, and merges must not deploy the site.
+- The required "Repository security invariants" check runs `node scripts/security-invariants.mjs`; keep workflow permissions at `contents: read` and the deploy job gated on a manual run from `main`.
 - Do not change repository visibility as part of routine implementation work.
