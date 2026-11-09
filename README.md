@@ -91,6 +91,10 @@ The normal build requires both languages. For a temporary preview during an inco
 
 `content/tracks.json` defines ordered reading tracks (`id`, plus `title` and `description` in both languages). An article joins a track with `"series": { "id": "<track id>", "part": 1 }` in `article.json`. The build fails on an unknown track, a duplicate part, or a track without articles. Tracks are listed on the home page and get their own pages at `/en/tracks/<id>/` and `/pt-br/trilhas/<id>/`; track articles show a track eyebrow and a "This track" rail. Track numbers follow the order in `tracks.json`.
 
+### Publication status
+
+Articles are published by default. Add `"status": "ready"` to `article.json` to keep a finished article in the repository without releasing it: the build still validates it (metadata, both languages, media), but leaves it out of the home page, tracks, reading paths, feeds, search index and sitemap, and does not ship its banner or local figures. Tracks and paths that would end up with nothing published are skipped, and the build prints which articles were held back. `npm run articles:status` lists them with their date, series and paths, and flags those whose date has been reached. To release one, remove `status` (or set it to `published`), run `npm run check`, and deploy manually. Any other value fails the build.
+
 ### Reading paths
 
 `content/paths.json` defines curated reading paths by audience. Unlike tracks, a path may reuse any article, including articles that belong to a track. Each path has an `id`, localized `title`, `description` and `audience`, an ordered `items` list (`article` id plus a localized `note`), and an optional `comingSoon` list of localized titles for planned articles (rendered without links). The build fails on an unknown article id or a missing translation. Paths are listed on the home page (`#paths`) and get their own pages at `/en/paths/<id>/` and `/pt-br/caminhos/<id>/`.

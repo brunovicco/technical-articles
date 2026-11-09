@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 900" role="img" aria-label="Platform selection flowchart with knockout criteria, comparable proof of concept, and evidence-based contracting" xml:lang="en">
+<defs><marker id="m" markerWidth="12" markerHeight="12" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6" stroke="#608c91" fill="none" stroke-width="2"/></marker></defs><rect width="1450" height="900" rx="26" fill="#f5f9f9"/>
+<g font-family="Arial, sans-serif"><text x="62" y="73" font-size="34" font-weight="bold" fill="#183c48">Platform selection: three filters, not a feature checklist</text><text x="62" y="112" font-size="20" fill="#5f7b81">Proposed process — apply the same tasks and criteria to every candidate.</text>
+<rect x="445" y="155" width="560" height="90" rx="19" fill="#1b4c59"/><text x="725" y="191" text-anchor="middle" font-size="25" font-weight="bold" fill="white">01 · Non-negotiable requirements</text><text x="725" y="223" text-anchor="middle" font-size="19" fill="#c8e8e7">data, identity, region, risk, support</text>
+<path d="M725 246 V302" stroke="#608c91" stroke-width="4" fill="none" marker-end="url(#m)"/>
+<rect x="445" y="317" width="560" height="90" rx="19" fill="#277a7a"/><text x="725" y="354" text-anchor="middle" font-size="25" font-weight="bold" fill="white">02 · Same-workload evaluation lab</text><text x="725" y="384" text-anchor="middle" font-size="19" fill="#e2f6f2">quality, tools, failures, latency, exports</text>
+<path d="M725 408 V467" stroke="#608c91" stroke-width="4" fill="none" marker-end="url(#m)"/>
+<rect x="445" y="480" width="560" height="90" rx="19" fill="#c88742"/><text x="725" y="517" text-anchor="middle" font-size="25" font-weight="bold" fill="white">03 · Economic and contractual review</text><text x="725" y="548" text-anchor="middle" font-size="19" fill="#fff4e7">TCO, pricing unit, exit terms, SLA</text>
+<path d="M725 571 V630" stroke="#608c91" stroke-width="4" fill="none" marker-end="url(#m)"/>
+<rect x="430" y="644" width="590" height="100" rx="18" fill="#dfece8" stroke="#9dbbb7"/><text x="725" y="681" text-anchor="middle" font-size="25" font-weight="bold" fill="#24535a">Evidence-backed decision on record</text><text x="725" y="718" text-anchor="middle" font-size="19" fill="#4e7378">owners, trade-offs, review plan</text>
+<rect x="56" y="320" width="315" height="117" rx="18" fill="#fff0e9" stroke="#deb1a0"/><text x="214" y="357" text-anchor="middle" font-size="21" font-weight="bold" fill="#8b4b37">Requirement not met?</text><text x="214" y="390" text-anchor="middle" font-size="17" fill="#845b4b">Reject or redesign architecture</text>
+<rect x="1080" y="321" width="316" height="117" rx="18" fill="#fff4e0" stroke="#d9b77b"/><text x="1238" y="356" text-anchor="middle" font-size="21" font-weight="bold" fill="#835e2b">Pilot failed?</text><text x="1238" y="390" text-anchor="middle" font-size="17" fill="#876c45">Reassess and retest</text>
+<path d="M445 201 H212 V320" stroke="#b38b7a" stroke-width="3" fill="none" marker-end="url(#m)"/><path d="M1005 365 H1080" stroke="#bda176" stroke-width="3" fill="none" marker-end="url(#m)"/>
+<text x="61" y="816" font-size="19" fill="#617b80">The scorecard supports the decision. It does not replace tests, contracts, evidence, or contextual judgment.</text>
+</g></svg>

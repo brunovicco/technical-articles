@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { formatCode } from './format-code.mjs';
 import { goatcounterCode, goatcounterTag } from './analytics.mjs';
+import { STATUSES, articleDirectories, isPublished, statusOf } from './article-status.mjs';
 import { renderProfile, renderProjects, profileSources } from '../public/assets/profile-content.mjs';
 
 export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -63,7 +64,7 @@ const messages={
   },
 };
 
-const directories=(await fs.readdir(path.join(root,'content/articles'),{withFileTypes:true})).filter(entry=>entry.isDirectory());
+const directories=await articleDirectories(root);
 const tracks=await fs.readFile(path.join(root,'content/tracks.json'),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return [];throw error;});
 for(const track of tracks){
   if(!/^[a-z0-9-]+$/.test(track.id))throw new Error(`Invalid track id: ${track.id}`);
@@ -71,7 +72,7 @@ for(const track of tracks){
 }
 if(new Set(tracks.map(track=>track.id)).size!==tracks.length)throw new Error('Duplicate track id');
 const paths=await fs.readFile(path.join(root,'content/paths.json'),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return [];throw error;});
-const articles=[];
+const articles=[],held=[];
 for(const entry of directories){
   const dir=path.join(root,'content/articles',entry.name);
   const metadata=JSON.parse(await fs.readFile(path.join(dir,'article.json'),'utf8'));
@@ -81,6 +82,7 @@ for(const entry of directories){
     const source=new URL(metadata.sourceUrl);
     if(source.protocol!=='https:' || source.username || source.password)throw new Error(`Invalid source URL: ${entry.name}`);
   }
+  if(!STATUSES.includes(statusOf(metadata)))throw new Error(`Invalid article status: ${entry.name} → ${metadata.status}`);
   metadata.sourceUrl=metadata.sourceUrl || undefined;
   metadata.images ??= [];
   for(const [coverLang,file] of Object.entries(metadata.cover||{})){
@@ -105,27 +107,34 @@ for(const entry of directories){
     const text=plain(first).replace(/\s+([,.;:!?])/g,'$1');metadata.excerpt[lang]=text.length>240?text.slice(0,237).replace(/\s+\S*$/,'')+'…':text;
     metadata.wordCount[lang]=plain(body).split(/\s+/).length;
   }
-  articles.push(metadata);
+  (isPublished(metadata)?articles:held).push(metadata);
 }
 articles.sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id));
-for(const track of tracks){
-  track.number=String(tracks.indexOf(track)+1).padStart(2,'0');
+for(const track of [...tracks]){
   track.articles=articles.filter(a=>a.series?.id===track.id).sort((a,b)=>a.series.part-b.series.part);
-  if(!track.articles.length)throw new Error(`Track without articles: ${track.id}`);
-  if(new Set(track.articles.map(a=>a.series.part)).size!==track.articles.length)throw new Error(`Duplicate part in track: ${track.id}`);
+  if(!track.articles.length){
+    // A track whose articles are all held back is not published yet; a track with no articles at all is an error.
+    if(held.some(a=>a.series?.id===track.id)){tracks.splice(tracks.indexOf(track),1);continue;}
+    throw new Error(`Track without articles: ${track.id}`);
+  }
+  if(new Set([...track.articles,...held.filter(a=>a.series?.id===track.id)].map(a=>a.series.part)).size!==track.articles.length+held.filter(a=>a.series?.id===track.id).length)throw new Error(`Duplicate part in track: ${track.id}`);
 }
-for(const rp of paths){
+tracks.forEach((track,index)=>{track.number=String(index+1).padStart(2,'0');});
+for(const rp of [...paths]){
   if(!/^[a-z0-9-]+$/.test(rp.id))throw new Error(`Invalid path id: ${rp.id}`);
-  rp.number=String(paths.indexOf(rp)+1).padStart(2,'0');
   for(const lang of ['pt-br','en'])if(!rp.title?.[lang]||!rp.description?.[lang]||!rp.audience?.[lang])throw new Error(`Path ${rp.id} needs a title, description and audience in ${lang}`);
   if(!rp.items?.length)throw new Error(`Path without items: ${rp.id}`);
   for(const item of rp.items){
-    item.meta=articles.find(a=>a.id===item.article);
+    item.meta=[...articles,...held].find(a=>a.id===item.article);
     if(!item.meta)throw new Error(`Unknown article in path ${rp.id}: ${item.article}`);
     for(const lang of ['pt-br','en'])if(!item.note?.[lang])throw new Error(`Path ${rp.id}/${item.article} needs a note in ${lang}`);
   }
   for(const soon of rp.comingSoon||[])for(const lang of ['pt-br','en'])if(!soon.title?.[lang])throw new Error(`Path ${rp.id} coming-soon item needs a title in ${lang}`);
+  // Held-back articles stay out of the paths until they are released; a path with nothing published yet is skipped.
+  rp.items=rp.items.filter(item=>isPublished(item.meta));
+  if(!rp.items.length)paths.splice(paths.indexOf(rp),1);
 }
+paths.forEach((rp,index)=>{rp.number=String(index+1).padStart(2,'0');});
 if(new Set(paths.map(rp=>rp.id)).size!==paths.length)throw new Error('Duplicate path id');
 const trackOf=article=>article.series&&tracks.find(track=>track.id===article.series.id);
 let assets={};
@@ -261,6 +270,10 @@ function aboutpage(lang){
 }
 async function write(file,content){const destination=path.join(output,file);await fs.mkdir(path.dirname(destination),{recursive:true});await fs.writeFile(destination,content);}
 await fs.rm(output,{recursive:true,force:true});await fs.mkdir(output,{recursive:true});await fs.cp(path.join(root,'public'),output,{recursive:true});
+// Files that only held-back articles use (banners and local figures) are not shipped before release.
+const assetsOf=list=>new Set(list.flatMap(a=>[...Object.values(a.cover||{}).map(file=>`assets/banners/${file}`),...Object.values(a.content).flatMap(body=>[...body.matchAll(/\/assets\/media\/([^"'\s)]+)/g)].map(match=>`assets/media/${match[1]}`))]));
+const shipped=assetsOf(articles);
+for(const file of assetsOf(held))if(!shipped.has(file))await fs.rm(path.join(output,file),{force:true});
 const sitemap=[];
 for(const lang of ['pt-br','en']){
   await write(`${lang}/index.html`,homepage(lang));
@@ -278,5 +291,5 @@ await write('404.html',shell({lang:defaultLanguage,title:'404',description:messa
 await write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${sitemap.map(route=>`<url><loc>${absolute(route)}</loc></url>`).join('')}</urlset>`);
 await write('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${absolute('/sitemap.xml')}\n`);
 await write('.nojekyll','');
-await write('build-info.json',JSON.stringify({articles:articles.length,versions:articles.reduce((count,a)=>count+Object.keys(a.versions).length,0),localImages:Object.values(assets).filter(a=>a.file).length,originalLanguages:articles.reduce((counts,a)=>(counts[a.originalLanguage]=(counts[a.originalLanguage]||0)+1,counts),{}),siteUrl},null,2));
-console.log(`Built ${articles.length} articles, ${articles.reduce((count,a)=>count+Object.keys(a.versions).length,0)} language versions → dist (${siteUrl})`);
+await write('build-info.json',JSON.stringify({articles:articles.length,held:held.length,versions:articles.reduce((count,a)=>count+Object.keys(a.versions).length,0),localImages:Object.values(assets).filter(a=>a.file).length,originalLanguages:articles.reduce((counts,a)=>(counts[a.originalLanguage]=(counts[a.originalLanguage]||0)+1,counts),{}),siteUrl},null,2));
+console.log(`Built ${articles.length} articles, ${articles.reduce((count,a)=>count+Object.keys(a.versions).length,0)} language versions → dist (${siteUrl})${held.length?`; held back as ready: ${held.map(a=>a.id).join(', ')}`:''}`);

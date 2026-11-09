@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {isPublished} from './article-status.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
@@ -10,7 +11,14 @@ const info=JSON.parse(await fs.readFile(path.join(dist,'build-info.json'),'utf8'
 const base=new URL(info.siteUrl).pathname.replace(/\/$/,'');
 const read=file=>fs.readFile(path.join(dist,file),'utf8');
 const esc=value=>value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-const paths=JSON.parse(await fs.readFile(path.join(root,'content/paths.json'),'utf8'));
+const held=new Set();
+for(const id of await fs.readdir(path.join(root,'content/articles'))){
+  const metadata=JSON.parse(await fs.readFile(path.join(root,'content/articles',id,'article.json'),'utf8'));
+  if(!isPublished(metadata))held.add(metadata.id);
+}
+// Held-back articles are left out of the paths, and a path with nothing published is not generated.
+const paths=JSON.parse(await fs.readFile(path.join(root,'content/paths.json'),'utf8'))
+  .map(rp=>({...rp,items:rp.items.filter(item=>!held.has(item.article))})).filter(rp=>rp.items.length);
 
 test('every reading path has a localized page listing its articles in order',async()=>{
   assert.ok(paths.length>0);

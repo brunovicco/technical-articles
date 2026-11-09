@@ -3,12 +3,13 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {publishedEntries} from './article-status.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
 const info=JSON.parse(await fs.readFile(path.join(dist,'build-info.json'),'utf8'));
 const base=new URL(info.siteUrl).pathname.replace(/\/$/,'');
-const entries=(await fs.readdir(path.join(root,'content/articles'),{withFileTypes:true})).filter(entry=>entry.isDirectory());
+const entries=await publishedEntries(root);
 
 test('article banners are served locally only on the languages that declare them',async()=>{
   let covered=0;

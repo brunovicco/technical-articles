@@ -7,6 +7,7 @@
   "scripts": {
     "new:article": "node scripts/new-article.mjs",
     "build": "node scripts/build.mjs",
+    "articles:status": "node scripts/articles-status.mjs",
     "test": "node --test scripts/*.test.mjs",
     "check": "npm run build && npm test",
     "serve": "node scripts/serve.mjs"

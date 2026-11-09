@@ -4,13 +4,14 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import vm from 'node:vm';
 import {fileURLToPath} from 'node:url';
+import {publishedEntries} from './article-status.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const dist=path.join(root,'dist');
 const info=JSON.parse(await fs.readFile(path.join(dist,'build-info.json'),'utf8'));
 const base=new URL(info.siteUrl).pathname.replace(/\/$/,'');
 const read=file=>fs.readFile(file,'utf8');
-const entries=(await fs.readdir(path.join(root,'content/articles'),{withFileTypes:true})).filter(entry=>entry.isDirectory());
+const entries=await publishedEntries(root);
 const articles=await Promise.all(entries.map(async entry=>JSON.parse(await read(path.join(root,'content/articles',entry.name,'article.json')))));
 const newest=articles.filter(a=>a.versions.en).sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id))[0];
 
