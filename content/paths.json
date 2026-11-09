@@ -22,6 +22,13 @@
         }
       },
       {
+        "article": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar",
+        "note": {
+          "en": "What to transfer to the vendor, what stays in the company, and the evidence that the split works.",
+          "pt-br": "O que transferir ao fornecedor, o que permanece na empresa e a evidência de que a divisão funciona."
+        }
+      },
+      {
         "article": "risco-de-concentracao-em-ia-generativa",
         "note": {
           "en": "What changes when one provider concentrates models, data and operations.",
@@ -87,6 +94,13 @@
         }
       },
       {
+        "article": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar",
+        "note": {
+          "en": "What to measure in a comparable pilot so the TCO in Part 3 is defensible.",
+          "pt-br": "O que medir num piloto comparável para que o TCO da Parte 3 seja defensável."
+        }
+      },
+      {
         "article": "a-conta-da-ia-chegou-limitar-o-uso-e-a-resposta",
         "note": {
           "en": "When the bill arrives, is limiting usage the answer?",
@@ -118,8 +132,8 @@
     "comingSoon": [
       {
         "title": {
-          "en": "Platform economics and scenario analysis",
-          "pt-br": "Economia das plataformas e análise de cenários"
+          "en": "How much does an AI capability cost? TCO, FinOps and unit economics",
+          "pt-br": "Quanto custa uma capability de IA? TCO, FinOps e unit economics"
         }
       },
       {
@@ -150,6 +164,13 @@
         "note": {
           "en": "Start here: which layers to govern even when execution is contracted.",
           "pt-br": "Comece aqui: quais camadas governar mesmo quando a execução é contratada."
+        }
+      },
+      {
+        "article": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar",
+        "note": {
+          "en": "Comparing AWS, Microsoft, Google, Databricks, Salesforce and own SDKs at the operational boundary.",
+          "pt-br": "Comparando AWS, Microsoft, Google, Databricks, Salesforce e SDKs próprios na fronteira operacional."
         }
       },
       {
@@ -193,12 +214,6 @@
         "title": {
           "en": "TOGAF applied to AI",
           "pt-br": "TOGAF aplicado à IA"
-        }
-      },
-      {
-        "title": {
-          "en": "Platform comparison",
-          "pt-br": "Comparação de plataformas"
         }
       }
     ]

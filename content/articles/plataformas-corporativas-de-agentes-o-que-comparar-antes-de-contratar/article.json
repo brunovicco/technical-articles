@@ -1,0 +1,31 @@
+{
+  "id": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar",
+  "originalLanguage": "pt-br",
+  "status": "ready",
+  "date": "2026-11-15",
+  "tags": [
+    "platforms",
+    "governance"
+  ],
+  "versions": {
+    "en": {
+      "title": "Enterprise agent platforms: what to compare before you contract",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    },
+    "pt-br": {
+      "title": "Plataformas corporativas de agentes: o que comparar antes de contratar?",
+      "kind": "original"
+    }
+  },
+  "images": [],
+  "series": {
+    "id": "enterprise-ai-decisions",
+    "part": 2
+  },
+  "cover": {
+    "en": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar-en.jpg",
+    "pt-br": "plataformas-corporativas-de-agentes-o-que-comparar-antes-de-contratar-pt-br.jpg"
+  }
+}
