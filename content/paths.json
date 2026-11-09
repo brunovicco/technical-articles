@@ -1,0 +1,206 @@
+[
+  {
+    "id": "enterprise-ai-strategy",
+    "audience": {
+      "en": "For executives, Heads of AI and strategy leads",
+      "pt-br": "Para executivos, Heads de IA e líderes de estratégia"
+    },
+    "title": {
+      "en": "Enterprise AI Strategy",
+      "pt-br": "Estratégia de IA corporativa"
+    },
+    "description": {
+      "en": "From the build, buy or compose decision to dependency, regulation and governance: what an organization should own, and what it can safely contract.",
+      "pt-br": "Da decisão build, buy ou compose à dependência, regulação e governança: o que a organização deve possuir e o que pode contratar com segurança."
+    },
+    "items": [
+      {
+        "article": "build-buy-ou-compose-o-que-uma-empresa-realmente-precisa-possuir-em-ia",
+        "note": {
+          "en": "Start here: the unit of decision is the capability, not the platform.",
+          "pt-br": "Comece aqui: a unidade de decisão é a capability, não a plataforma."
+        }
+      },
+      {
+        "article": "risco-de-concentracao-em-ia-generativa",
+        "note": {
+          "en": "What changes when one provider concentrates models, data and operations.",
+          "pt-br": "O que muda quando um fornecedor concentra modelos, dados e operação."
+        }
+      },
+      {
+        "article": "ia-generativa-em-ambientes-regulados",
+        "note": {
+          "en": "The standard in regulated environments is demonstrability.",
+          "pt-br": "Em ambientes regulados, o critério é a demonstrabilidade."
+        }
+      },
+      {
+        "article": "seven-frameworks-for-governing-llm-systems-the-map-before-the-territory",
+        "note": {
+          "en": "A map of the governance frameworks behind the decision.",
+          "pt-br": "Um mapa dos frameworks de governança por trás da decisão."
+        }
+      }
+    ],
+    "comingSoon": [
+      {
+        "title": {
+          "en": "TOGAF applied to AI",
+          "pt-br": "TOGAF aplicado à IA"
+        }
+      },
+      {
+        "title": {
+          "en": "Prioritization and business case",
+          "pt-br": "Priorização e business case"
+        }
+      },
+      {
+        "title": {
+          "en": "Scale decisions",
+          "pt-br": "Decisões de escala"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ai-economics-investment",
+    "audience": {
+      "en": "For CFOs, product owners and investment committees",
+      "pt-br": "Para CFOs, donos de produto e comitês de investimento"
+    },
+    "title": {
+      "en": "AI Economics & Investment Decisions",
+      "pt-br": "Economia de IA e decisões de investimento"
+    },
+    "description": {
+      "en": "How to compare the cost of each option, what the bill hides, and which metrics survive scrutiny before scaling a spend.",
+      "pt-br": "Como comparar o custo de cada opção, o que a fatura esconde e quais métricas resistem ao escrutínio antes de escalar o gasto."
+    },
+    "items": [
+      {
+        "article": "build-buy-ou-compose-o-que-uma-empresa-realmente-precisa-possuir-em-ia",
+        "note": {
+          "en": "Start here: TCO, unit economics and the trade-offs of each option.",
+          "pt-br": "Comece aqui: TCO, unit economics e os trade-offs de cada opção."
+        }
+      },
+      {
+        "article": "a-conta-da-ia-chegou-limitar-o-uso-e-a-resposta",
+        "note": {
+          "en": "When the bill arrives, is limiting usage the answer?",
+          "pt-br": "Quando a conta chega, limitar o uso é a resposta?"
+        }
+      },
+      {
+        "article": "tokens-como-metrica-de-produtividade-onde-essa-leitura-quebra",
+        "note": {
+          "en": "Why tokens are a weak productivity metric.",
+          "pt-br": "Por que tokens são uma métrica fraca de produtividade."
+        }
+      },
+      {
+        "article": "dora-developer-experience-e-coortes-como-eu-mediria-o-impacto-da-ia-em-engenharia",
+        "note": {
+          "en": "Measuring the impact of AI on engineering with cohorts.",
+          "pt-br": "Medindo o impacto da IA em engenharia com coortes."
+        }
+      },
+      {
+        "article": "risco-de-concentracao-em-ia-generativa",
+        "note": {
+          "en": "The economic side of provider concentration.",
+          "pt-br": "O lado econômico da concentração em fornecedores."
+        }
+      }
+    ],
+    "comingSoon": [
+      {
+        "title": {
+          "en": "Platform economics and scenario analysis",
+          "pt-br": "Economia das plataformas e análise de cenários"
+        }
+      },
+      {
+        "title": {
+          "en": "Prioritization and business case",
+          "pt-br": "Priorização e business case"
+        }
+      }
+    ]
+  },
+  {
+    "id": "enterprise-ai-architecture",
+    "audience": {
+      "en": "For Solutions Architects and platform engineers",
+      "pt-br": "Para Solutions Architects e engenheiros de plataforma"
+    },
+    "title": {
+      "en": "Enterprise AI Architecture",
+      "pt-br": "Arquitetura de IA corporativa"
+    },
+    "description": {
+      "en": "From capability decomposition to patterns, controls and the platform around the agent: the technical texts behind the architecture decisions.",
+      "pt-br": "Da decomposição por capability a padrões, controles e à plataforma em volta do agente: os textos técnicos por trás das decisões de arquitetura."
+    },
+    "items": [
+      {
+        "article": "build-buy-ou-compose-o-que-uma-empresa-realmente-precisa-possuir-em-ia",
+        "note": {
+          "en": "Start here: which layers to govern even when execution is contracted.",
+          "pt-br": "Comece aqui: quais camadas governar mesmo quando a execução é contratada."
+        }
+      },
+      {
+        "article": "6-padroes-de-arquitetura-llm-aprendizados-de-234-celulas-experimentais-sobre-controle-e-autonomia",
+        "note": {
+          "en": "Six architecture patterns and the control/autonomy trade-off.",
+          "pt-br": "Seis padrões de arquitetura e o trade-off entre controle e autonomia."
+        }
+      },
+      {
+        "article": "llm-workflow-agente-ou-codigo-deterministico-como-escolher-antes-do-framework",
+        "note": {
+          "en": "Workflow, agent or deterministic code, before the framework.",
+          "pt-br": "Workflow, agente ou código determinístico, antes do framework."
+        }
+      },
+      {
+        "article": "arquitetura-onde-a-politica-vira-controle-tecnico-e-por-que-a-residencia-de-dados-define-o-desenho",
+        "note": {
+          "en": "Where policy becomes a technical control.",
+          "pt-br": "Onde a política vira controle técnico."
+        }
+      },
+      {
+        "article": "agentic-sdlc-como-plataforma-o-que-precisa-existir-entre-o-coding-agent-e-o-merge",
+        "note": {
+          "en": "The platform that must exist between the coding agent and the merge.",
+          "pt-br": "A plataforma que precisa existir entre o coding agent e o merge."
+        }
+      },
+      {
+        "article": "harness-engineering-como-tornar-agentes-confiaveis",
+        "note": {
+          "en": "Making agents reliable with a harness.",
+          "pt-br": "Tornando agentes confiáveis com um harness."
+        }
+      }
+    ],
+    "comingSoon": [
+      {
+        "title": {
+          "en": "TOGAF applied to AI",
+          "pt-br": "TOGAF aplicado à IA"
+        }
+      },
+      {
+        "title": {
+          "en": "Platform comparison",
+          "pt-br": "Comparação de plataformas"
+        }
+      }
+    ]
+  }
+]
