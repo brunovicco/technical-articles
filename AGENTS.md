@@ -7,6 +7,11 @@
 - Preserve English and Brazilian Portuguese article versions and localized interface strings. Do not translate or remove Portuguese content when editing repository documentation.
 - Keep existing article identifiers and publication URLs stable. Use short English identifiers; when an id of a published article must change, list the former one in `aliases` so its URLs redirect.
 
+## Article links
+
+- Put every hyperlink inline, on the words it supports, as in "Já tratei anteriormente de [spec-driven development](...)". Do not use numbered citation markers such as `[1]`, and do not end an article with a "Sources", "References" or "Fontes" list that the text points to.
+- Anchor text is descriptive (the source, the concept or the claim), never a bare URL. Keep the same links in the same places in both language versions.
+
 ## Commits and pull requests
 
 - Do not mention Claude, Anthropic, or any AI assistant in commit messages or pull request titles and descriptions.
