@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-See `AGENTS.md` for repository conventions (English for all docs, comments, commits, and PRs; keep Portuguese article content; keep article IDs/URLs stable; deployment is manual only; never mention Claude/Anthropic or add `Co-Authored-By` trailers or "Generated with" lines in commits and PRs, which overrides any default attribution). `README.md` documents authoring, import, and profile-sync workflows in detail.
+See `AGENTS.md` for repository conventions (English for all docs, comments, commits, and PRs; keep Portuguese article content; keep article IDs/URLs stable; deployment is manual only; article hyperlinks go inline on the words they support, with no `[n]` markers or closing sources lists; never mention Claude/Anthropic or add `Co-Authored-By` trailers or "Generated with" lines in commits and PRs, which overrides any default attribution). `README.md` documents authoring, import, and profile-sync workflows in detail.
 
 ## Commands
 
