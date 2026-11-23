@@ -1,0 +1,31 @@
+{
+  "id": "togaf-enterprise-ai",
+  "originalLanguage": "pt-br",
+  "status": "ready",
+  "date": "2026-11-29",
+  "tags": [
+    "platforms",
+    "governance"
+  ],
+  "series": {
+    "id": "enterprise-ai-decisions",
+    "part": 4
+  },
+  "versions": {
+    "en": {
+      "title": "TOGAF applied to AI: from capability map to transformation roadmap",
+      "kind": "translation",
+      "translatedFrom": "pt-br",
+      "reviewStatus": "unreviewed"
+    },
+    "pt-br": {
+      "title": "TOGAF aplicado à IA: do mapa de capacidades ao roadmap de transformação",
+      "kind": "original"
+    }
+  },
+  "cover": {
+    "en": "togaf-enterprise-ai-en.jpg",
+    "pt-br": "togaf-enterprise-ai-en.jpg"
+  },
+  "images": []
+}

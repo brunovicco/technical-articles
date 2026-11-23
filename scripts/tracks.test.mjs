@@ -41,7 +41,7 @@ test('track articles show the track eyebrow and rail, and other articles do not'
   for(const article of articles){
     const html=await read(`en/articles/${article.id}/index.html`);
     if(article.series){
-      const total=articles.filter(a=>a.series?.id===article.series.id).length;
+      const total=tracks.find(t=>t.id===article.series.id).total||articles.filter(a=>a.series?.id===article.series.id).length;
       assert.ok(html.includes(`PART ${article.series.part} OF ${total}`));
       assert.ok(html.includes('class="track-rail"'));
       assert.equal((html.match(/aria-current="page"><span>/g)||[]).length,1);

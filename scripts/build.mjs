@@ -70,6 +70,7 @@ for(const track of tracks){
   if(!/^[a-z0-9-]+$/.test(track.id))throw new Error(`Invalid track id: ${track.id}`);
   for(const lang of ['pt-br','en'])if(!track.title?.[lang]||!track.description?.[lang])throw new Error(`Track ${track.id} needs a title and description in ${lang}`);
 }
+for(const track of tracks)if(track.total!==undefined&&(!Number.isInteger(track.total)||track.total<1))throw new Error(`Invalid total for track ${track.id}`);
 if(new Set(tracks.map(track=>track.id)).size!==tracks.length)throw new Error('Duplicate track id');
 const paths=await fs.readFile(path.join(root,'content/paths.json'),'utf8').then(JSON.parse,error=>{if(error.code==='ENOENT')return [];throw error;});
 const articles=[],held=[];
@@ -255,7 +256,7 @@ function articlepage(article,lang){
   const related=articles.filter(a=>a.id!==article.id&&a.versions[lang]).map(a=>({a,shared:a.tags.filter(tag=>article.tags.includes(tag)).length})).sort((a,b)=>b.shared-a.shared||b.a.date.localeCompare(a.a.date)).slice(0,3).map(r=>r.a);
   const track=trackOf(article);
   const trackMates=track?track.articles.filter(a=>a.versions[lang]):[];
-  const trackEyebrow=track?`<a class="eyebrow track-eyebrow" href="${url(trackPath(lang,track.id))}">${t.trackLabel} ${track.number} · ${escape(track.title[lang])} · ${t.part} ${article.series.part} ${t.of} ${trackMates.length}</a>`:'';
+  const trackEyebrow=track?`<a class="eyebrow track-eyebrow" href="${url(trackPath(lang,track.id))}">${t.trackLabel} ${track.number} · ${escape(track.title[lang])} · ${t.part} ${article.series.part} ${t.of} ${track.total||trackMates.length}</a>`:'';
   const trackRail=track?`<section class="track-rail" aria-label="${t.thisTrack}"><span class="eyebrow">${t.thisTrack}</span><a class="track-rail-title" href="${url(trackPath(lang,track.id))}">${escape(track.title[lang])}</a><ol>${trackMates.map(a=>a.id===article.id?`<li aria-current="page"><span>${String(a.series.part).padStart(2,'0')}</span>${escape(a.versions[lang].title)}</li>`:`<li><span>${String(a.series.part).padStart(2,'0')}</span><a href="${url(articlePath(lang,a.id))}">${escape(a.versions[lang].title)}</a></li>`).join('')}</ol></section>`:'';
   const banner=article.cover?.[lang];
   const pageUrl=absolute(articlePath(lang,article.id)),enc=encodeURIComponent;
