@@ -36,6 +36,13 @@
         }
       },
       {
+        "article": "togaf-enterprise-ai",
+        "note": {
+          "en": "From capability map to target architecture and roadmap: how to sequence the decisions of Parts 1 to 3.",
+          "pt-br": "Do mapa de capacidades à arquitetura-alvo e ao roadmap: como sequenciar as decisões das Partes 1 a 3."
+        }
+      },
+      {
         "article": "genai-concentration-risk",
         "note": {
           "en": "What changes when one provider concentrates models, data and operations.",
@@ -58,12 +65,6 @@
       }
     ],
     "comingSoon": [
-      {
-        "title": {
-          "en": "TOGAF applied to AI",
-          "pt-br": "TOGAF aplicado à IA"
-        }
-      },
       {
         "title": {
           "en": "Prioritization and business case",
@@ -182,6 +183,13 @@
         }
       },
       {
+        "article": "togaf-enterprise-ai",
+        "note": {
+          "en": "Using TOGAF practices to turn a capability map into a target architecture and transition roadmap.",
+          "pt-br": "Usando práticas do TOGAF para transformar um mapa de capacidades em arquitetura-alvo e roadmap de transição."
+        }
+      },
+      {
         "article": "llm-architecture-patterns",
         "note": {
           "en": "Six architecture patterns and the control/autonomy trade-off.",
@@ -214,14 +222,6 @@
         "note": {
           "en": "Making agents reliable with a harness.",
           "pt-br": "Tornando agentes confiáveis com um harness."
-        }
-      }
-    ],
-    "comingSoon": [
-      {
-        "title": {
-          "en": "TOGAF applied to AI",
-          "pt-br": "TOGAF aplicado à IA"
         }
       }
     ]
